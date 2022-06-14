@@ -82,24 +82,31 @@ a {
 }
 .content .text ul {
   font-size: 13px;
-  height: 108px;
+  height: 120px;
   width: 100%;
   display: flex;
   flex-flow: wrap column;
   box-sizing: border-box;
+  align-content: space-between;
 }
 .content.text ul li {
-  width: 50%;
-  padding-left:27px;
-  height: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  padding-left: 27px;
+  height: 30px;
   margin: 5px 0;
   background-image: url(./check-icon.png);
   background-repeat: no-repeat;
   background-size: 8%;
-
+}
+.content.text ul li p {
+  line-height: 120%;
 }
 .content .text a {
   color: #0f67ff;
+  display: inline-block;
+  width: 100%;
 }
 
 /* 更多功能與服務 */
@@ -142,7 +149,6 @@ a {
   font-weight: 200;
   font-size: 14.5px;
   line-height: 180%;
-  
 }
 .content-box .box-group .item-box .media-box {
   display: flex;
@@ -150,7 +156,7 @@ a {
   width: 100%;
 }
 .content-box .box-group .item-box .media {
-  box-shadow: 0 0 10px rgb(97, 97, 97,50%);
+  box-shadow: 0 0 10px rgb(97, 97, 97, 50%);
   width: 120px;
   height: 120px;
   display: flex;
@@ -158,5 +164,4 @@ a {
   justify-content: center;
   border-radius: 50%;
   background-color: #fff;
- 
 }
