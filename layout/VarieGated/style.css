@@ -525,6 +525,7 @@ h2 {
   position: absolute;
   right: 0;
   top: 20px;
+  z-index: 5;
 }
 
 .most-recent-img-container .image-cover {
