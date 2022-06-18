@@ -59,8 +59,9 @@ button {
   color: #000;
   box-sizing: border-box;
 }
-p.header {
+.header p {
   font-size: 14px;
+  font-weight: 400;
 }
 .hover-pink:hover {
   color: #ffb4b4;
@@ -296,6 +297,36 @@ p.header {
   position: absolute;
   z-index: 2;
   left: 0;
+}
+.salesEvent-img-selector
+{
+ text-align: end;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+.salesEvent-img-list{
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+
+}
+.salesEvent-img-list :hover .straight-line{
+  width: 60px;
+}
+.salesEvent-img-list .counter{
+  display: block;
+  margin: 10px;
+}
+.salesEvent-img-list .counter:first-child .straight-line{
+  width: 60px;
+}
+.salesEvent-img-list .straight-line{
+  position: absolute;
+  margin: 0;
+  right: 0;
+  width: 0;
+  transition: .3s ease;
 }
 .salesEvent-text a {
   display: flex;
