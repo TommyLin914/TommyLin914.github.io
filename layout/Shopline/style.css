@@ -40,7 +40,6 @@ a {
 }
 
 /* contents */
-
 .content-group {
   width: 80%;
   margin: 0 auto;
@@ -53,6 +52,7 @@ a {
   align-items: center;
   margin: auto;
 }
+
 .content-group .content.bottom-line {
   border-bottom: 1px solid #e0e5e9;
 }
