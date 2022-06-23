@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+        p{
+            font-family: 'Open Sans', sans-serif;
+        }
+        .container {
+            margin: auto;
+            width: 900px;
+        }
+
+        .img-top-container,
+        .img-bottom-container {
+            margin: 10px auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            outline: 3px solid rgb(104, 202, 161);
+        }
+
+        .information {
+            margin: 30px auto;
+            padding: 10px;
+            outline: 3px solid rgb(104, 202, 161);
+        }
+        p+p{
+            margin-top: 10px;
+        }
+        img {
+            height: 100%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="img-top-container">
+            <img src="" alt="" class="img-top">
+        </div>
+        <div class="information">
+            <p class="name"></p>
+            <p class="email"></p>
+            <p class="school"></p>
+            <p class="read"></p>
+        </div>
+        <div class="img-bottom-container">
+            <img src="" alt="" class="img-bottom">
+            <img src="" alt="" class="img-bottom">
+            <img src="" alt="" class="img-bottom">
+        </div>
+    </div>
+
+
+    <script>
+        let topImg = document.querySelector(".img-top");
+        topImg.src = "https://picsum.photos/300/200/?random=11";
+
+
+        let infoObj = {
+            name: "Tommy",
+            email: "tommy@gmail",
+            school: "Build School",
+            hobbies: "Shopping"
+        }
+        let nameText = document.querySelector(".name");
+        let emailText = document.querySelector(".email");
+        let schoolText = document.querySelector(".school");
+        let readText = document.querySelector(".read");
+        nameText.innerHTML = `姓名: ${infoObj.name}`;
+        emailText.innerHTML = `e-mail: ${infoObj.email}`;
+        schoolText.innerHTML = `學校: ${infoObj.school}`;
+        readText.innerHTML = `興趣: ${infoObj.hobbies}`;
+
+        let bottomImg = document.querySelectorAll(".img-bottom-container .img-bottom");
+        bottomImg[0].src = "https://picsum.photos/300/200/?random=12";
+        bottomImg[1].src = "https://picsum.photos/300/200/?random=13";
+        bottomImg[2].src = "https://picsum.photos/300/200/?random=14";
+
+    </script>
+
+</body>
+
+</html>
