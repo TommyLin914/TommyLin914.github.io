@@ -50,15 +50,15 @@
 
     <div class="container"></div>
     <script>
+        
         let setHtml = document.querySelector(".container");
         let htmlText = '<div class="img-top-container"> <img src="" alt="" class="img-top"> </div> <div class="information"> <p class="name">姓名: </p> <p class="email">e-mail: </p> <p class="school">學校: </p> <p class="hobby">興趣: </p> </div> <div class="img-bottom-container"> <img src="" alt="" class="img-bottom">  <img src="" alt="" class="img-bottom">  <img src="" alt="" class="img-bottom"> </div>';
         setHtml.insertAdjacentHTML("afterbegin",htmlText);
 
+
         let topImg = document.querySelector(".img-top");
         topImg.src = "https://picsum.photos/300/200/?random=20";
 
-
-       
         let infoArr = [
             "Tommy",
             "tommy@gmail",
