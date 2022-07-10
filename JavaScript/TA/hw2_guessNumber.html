@@ -339,9 +339,10 @@
             addSpanAB.innerText = `${a}A${b}B`
             let spanAB = addLi.appendChild(addSpanAB)
 
-            if (a == 0 && b == 0) { spanAB.classList.add('badge', 'text-bg-danger') }
-            else if (a == 4) { spanAB.classList.add('badge', 'text-bg-success') }
-            else { spanAB.classList.add('badge', 'text-bg-warning') }
+            if (a == 4) { spanAB.classList.add('badge', 'text-bg-success') }
+            else if (a != 0 && b != 0) { spanAB.classList.add('badge', 'text-bg-warning') }
+            else { spanAB.classList.add('badge', 'text-bg-danger') }
+
             input = inputBox.value
             addSpanAns.innerText = input
             let span = addLi.append(addSpanAB, addSpanAns)
