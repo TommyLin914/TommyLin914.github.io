@@ -301,7 +301,7 @@
 
         //#region 產生謎底
         let zeroToNine = []
-        var answer
+        let answer
         let answerArr = []
         let answerDisplay = document.querySelector('.answer')
         function gameStart() {
@@ -407,15 +407,12 @@
         function distinct(arr) {
             return Array.from(new Set([...arr]))
         }
+        let numberRegExp = /^[0-9]{4}$/
+        
         function checkNumber(num) {
-            let checkLength = distinct(guessArr).length
-            if (!isNaN(num) && checkLength == 4) {
-                return true
-            }
-            else { return false }
-
+            let numberRegExp = /^[0-9]{4}$/
+            return numberRegExp.test(num)
         }
-        //#endregion
         //#endregion
 
         //#region 猜對了
