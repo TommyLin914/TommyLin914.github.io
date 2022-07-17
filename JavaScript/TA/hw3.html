@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/7b6352651c.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .icon {
+        display: block;
+        background-image: url(https://store.storeimages.cdn-apple.com/8756/store.apple.com/shop/rs-globalelements/dist/tw/ac-globalnav-dist/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_apple_image__b5er5ngrzxqq_large.svg);
+        background-repeat: no-repeat;
+        height: 30px;
+        width: 45px;
+      }
+      a {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      p{
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .main{
+        position: relative;
+      }
+      .product-type-main{
+        width: 100%;
+        background-color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin: 0;
+        border-bottom: 1px solid #61616186;
+      }
+      .head {
+        height: 45px;
+      }
+      .nav-item {
+        padding: 0 16px;
+      }
+      .nav-link {
+        color: #fff;
+        font-size: 15px;
+        line-height: 45px;
+        padding: unset;
+      }
+      .nav-link:hover {
+        color: #fff;
+      }
+
+      .product-type {
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .price-top {
+        font-size: 20px;
+        font-weight: 300;
+      }
+
+      .delivery {
+        border-bottom: 1px #61616186 solid;
+      }
+
+      .delivery i {
+        display: block;
+        font-size: 30px;
+      }
+
+      .delivery-info {
+        width: 50%;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .installment {
+        background-color: #f5f5f7;
+        text-align: center;
+        height: 50px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 50px;
+
+      }
+
+      .accordion-button::after,
+      .accordion-button:not(.collapsed)::after,
+      .accordion-button:not(.collapsed) {
+        background-color: unset;
+        color: unset;
+      }
+      .accordion-button::after,
+      .accordion-button:not(.collapsed)::after{
+        width: 0;
+      }
+    
+      .color-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 5px auto;
+        outline: 1px solid #92929263;
+      }
+      .name-detail{
+        margin-bottom: 0;
+      }
+      .type-btn {
+        width: 100%;
+        outline: 1px solid #92929263;
+      }
+
+      .option-btn {
+        width: 90%;
+        outline: 1px solid #92929263;
+        min-height: 60px;
+        box-sizing: border-box;
+      }
+      .accordion-button{
+        font-size: 20px;
+        font-weight: bolder;
+      }
+    </style>
+    <title>買蘋果啦</title>
+  </head>
+
+  <body>
+    <section class="head bg-dark d-flex justify-content-center">
+      <a href="" class="icon"></a>
+    </section>
+
+    <div class="main">
+    <section
+      class="product-type-main d-flex justify-content-between align-items-center p-3"
+    >
+      <h2 class="product-type">{{ip13}}</h2>
+      <p class="price-top">NT<span>{{99999}}</span></p>
+    </section>
+
+    <section class="installment">
+      <p>
+        可申請最長達12個月的零利率分期付款。
+        <span><a href="#">進一步了解></a> </span>
+      </p>
+    </section>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="img-box pb-4">
+            <img
+              class="product-img w-100"
+              src="https://picsum.photos/300/200/?random=10"
+            />
+
+            <div class="row delivery p-4">
+              <div class="delivery-info">
+                <i class="fa-solid fa-box"></i>
+                <span>快速且免額外付費的運送服務</span>
+              </div>
+              <div class="delivery-info">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>免額外付費輕鬆退貨</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-container col-12 col-md-6 pt-3">
+          <h1>
+            <strong>購買<span class="product-name">{{機型}}</span></strong>
+          </h1>
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+
+
+           
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./hw3.js"></script>
+  </body>
+</html>

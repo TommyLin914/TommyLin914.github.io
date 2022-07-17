@@ -361,18 +361,18 @@
         //#region input對答案
         let inputBox = document.querySelector('.guess-input')
         let guessBtn = document.querySelector('.btn-guess')
-        let guess, guessNum
+        let guess
         let guessArr
         function getInput() {
             guess = inputBox.value
-            guessNum = Number(guess)
             guessArr = Array.from(guess)
         }
         let aCount, bCount
         let filterArr
         let answerNum = Number(answer)
         function checkAnswer() {
-            if (checkNumber(guessNum) && guessNum > 0) {
+            console.log(guess)
+            if (checkNumber(guess)) {
                 filterArr = answerArr.filter((num) => {
                     return guess.includes(num)
                 })
