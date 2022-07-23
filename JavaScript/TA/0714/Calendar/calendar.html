@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="widli=device-widli, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Open+Sans:ital,wght@0,500;1,600&display=swap" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://kit.fontawesome.com/7b6352651c.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+        background-image: url(./inkbrush-ipad-wallpaper-horizontal.JPG);
+        background-size: 2200px 768px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .list-group-item + .list-group-item {
+        border-top-width: 2px;
+      }
+      .list-group-item:first-child {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+      .list-group {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .list-group-item {
+        min-width: calc(100% / 7.6);
+        border: 0;
+        text-align: center;
+        box-sizing: border-box;
+        margin: 5px;
+      }
+
+      .dow {
+        font-weight: 900;
+      }
+      .another-month {
+        color: #8b8b8b;
+      }
+
+      .title-month {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .calendar {
+        position: relative;
+      }
+      .calendar-container {
+        max-width: 1000px;
+      }
+      .btn:focus {
+        box-shadow: none;
+      }
+      .btn-display {
+        position: relative;
+        top: -10px;
+        width: 215px;
+        font-size: 40px;
+        font-weight: 900;
+        color: #353535;
+      }
+      .select-year {
+        position: absolute;
+        top: 48px;
+        font-weight: bold;
+        color: #757575;
+      }
+      .go-back {
+        outline: 1px solid rgba(107, 250, 195, 0.5);
+        border-radius: 10px;
+        margin: 0 20px;
+        position: fixed;
+        top: 40px;
+        left: 300px;
+      }
+      .set-location,
+      .set-color {
+        margin: 10px;
+        width: 45%;
+      }
+      .loc-color-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .border-bottom {
+        border-bottom: 1px solid rgba(7, 7, 7, 0.425);
+      }
+      .btn-launch,
+      .btn-set {
+        display: none;
+      }
+      .current-date {
+        width: 38px;
+        padding: 3px;
+        padding-left: 8px;
+        border-radius: 0 0 13px 0;
+        border-right: 2px solid #cfcda8;
+        border-bottom: 2px solid #cfcda8;
+      }
+      .date{
+        border-radius: 12px;
+        height: 100px;
+        text-align: unset;
+        padding: 0;
+        border: 2px solid #cfcda8;
+        max-width: 122.5px;
+      }
+      .date:not(.another-month) {
+        cursor: pointer;
+      }
+      .date.today {
+        font-weight: bold;
+        color: rgb(60, 163, 124);
+        border: 2px solid rgb(60, 163, 124);
+      }
+      .today > .current-date {
+        color: rgb(60, 163, 124);
+        border-right: 2px solid rgb(60, 163, 124);
+        border-bottom: 2px solid rgb(60, 163, 124);
+      }
+      .divColor {
+        min-width: 10px;
+        height: 15px;
+      }
+      .ul-todo {
+        height: 64px;
+        padding-left: 0;
+        overflow:auto;
+        
+      }
+      .ul-todo::-webkit-scrollbar{
+        width: 2px;
+      }
+      .li-todo {
+        display: flex;
+        align-items: center;
+      }
+      .p-todo {
+        display: block;
+        margin: auto;
+        font-size: 15px;
+        max-width: 94px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+    <title>Calendar</title>
+  </head>
+  <body>
+    <div class="calendar">
+      <div class="title-month container my-3">
+        <button type="button" class="btn btn-left">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <button type="button" class="btn btn-display" disabled="true">{{幾月}}</button>
+        <p class="select-year">{{2022}}</p>
+
+        <button type="button" class="btn btn-right">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+
+      <div class="calendar-container container">
+        <ul class="list-dow list-group px-2">
+          <li class="dow list-group-item">Sun.</li>
+          <li class="dow list-group-item">mon.</li>
+          <li class="dow list-group-item">Tue.</li>
+          <li class="dow list-group-item">Wed.</li>
+          <li class="dow list-group-item">Thu.</li>
+          <li class="dow list-group-item">Fri.</li>
+          <li class="dow list-group-item">Sat.</li>
+        </ul>
+        <ul class="list-date list-group px-2">
+          <!-- <li class="date col list-group-item">
+            <div class="current-date">1</div>
+            
+            <ul>
+              <li>             
+                  <div class="divColor"></div>
+                  <p>per-schedule</p>
+              </li>
+            </ul>
+            
+          </li> -->
+          <!-- <li class="date col list-group-item">2</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <button type="button" class="go-back btn btn-secondary">回到今天</button>
+
+    <!-- 顯示行程 -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary m-3 btn-launch" data-bs-toggle="modal" data-bs-target="#display-event-modal">Launch demo modal</button>
+
+    <!-- Modal display -->
+    <div class="modal fade m-3" id="display-event-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="schedule-title fw-bolder">{{行程標題}}</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body schedule-display">
+            <h3 class="schedule-date fs-6">{{20OO/OO/OO}}</h3>
+            <p class="schedule-time fs-5 pb-2 border-bottom border-1">{{15:00}}</p>
+
+            <p class="schedule-detail pb-2 fs-5 border-bottom border-1">
+              {{
+              障礙你在我是一隻水溝，東方訓練似乎對於執法看看法律責任科技認真視頻經過一年，不得不設置最低，全體諮詢，參考每個人細節都有，起來本報著名革命適用於當然死了購物地位限制，目光找不到，報名堅決一段，確定負責人類型長大繼續買了本網站體內平衡警察一人，全球相關忽然。}}
+            </p>
+            <p class="schedule-location fs-5">{{家裡}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+            <button type="button" class="btn-edit btn btn-primary">編輯</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal set Todo -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn-set btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-event-modal">Launch static backdrop modal</button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="add-event-modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">編輯行程</h5>
+            <button type="button" class="btn-close btn-close-add" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body schedule-set">
+            <!-- 輸入區塊 -->
+
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Leave a comment here" id="set-title"></textarea>
+              <label for="set-title">標題</label>
+            </div>
+
+            <form class="form-floating">
+              <input type="date" class="form-control" id="set-date" />
+              <label for="set-date mb-3">日期</label>
+            </form>
+
+            <form class="form-floating">
+              <input type="time" class="form-control" id="set-time" />
+              <label for="set-time mb-3">時間</label>
+            </form>
+
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Leave a comment here" id="set-detail" style="height: 100px"></textarea>
+              <label for="set-detail">備註</label>
+            </div>
+
+            <div class="loc-color-container">
+              <div class="set-location form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="set-location"></textarea>
+                <label for="set-location">地點</label>
+              </div>
+
+              <div class="set-color form-floating mb-3">
+                <input type="color" class="form-control" id="set-color" />
+                <label for="set-color">顏色</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+            <button type="button" class="btn-save btn btn-primary">SAVE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="calendar.js"></script>
+  </body>
+</html>
