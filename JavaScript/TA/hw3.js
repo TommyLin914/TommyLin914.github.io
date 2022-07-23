@@ -298,7 +298,7 @@ const divBtn = document.createElement('div')
         divIcon.style.backgroundColor = `${color.colorHEX}`
         btn.onclick = function () {
             btn.setAttribute('selected', 'false')
-            div.querySelectorAll('.btn').forEach(b => b.setAttribute('selected', 'false'))
+            divIcon.querySelectorAll('.btn').forEach(b => b.setAttribute('selected', 'false'))
             btn.setAttribute('selected', 'true')
             const colorAreaBtn = document.querySelector('.color-area')
             productImg.src = color.imgUrl
