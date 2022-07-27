@@ -26,7 +26,7 @@ let time = 20
 let speedLeft
 let speedBottom //set random
 let score = 0
-let hitboxRange = 30
+let hitboxRange = 40
 const gameTime = 30
 let direction
 let timeCounter = 1
