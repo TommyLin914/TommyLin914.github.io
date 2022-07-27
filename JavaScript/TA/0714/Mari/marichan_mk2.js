@@ -116,7 +116,7 @@ function setTarget() {
 function setSpeed() {
     //設定速度
     speedLeft = Math.floor(Math.random() * 7) + 3
-    speedBottom = Math.floor(Math.random() * 15) + 10
+    speedBottom = Math.floor(Math.random() * 12) + 5
     console.log(`L:${speedLeft} B:${speedBottom}`);
 
 }
