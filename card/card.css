@@ -84,6 +84,7 @@
 .content .details .price-info-card {
   width: 50%;
   display: block;
+  white-space: nowrap;
 }
 .content .details .loc-info-card span,
 .content .details .price-info-card span {

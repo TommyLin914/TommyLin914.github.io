@@ -102,6 +102,7 @@ $full-img-box-length: 200px;
     .loc-info-card,
     .price-info-card {
       @include info-half();
+      white-space: nowrap;
       span{
         padding-right: 4px;
         padding-left: 4px;
