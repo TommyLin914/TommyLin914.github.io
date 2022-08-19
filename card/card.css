@@ -1,0 +1,135 @@
+.container {
+  padding-top: 100px;
+}
+
+.group-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  height: 360px;
+}
+.group-card .card {
+  position: relative;
+  height: 360px;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  padding-bottom: 16px;
+}
+.group-card .card .img-box-card {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+  width: 60%;
+  padding-bottom: 60%;
+  background-color: var(--background);
+  border-radius: 20px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.group-card .card .img-box-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.content .details {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: center;
+  width: 100%;
+  align-items: baseline;
+}
+.content .details p {
+  margin-bottom: 8px;
+}
+.content .details .info-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+.content .details .name-info-card {
+  width: 50%;
+  display: block;
+  width: 30%;
+  min-width: 76px;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+.content .details .age-info-card {
+  width: 50%;
+  display: block;
+  width: 30%;
+  min-width: 76px;
+}
+.content .details .loc-info-card,
+.content .details .price-info-card {
+  width: 50%;
+  display: block;
+}
+.content .details .loc-info-card span,
+.content .details .price-info-card span {
+  padding-right: 4px;
+  padding-left: 4px;
+}
+.content .details .service-info-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.content .details .service-info-card span {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.action-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.action-btn .button {
+  width: 35%;
+}
+.action-btn .like-btn-card {
+  transition: 0.25s;
+}
+.action-btn .like-btn-card i {
+  color: var(--background);
+}
+.action-btn .like-btn-card:hover {
+  background-color: var(--light-pink);
+  border: var(--light-pink) solid 1px;
+}
+.action-btn .cart-btn-card {
+  background-color: var(--background);
+  transition: 0.25s;
+}
+.action-btn .cart-btn-card i {
+  color: var(--primary);
+  transition: 0.25s;
+}
+.action-btn .cart-btn-card:hover {
+  background-color: var(--primary);
+}
+.action-btn .cart-btn-card:hover i {
+  color: #fff;
+}/*# sourceMappingURL=card.css.map */

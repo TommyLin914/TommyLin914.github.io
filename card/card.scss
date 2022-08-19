@@ -1,0 +1,155 @@
+$default-card-height: 120px;
+$full-card-height: 360px;
+$full-img-box-length: 200px;
+
+.container {
+  padding-top: 100px;
+}
+.group-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  height: $full-card-height;
+
+  .card {
+    position: relative;
+    height: $full-card-height;
+    // height: $default-card-height;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba($color: #000000, $alpha: 0.5);
+    transition: 0.5s;
+    padding-bottom: 16px;
+    // &:hover {
+    //   height: $full-card-height;
+    //   .img-box-card {
+    //     width: $full-img-box-length;
+    //     height: $full-img-box-length;
+    //   }
+    // }
+    .img-box-card {
+      position: absolute;
+      left: 50%;
+      top: -50px;
+      transform: translateX(-50%);
+      // width: $full-img-box-length;
+      // height: $full-img-box-length;
+      width: 60%;
+      padding-bottom: 60%;
+
+      background-color: var(--background);
+      border-radius: 20px;
+      box-shadow:10px 15px 30px rgba($color: #000000, $alpha: 0.35);
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.content {
+  //  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  @mixin info-half {
+    width: 50%;
+    display: block;
+  }
+  @mixin info-full {
+    width: 100%;
+    display: block;
+  }
+  .details {
+    p {
+      margin-bottom: 8px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center;
+    width: 100%;
+    align-items: baseline;
+    .info-card {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin-bottom: 16px;
+      
+    }
+    .name-info-card {
+      @include info-half();
+      width: 30%;
+      min-width: 76px;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 0;
+    }
+    .age-info-card {
+      @include info-half();
+      width: 30%;
+      min-width: 76px;
+    }
+    .loc-info-card,
+    .price-info-card {
+      @include info-half();
+      span{
+        padding-right: 4px;
+        padding-left: 4px;
+      }
+    }
+    .service-info-card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 100%;
+      span {
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+$transition-btn: 0.25s;
+.action-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  .button {
+    width: 35%;
+  }
+  .like-btn-card {
+    transition: $transition-btn;
+    i {
+      color: var(--background);
+    }
+    &:hover {
+      background-color: var(--light-pink);
+      border: var(--light-pink) solid 1px;
+    }
+  }
+  .cart-btn-card {
+    background-color: var(--background);
+    transition: $transition-btn;
+    i {
+      color: var(--primary);
+      transition: $transition-btn;
+    }
+    &:hover {
+      background-color: var(--primary);
+      i {
+        color: #fff;
+      }
+    }
+  }
+}
