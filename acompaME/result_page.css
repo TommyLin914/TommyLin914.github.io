@@ -261,6 +261,7 @@ a:visited {
   box-shadow: 0 35px 80px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
   padding-bottom: 16px;
+  pointer-events: auto;
 }
 .group-card .card .img-box-card {
   position: absolute;
@@ -303,18 +304,15 @@ a:visited {
   display: flex;
   align-items: center;
   height: 400px;
+  pointer-events: none;
 }
 .group-card .container-card:hover {
   top: 50px;
-  pointer-events: none;
 }
 @media (max-width: 768px) {
   .group-card .container-card:hover {
     top: 0;
   }
-}
-.group-card .container-card:hover .card {
-  pointer-events: auto;
 }
 .group-card .container-card:hover .card:hover {
   height: 400px;
