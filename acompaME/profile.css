@@ -1,5 +1,12 @@
+@charset "UTF-8";
 a {
   text-decoration: none;
+}
+
+:root {
+  /*文字色*/
+  /* 底線，裝飾性顏色 */
+  /* 版型 */
 }
 
 section {
@@ -18,19 +25,20 @@ section {
   width: 20%;
   min-width: 250px;
   height: 100%;
+  padding-top: 5%;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  background-color: var(--secondary);
+  background-color: #688bc1;
   transition: 0.5s;
 }
 .side-section button {
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 .side-section > * {
   width: 80%;
@@ -74,50 +82,59 @@ section {
   padding: 5px 0;
 }
 .nav-user ul li .button {
+  background-color: var(--background);
+  color: var(--primary);
   display: block;
   margin: auto;
   transition: 0.5s;
   width: 100%;
   box-sizing: border-box;
+  font-weight: 800;
 }
 .nav-user ul li .button:hover {
-  color: var(--info);
-  background-color: var(--light-blue);
-  border: 1px solid var(--light-blue);
+  color: #6f6a81;
+  background-color: #90a8cc;
+  border: 1px solid #90a8cc;
 }
-.nav-user .like-btn-nav,
-.nav-user .cart-btn-nav {
-  background-color: var(--background);
+.nav-user ul li .like-btn-nav,
+.nav-user ul li .cart-btn-nav {
+  background-color: var(--light-pink);
+  border: var(--light-pink) solid 1px;
   width: 100%;
   transition: 0.3s;
 }
-.nav-user .like-btn-nav *,
-.nav-user .cart-btn-nav * {
+.nav-user ul li .like-btn-nav *,
+.nav-user ul li .cart-btn-nav * {
   display: block;
-  color: var(--info);
-  margin: auto;
+  margin: 0;
   transition: 0.3s;
 }
-.nav-user .like-btn-nav i,
-.nav-user .cart-btn-nav i {
-  color: var(--light-pink);
+.nav-user ul li .like-btn-nav i,
+.nav-user ul li .cart-btn-nav i {
+  color: var(--background);
   padding-right: 2px;
-  width: 40%;
+  width: 15%;
 }
-.nav-user .like-btn-nav:hover,
-.nav-user .cart-btn-nav:hover {
-  background-color: var(--light-pink);
-  border: var(--light-pink) solid 1px;
+.nav-user ul li .like-btn-nav p,
+.nav-user ul li .cart-btn-nav p {
+  font: 1em sans-serif;
+  color: var(--background);
+  font-weight: 800;
 }
-.nav-user .like-btn-nav:hover *,
-.nav-user .cart-btn-nav:hover * {
+.nav-user ul li .like-btn-nav:hover,
+.nav-user ul li .cart-btn-nav:hover {
+  background-color: #dec4bf;
+  border: #dec4bf solid 1px;
+}
+.nav-user ul li .like-btn-nav:hover *,
+.nav-user ul li .cart-btn-nav:hover * {
   color: var(--background);
 }
 
 .main-container {
   padding: 0 5rem;
   width: 80%;
-  margin-left: 20%;
+  margin-left: auto;
 }
 @media (max-width: 768px) {
   .main-container {
@@ -133,12 +150,10 @@ section.profile span {
   display: inline-block;
   text-transform: capitalize;
 }
-section.profile h2 {
-  color: var(--info);
-}
 section.profile h2 span {
   font-size: 2rem;
   color: var(--grown);
+  font-weight: 800;
 }
 section.profile h3 {
   font-size: 1.5rem;
@@ -146,10 +161,10 @@ section.profile h3 {
 section.profile .heading {
   text-align: center;
   font-size: 2rem;
+  font-weight: 800;
   margin: 0 6rem;
   padding: 1rem;
   border-bottom: 1px solid var(--gray);
-  color: var(--info);
 }
 section.profile .sub-title {
   margin: 3rem auto;
@@ -161,9 +176,10 @@ section.profile .sub-title {
   margin: auto;
 }
 .home-section .intro-home {
+  color: var(--info);
   font-family: "Noto Serif TC", serif;
 }
-.home-section .full-intro-home {
+.home-section .full-intro-home * {
   line-height: 2rem;
   font-size: 1.5rem;
 }
@@ -262,6 +278,7 @@ section.profile .sub-title {
   width: 4vw;
   border-radius: 5px;
   text-align: center;
+  vertical-align: middle;
 }
 .booking-section .label-date-booking {
   text-align: left;
@@ -280,6 +297,9 @@ section.profile .sub-title {
 }
 .booking-section .calender-heading-booking i {
   color: var(--primary);
+}
+.booking-section .day-booking {
+  border-bottom: 1px solid var(--gray);
 }
 .booking-section .table-date-booking {
   table-layout: fixed;
@@ -319,7 +339,6 @@ section.profile .sub-title {
   right: 0;
 }
 .booking-section .group-time-booking {
-  padding-top: 20px;
   width: 30%;
 }
 @media (max-width: 768px) {
