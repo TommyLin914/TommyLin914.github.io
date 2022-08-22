@@ -1,12 +1,85 @@
-@charset "UTF-8";
-a {
-  text-decoration: none;
+body {
+  background-color: #eeedec;
 }
 
-:root {
-  /*文字色*/
-  /* 底線，裝飾性顏色 */
-  /* 版型 */
+* {
+  font-family: "Noto Serif TC", serif;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.button {
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 16px;
+  color: #fff;
+  text-align: center;
+  background-color: #6d8cbc;
+  border: 1px solid #6d8cbc;
+}
+
+.title {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 900;
+  line-height: 1.5em;
+  font-size: 48px;
+  letter-spacing: 1.8px;
+  color: #6d8cbc;
+}
+
+.sub-title {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #7d9ab8;
+}
+
+.third-subtitle {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: #89849a;
+}
+
+p,
+h4,
+a,
+h5,
+h6,
+span,
+.text {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  color: #89849a;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.bg-A {
+  background-color: #acb9cf;
+}
+
+.bg-B {
+  background-color: #d7bdaf;
+}
+
+.bg-C {
+  background-color: #cda59d;
+}
+
+a {
+  text-decoration: none;
 }
 
 section {
@@ -56,7 +129,7 @@ section {
   border-radius: 50%;
   overflow: hidden;
   margin: auto;
-  border: 7px solid var(--light-blue);
+  border: 7px solid #acb9cf;
 }
 .group-user .box-img-user .img-user {
   position: absolute;
@@ -69,10 +142,10 @@ section {
 }
 .group-user .name-user {
   font-size: 3em;
-  color: var(--background);
+  color: #eeedec;
 }
 .group-user .gender-user {
-  color: var(--background);
+  color: #eeedec;
 }
 
 .nav-user ul {
@@ -82,8 +155,8 @@ section {
   padding: 5px 0;
 }
 .nav-user ul li .button {
-  background-color: var(--background);
-  color: var(--primary);
+  background-color: #eeedec;
+  color: #6d8cbc;
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -98,8 +171,8 @@ section {
 }
 .nav-user ul li .like-btn-nav,
 .nav-user ul li .cart-btn-nav {
-  background-color: var(--light-pink);
-  border: var(--light-pink) solid 1px;
+  background-color: #cda59d;
+  border: #cda59d solid 1px;
   width: 100%;
   transition: 0.3s;
 }
@@ -111,14 +184,14 @@ section {
 }
 .nav-user ul li .like-btn-nav i,
 .nav-user ul li .cart-btn-nav i {
-  color: var(--background);
+  color: #eeedec;
   padding-right: 2px;
   width: 15%;
 }
 .nav-user ul li .like-btn-nav p,
 .nav-user ul li .cart-btn-nav p {
   font: 1em sans-serif;
-  color: var(--background);
+  color: #eeedec;
   font-weight: 800;
 }
 .nav-user ul li .like-btn-nav:hover,
@@ -128,7 +201,7 @@ section {
 }
 .nav-user ul li .like-btn-nav:hover *,
 .nav-user ul li .cart-btn-nav:hover * {
-  color: var(--background);
+  color: #eeedec;
 }
 
 .main-container {
@@ -152,7 +225,7 @@ section.profile span {
 }
 section.profile h2 span {
   font-size: 2rem;
-  color: var(--grown);
+  color: #c59b89;
   font-weight: 800;
 }
 section.profile h3 {
@@ -164,7 +237,7 @@ section.profile .heading {
   font-weight: 800;
   margin: 0 6rem;
   padding: 1rem;
-  border-bottom: 1px solid var(--gray);
+  border-bottom: 1px solid #c4c8d0;
 }
 section.profile .sub-title {
   margin: 3rem auto;
@@ -175,19 +248,38 @@ section.profile .sub-title {
   width: 80%;
   margin: auto;
 }
+.home-section h3 {
+  margin-bottom: 0;
+}
+.home-section .opening-home {
+  font-size: 2rem;
+}
 .home-section .intro-home {
-  color: var(--info);
   font-family: "Noto Serif TC", serif;
+  color: #89849a;
+  padding-bottom: 18px;
+  font-size: 3rem;
+}
+.home-section .intro-home span {
+  font-size: 3rem;
 }
 .home-section .full-intro-home * {
   line-height: 2rem;
   font-size: 1.5rem;
 }
 
+.about-section .container-about {
+  width: 80%;
+  margin: auto;
+  margin-top: 0;
+}
+@media (max-width: 768px) {
+  .about-section .container-about {
+    width: auto;
+  }
+}
 .about-section .info-about {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: auto;
 }
 @media (max-width: 768px) {
   .about-section .info-about {
@@ -195,7 +287,7 @@ section.profile .sub-title {
   }
 }
 .about-section .info-about p {
-  width: 34%;
+  width: auto;
   font-size: 1.2rem;
 }
 @media (max-width: 768px) {
@@ -210,9 +302,15 @@ section.profile .sub-title {
   color: #b47e67;
 }
 .about-section .group-box-about {
+  width: 60%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .about-section .group-box-about {
+    width: 100%;
+  }
 }
 .about-section .group-box-about .box-about {
   width: 280px;
@@ -265,7 +363,7 @@ section.profile .sub-title {
 }
 
 .booking-section * {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .booking-section tr {
   display: table-row;
@@ -274,7 +372,7 @@ section.profile .sub-title {
 .booking-section th,
 .booking-section td {
   position: relative;
-  height: 4vw;
+  height: 3vw;
   width: 4vw;
   border-radius: 5px;
   text-align: center;
@@ -284,38 +382,43 @@ section.profile .sub-title {
   text-align: left;
 }
 .booking-section .calender-booking {
+  background-color: #fff;
+  padding: 15px;
   box-sizing: border-box;
-  outline: 1px solid var(--gray);
   border-radius: 5px;
+  padding-top: 0px;
 }
 .booking-section .btn-month {
   border: none;
+  background-color: #fff;
 }
 .booking-section .calender-heading-booking {
   margin: auto;
   height: 3rem;
+  align-items: center;
 }
 .booking-section .calender-heading-booking i {
-  color: var(--primary);
+  color: #6d8cbc;
 }
 .booking-section .day-booking {
-  border-bottom: 1px solid var(--gray);
+  border-bottom: 1px solid #c4c8d0;
+  height: 2vw;
 }
 .booking-section .table-date-booking {
   table-layout: fixed;
 }
 .booking-section .selectable:hover {
-  background-color: var(--light-blue);
+  background-color: #acb9cf;
   color: #fff;
   cursor: pointer;
 }
 .booking-section .unselectable {
-  color: var(--gray);
+  color: #c4c8d0;
 }
 .booking-section .today {
   font-size: 2rem;
   font-weight: 600;
-  color: var(--primary);
+  color: #6d8cbc;
 }
 @media (max-width: 768px) {
   .booking-section .container-booking {
@@ -347,9 +450,9 @@ section.profile .sub-title {
   }
 }
 .booking-section .box-time-booking {
-  color: var(--background);
+  color: #eeedec;
   position: relative;
-  background-color: var(--info);
+  background-color: #89849a;
   transition: 0.5s;
   width: 40%;
   border-radius: 15px;
@@ -358,17 +461,17 @@ section.profile .sub-title {
   text-align: center;
 }
 .booking-section .box-time-booking:hover {
-  background-color: var(--light-blue);
+  background-color: #acb9cf;
   cursor: pointer;
 }
 .booking-section .cart-btn-profile {
   margin-top: 20px;
-  color: var(--background);
+  color: #eeedec;
   transition: 0.5s;
   width: 50%;
 }
 .booking-section .cart-btn-profile:hover {
-  background-color: var(--light-blue);
+  background-color: #acb9cf;
 }
 @media (max-width: 768px) {
   .booking-section {
