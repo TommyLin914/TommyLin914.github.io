@@ -99,7 +99,8 @@ section {
   min-width: 250px;
   height: 100%;
   padding-top: 5%;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   left: 0;
   display: flex;

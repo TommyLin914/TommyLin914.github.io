@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>個人明細頁</title>
+  <!-- google-font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Reset-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+  <!-- Font Icon-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- Bootstrap5-->
+  <!-- 放在head-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./common_style.css" />
+  <link rel="stylesheet" href="./profile.css">
+<link rel="stylesheet" href="./header.css">
+  <style>
+    footer {
+  padding-top: 10px;
+  background-color: #3d5a86;
+}
+footer p {
+  color: #fff;
+  font-size: 12px;
+}
+footer i {
+  font-size: 16px;
+  color: #fff;
+}
+  </style>
+</head>
+
+<body>
+<!--Header-->
+<header>
+  <div class="container pt-3 flx-row jcb">
+      <div class="logo">
+          <a href="./index.html">
+              <img src="https://fakeimg.pl/80x24/?text=Logo" alt="">
+          </a>
+      </div>
+      <div class="header-menu flx-row">
+          <ul class="flx-row ps-0 product-menu">
+              <li class="me-2 main-menu">
+                  <a href="javascript:;">商品主分類</a>
+                  <!--商品子分類頁-->
+                  <ul class="sub-menu ps-0 pt-3">
+                      <li><a class="p-2" href="javascript:;"><i class="fa-solid fa-brain me-2"></i>子分類1</a></li>
+                      <li><a class="p-2" href="javascript:;"><i class="fa-solid fa-ear-listen me-2"></i>子分類2</a>
+                      </li>
+                      <li><a class="p-2" href="javascript:;"><i class="fa-solid fa-heart me-2"></i>子分類3</a></li>
+                      <li><a class="p-2" href="javascript:;"><i class="fa-solid fa-socks me-2"></i>子分類4</a></li>
+                  </ul>
+              </li>
+              <li class="me-2"><a href="javascript:;">成為出租者</a></li>
+              <li class="me-2"><a href="./contactus.html">聯絡我們</a></li>
+
+          </ul>
+          <ul class="flx-row  ps-0">
+              <li class="cart me-4"><a href="javascript:;">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      <div class="cart-number text rounded-circle">0</div>
+                  </a>
+              </li>
+              <li class="me-2"><a href="javascript:;">登入</a></li>
+              <li class="me-2 main-menu"><a href="javascript:;"><i class="fa-solid fa-user-large"></i></a>
+                  <!--商品子分類頁-->
+                  <ul class="sub-menu pofile ps-0 pt-3">
+                      <li class="pofile-pic p-lg-3"><img class="rounded-circle" src="./img/example.jpg"
+                              alt="">Hi,筑筑</li>
+                      <li><a class="p-2" href="javascript:;">編輯個人資料</a></li>
+                      <li><a class="p-2" href="javascript:;">我的收藏</a></li>
+                      <li><a class="p-2" href="javascript:;">成為出租者</a></li>
+                      <li><a class="p-2" href="javascript:;">歷史訂單</a></li>
+                      <li><a class="p-2" href="javascript:;">登出</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </div>
+</header>
+<!-- header -->
+
+
+  <div class="d-flex mix-container">
+    <!-- 側邊欄 -->
+    <section class="profile side-section">
+      <div class="group-user">
+        <div class="box-img-user"><img src="https://i.imgur.com/U04oUab.jpg" alt="profile-photo" class="img-user" /></div>
+        <h1 class="title name-user">子瑜</h1>
+        <p class="gender-user">女性</p>
+      </div>
+      <nav class="nav-user">
+        <ul>
+          <li><a href="#home" class="button">你好</a></li>
+          <li><a href="#about" class="button">關於我</a></li>
+          <li><a href="#album" class="button">相簿</a></li>
+          <!-- <li><a href="#booking" class="button">預約</a></li> -->
+        </ul>
+        <ul>
+          <li>
+            <a href="#add-favor" class="d-flex justify-content-center align-items-center button like-btn-nav">
+              <i class="fa-solid fa-heart"></i>
+              <p class="btn-declare declare">加入收藏</p>
+            </a>
+          </li>
+          <li>
+            <a href="#booking" class="d-flex justify-content-center align-items-center button cart-btn-nav">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <p class="btn-declare declare">前往預約</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <div class="main-container">
+      <!-- 主頁 -->
+      <section class="profile home-section" id="home">
+        <h3 class="third-subtitle opening-home">你好!</h3>
+        <h2 class="intro-home">
+          我是<span class="name-home">子瑜</span>
+          <h2 />
+          <article class="full-intro-home">
+            <p>手術適用於網咖完成進步方面考察我說保健來電計算機，財務如同招商你能始終同學職責在這個開通目的鄉民轉貼領先，觀點德國效率日本看過把握</p>
+            <p>查找集中年度家人才會毫不以為舉報廠家，網咖鎖定就好平方米這麼多內容對手幫我雙方不限發行情緒，筆記本申請限制魅力模組不承擔涉及現代心中什麼樣，</p>
+          </article>
+      </section>
+      <!-- 關於我 -->
+      <section class="profile about-section" id="about">
+        <h2 class="heading sub-title about-me">about<span>me</span></h2>
+        <div class="container-about">
+          <div class="justify-content-evenly row">
+            <div class="info-about">
+              <p>姓名:<span class="profile name-about">子瑜</span></p>
+              <p>年齡:<span class="profile age-about">23</span>歲</p>
+              <p>身材:<span class="profile height-about">164</span>公分<span class="weight-about">45</span>公斤</p>
+              <p>學歷:<span class="profile edu-about">大專</span></p>
+              <p>職業:<span class="job-about">櫃姐</span></p>
+              <p>婚姻:<span class="relation-about">單身</span></p>
+              <p>語言:<span class="language-about">中/英</span></p>
+              <p><span class="XX-about"></span></p>
+            </div>
+            <div class="group-box-about">
+              <div class="box-about">
+                <h3 class="third-subtitle box-city-about">子瑜</h3>
+                <span></span><p>23歲</p>
+              </div>
+              <div class="box-about">
+                <h3 class="third-subtitle box-city-about">新北市</h3>
+                <p>居住城市</p>
+              </div>
+              <div class="box-about">
+                <h3 class="third-subtitle box-service-about">
+                  <span class="service-about">商業應酬</span>
+                  <span class="service-about">朋友聚會</span>
+                  <br>
+                  <span class="service-about">鐘點約會</span>
+                  <span class="service-about">旅遊陪同</span>
+                </h3>
+                <p>服務項目</p>
+              </div>
+              <div class="box-about">
+                <h3 class="box-price-about">
+                  <span>NT</span><span class="third-subtitle price-about">1000</span>
+                </h3>
+                <p>時薪</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 相簿 -->
+      <section class="profile album-section" id="album">
+        <h2 class="heading sub-title my-album">my<span>album</span></h2>
+        <div class="d-flex align-items-center justify-content-center flex-wrap group-box-album">
+          <div class="box-album">
+            <img src="https://i.imgur.com/U04oUab.jpg" alt="profile-photo" class="img-album" />
+          </div>
+          <div class="box-album">
+            <img src="https://i.imgur.com/6RJoTLh.jpg" alt="profile-photo" class="img-album" />
+          </div>
+          <div class="box-album">
+            <img src="https://i.imgur.com/rSJqjKz.jpg" alt="profile-photo" class="img-album" />
+          </div>
+          <div class="box-album">
+            <img src="./img/tzuyu3.jpg" alt="profile-photo" class="img-album" />
+          </div>
+          <div class="box-album">
+            <img src="./img/tzuyu1.jpg" alt="profile-photo" class="img-album" />
+          </div>
+          <div class="box-album">
+            <img src="./img/tzuyu2.jpg" alt="profile-photo" class="img-album" />
+          </div>
+        </div>
+      </section>
+      <!-- 預訂 -->
+      <section class="profile booking-section" id="booking">
+        <h2 class="heading sub-title booking-schedule"> <span>Booking</span>Now</h2>
+        <div class="d-flex justify-content-evenly container-booking">
+          <div class="group-form-booking">
+            <label class="label-date-booking">
+              <p>選擇日期</p>
+            </label>
+            <div class="calender-booking">
+              <div class="d-flex justify-content-evenly calender-heading-booking">
+                <button class="btn-month last-month-booking"><i class="fa-solid fa-circle-chevron-left"></i></button>
+                <div class="current-month-booking">八月</div>
+                <button class="btn-month next-month-booking"><i class="fa-solid fa-circle-chevron-right"></i></button>
+              </div>
+              <div class="wrapper-booking">
+                <!---->
+                <table class="table-date-booking">
+                  <thead>
+                    <tr class="row-day">
+                      <th class="day-booking">日</th>
+                      <th class="day-booking">一</th>
+                      <th class="day-booking">二</th>
+                      <th class="day-booking">三</th>
+                      <th class="day-booking">四</th>
+                      <th class="day-booking">五</th>
+                      <th class="day-booking">六</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="row row-date-booking">
+                      <!---->
+                      <td> </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">1</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">2</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">3</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">4</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">5</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">6</div>
+                      </td>
+                    </tr>
+                    <!---->
+                    <tr class="row row-date-booking">
+                      <td class="date-booking unselectable">
+                        <div class="date-num">7</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">8</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">9</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">10</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">11</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">12</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">13</div>
+                      </td>
+                    </tr>
+                    <!---->
+                    <tr class="row row-date-booking">
+                      <td class="date-booking unselectable">
+                        <div class="date-num">14</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">15</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">16</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">17</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">18</div>
+                      </td>
+                      <td class="date-booking unselectable">
+                        <div class="date-num">19</div>
+                      </td>
+                      <td class="date-booking selectable today">
+                        <div class="date-num">20</div>
+                      </td>
+                    </tr>
+                    <!---->
+                    <tr class="row row-date-booking">
+                      <td class="date-booking selectable">
+                        <div class="date-num">21</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">22</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">23</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">24</div>
+                      </td>
+                      <td class="date-booking selectable selected">
+                        <div class="date-num">25</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">26</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">27</div>
+                      </td>
+                    </tr>
+                    <!---->
+                    <tr class="row row-date-booking">
+                      <td class="date-booking selectable">
+                        <div class="date-num">28</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">29</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">30</div>
+                      </td>
+                      <td class="date-booking selectable">
+                        <div class="date-num">31</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!---->
+              </div>
+            </div>
+          </div>
+          <div class="group-time-booking">
+            <label class="label-time-booking">
+              <p>選擇時段</p>
+            </label>
+            <div class="d-flex justify-content-evenly flex-wrap group-box-time-booking">
+              <div class="box-time-booking">16:00</div>
+              <div class="box-time-booking">17:00</div>
+              <div class="box-time-booking">18:00</div>
+              <div class="box-time-booking">19:00</div>
+              <div class="box-time-booking selected">20:00</div>
+              <div class="box-time-booking">21:00</div>
+              <button class="button cart-btn-profile">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container d-flex flex-column align-items-center">
+        <div class="social-wrap">
+            <a href="javascript:;"><i class="fa-brands fa-line"></i></a>
+            <a href="javascript:;"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="javascript:;"><i class="fa-brands fa-square-instagram"></i></a>
+        </div>
+        <p>accompaMe © 2022 All Rights Reserved</p>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
