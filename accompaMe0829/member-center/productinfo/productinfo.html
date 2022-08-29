@@ -25,146 +25,288 @@
 </head>
 
 <body>
+    <!-- ------------ header start-------------------- -->
+    <header class=" navbar navbar-expand-md" aria-label="Fourth navbar example">
+        <div class="container-fluid d-flex gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+          <div class="logo">
+            <a href="../Index/Index.html">
+              <img src="https://fakeimg.pl/80x24/?text=Logo" alt="">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
+            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse flex-grow-1 " id="navbarsExample04">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../Index/Index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="../Search/Search.html" data-bs-toggle="dropdown"
+                  aria-expanded="false">商品主分類</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../Search/Search.html"><i
+                        class="fa-solid fa-brain me-2"></i>商品主分類</a></li>
+                  <li><a class="dropdown-item" href="../Search/Search_Event.html"><i
+                        class="fa-solid fa-brain me-2"></i>商品活動頁</a></li>
+                  <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                  <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                  <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                  <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                  <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../LoginPage/LoginPage.html">成為租客</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="../BlogPage/BlogPage.html">部落格</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../ContactUs/Contactus.html">聯絡我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link person-id" href="../LoginPage/LoginPage.html"><i class="fa-solid fa-user-large"></i></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="./img/tzuyu1.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu end-dropdown-menu">
+                  <p class="">Hi，子瑜</p>
+                  <li><a class="dropdown-item" href="../member-center/personalinfo/personalinfo.html">編輯個人資料</a></li>
+                  <li><a class="dropdown-item" href="../member-center/favorite/favorite.html">我的收藏</a></li>
+                  <li><a class="dropdown-item" href="../member-center/productinfo/productinfo.html">成為出租者</a></li>
+                  <li><a class="dropdown-item" href="">登出</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+
+    <!-- ------------  header end  -------------------- -->
+
+
+
     <div class="container-md">
 
+
         <!-- nav part -->
-        <div class="nav">
-            <div class="user">
-                <img src="https://picsum.photos/300/200/?random=10">
-                <h3 class="name">user-1</h3>
-                <p> Lorem ipsum dolor sit amet consectetur </p>
+
+        <section class="profile side-section">
+            <div class="group-user">
+              <div class="box-img-user"><img src="https://i.imgur.com/U04oUab.jpg" alt="profile-photo" class="img-user" />
+              </div>
+              <h1 class="title name-user">子瑜</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, explicabo.</p>
             </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="./productinfo.html" class="button">編輯個人資料</a></li>
-                    <li><a href="../favorite/favorite.html" class="button">我的收藏</a></li>
-                    <li><a href="../productinfo/productinfo.html" class="button">刊登出租資訊</a></li>
-                </ul>
+            <nav class="nav-user">
+              <ul>
+                <li>
+                  <a href="../personalinfo/personalinfo.html" class="d-flex justify-content-center align-items-center button nav-button">
+                    <p class="btn-declare declare">編輯個人資料</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="../favorite/favorite.html" class="d-flex justify-content-center align-items-center button nav-button">
+                    <p class="btn-declare declare">我的收藏</p>
+                  </a>
+                </li>
+                <li>
+                    <a href="../productinfo/productinfo.html" class="d-flex justify-content-center align-items-center button nav-button">
+                      <p class="btn-declare declare">刊登出租資訊</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../OrderList/OrderedList.html" class="d-flex justify-content-center align-items-center button nav-button">
+                      <p class="btn-declare declare">我的訂單</p>
+                    </a>
+                  </li>
+              </ul>
             </nav>
-        </div>
-
-
-        <div id="menu" class="fas fa-bars"></div>
+    </section>
 
         <!-- nav part ends -->
 
         <!-- main part -->
-        <section class="info">
-            <h3>刊登出租資訊</h3>
-            <div class="info-group">
-                <div class="pic">
-                    <img src="https://picsum.photos/300/200/?random=10">
-                </div>
-                <div class="text">
-                    <h4>身高(必填)</h4>
-                    <input type="number" class="box">
-                    <h4>體重(必填)</h4>
-                    <input type="number" class="box">
-                    </select>
-                    <h4>婚姻狀態(必填)</h4>
-                    <select name="married" class="box">
-                        <option value="">已婚</option>
-                        <option value="">未婚</option>
-                    </select>
-                </div>
-            </div>
 
+        <div class="main-container">
+            <section class="info">
+            <h2>刊登出租資訊</h2>
             <div class="detail-group">
-                <div class="detail-1">
-                    <h4>學歷(必填)</h4>
-                    <select name="edu" class="box">
-                        <option value="">博士</option>
-                        <option value="">碩士</option>
-                        <option value="">大專</option>
-                        <option value="">高中職</option>
-                        <option value="">國中(含以下)</option>
-                    </select>
+                <div class="detail-1 col-md-6 col-12">
+                    <h4>*身高</h4>
+                    <input type="number" class="box">
+                    <h4>*體重</h4>
+                    <input type="number" class="box">
                 </div>
-                <div class="detail-2">
+                <div class="detail-2 col-md-6 col-12">
+                    <h4>*學歷</h4>
+                    <select name="edu" class="box">
+                            <option value="">博士</option>
+                            <option value="">碩士</option>
+                            <option value="">大專</option>
+                            <option value="">高中職</option>
+                            <option value="">國中(含以下)</option>
+                    </select>
                     <h4>職業</h4>
                     <input type="text" class="box">
                 </div>
             </div>
 
+    <!-- ---------------------------------------------------- -->
             <div class="price">
-                <h4>時薪(必填)</h4>
+                <h4>*時薪</h4>
                 <input type="number" class="box">
             </div>
 
             <div class="service">
-                <h4>服務項目(必填)</h4>
-                <div class="checkbox-group">
-                    <div class="checkbox">
+                <h4>*服務項目</h4>
+                <div class="row checkbox-group">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="s1">
-                        <label for="s1">旅遊陪同</label>
+                        <label for="s1"><span>旅遊陪同</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="s2">
-                        <label for="s2">朋友聚會</label>
+                        <label for="s2"><span>朋友聚會</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="s3">
-                        <label for="s3">商業應酬</label>
+                        <label for="s3"><span>商業應酬</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="s4">
-                        <label for="s4">鐘點約會</label>
+                        <label for="s4"><span>鐘點約會</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="s5">
-                        <label for="s5">專業職人</label>
+                        <label for="s5"><span>專業職人</span></label>
                     </div>
                 </div>
             </div>
 
             <div class="language">
-                <h4>語言(必填)</h4>
-                <div class="checkbox-group">
-                    <div class="checkbox">
+                <h4>*語言</h4>
+                <div class="row checkbox-group">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="l1">
-                        <label for="l1">中文</label>
+                        <label for="l1"><span>中文</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="l2">
-                        <label for="l2">英文</label>
+                        <label for="l2"><span>英文</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="l3">
-                        <label for="l3">台語</label>
+                        <label for="l3"><span>台語</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="l4">
-                        <label for="l4">日文</label>
+                        <label for="l4"><span>日文</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="l5">
-                        <label for="l5">韓文</label>
+                        <label for="l5"><span>韓文</span></label>
                     </div>
                 </div>
             </div>
 
             <div class="area">
-                <h4>服務區域(必填)</h4>
-                <div class="checkbox-group">
-                    <div class="checkbox">
+                <h4>*服務區域(最多選三項)</h4>
+                <div class="row checkbox-group">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="a1">
-                        <label for="a1">台北</label>
+                        <label for="a1"><span>臺北市</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="a2">
-                        <label for="a2">台中</label>
+                        <label for="a2"><span>新北市</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="a3">
-                        <label for="a3">高雄</label>
+                        <label for="a3"><span>基隆市</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="a4">
-                        <label for="a4">花蓮</label>
+                        <label for="a4"><span>桃園市</span></label>
                     </div>
-                    <div class="checkbox">
+                    <div class="col-6 col-md-4 checkbox">
                         <input type="checkbox" name="" id="a5">
-                        <label for="a5">屏東</label>
+                        <label for="a5"><span>新竹市</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a6">
+                        <label for="a6"><span>新竹縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a7">
+                        <label for="a7"><span>苗栗縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a8">
+                        <label for="a8"><span>臺中市</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a9">
+                        <label for="a9"><span>彰化縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a10">
+                        <label for="a10"><span>南投縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a11">
+                        <label for="a11"><span>雲林縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a12">
+                        <label for="a12"><span>嘉義市</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a13">
+                        <label for="a13"><span>嘉義縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a14">
+                        <label for="a14"><span>臺南市</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a15">
+                        <label for="a15"><span>高雄市</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a16">
+                        <label for="a16"><span>屏東縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a17">
+                        <label for="a17"><span>宜蘭縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a18">
+                        <label for="a18"><span>花蓮縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a19">
+                        <label for="a19"><span>臺東縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a20">
+                        <label for="a20"><span>澎湖縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a21">
+                        <label for="a21"><span>金門縣</span></label>
+                    </div>
+                    <div class="col-6 col-md-4 checkbox">
+                        <input type="checkbox" name="" id="a22">
+                        <label for="a22"><span>連江縣</span></label>
                     </div>
                 </div>
             </div>
@@ -179,10 +321,19 @@
                 <h4>*最多上傳6張照片</h4>
             </div>
 
-            <div class="confirm">
-                <button class="button">確認</button>
+            <div class="product-button-group">
+                <div class="reset">
+                    <button class="button">重新填寫</button>
+                </div>
+                <div class="confirm">
+                    <button class="button">確認</button>
+                </div>
             </div>
+            
         </section>
+
+        </div>
+        
 
     </div>
 
