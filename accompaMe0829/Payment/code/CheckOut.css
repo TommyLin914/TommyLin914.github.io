@@ -1,0 +1,251 @@
+body {
+  background-color: #eeedec;
+}
+
+* {
+  font-family: "Noto Serif TC", serif;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.button {
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 16px;
+  color: #fff;
+  text-align: center;
+  background-color: #6d8cbc;
+  border: 1px solid #6d8cbc;
+}
+
+.title {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 900;
+  line-height: 1.5em;
+  font-size: 48px;
+  letter-spacing: 1.8px;
+  color: #6d8cbc;
+}
+
+.sub-title {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #7d9ab8;
+}
+
+.third-subtitle {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: #89849a;
+}
+
+p,
+h4,
+a,
+h5,
+h6,
+span,
+.text {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  color: #89849a;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.bg-A {
+  background-color: #acb9cf;
+}
+
+.bg-B {
+  background-color: #d7bdaf;
+}
+
+.bg-C {
+  background-color: #cda59d;
+}
+
+.order-track h1 {
+  padding: 1rem 0 1rem;
+}
+
+.order-progress {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+  width: 700px;
+  padding: 1rem 0 1rem;
+}
+.order-progress li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.order-progress li i {
+  font-size: 25px;
+  color: #fff;
+  line-height: 50px;
+}
+.order-progress li:nth-last-of-type(1)::after,
+.order-progress li:nth-last-of-type(2)::after {
+  content: "";
+  position: absolute;
+  height: 0.5rem;
+  background-color: #fff;
+  right: 50%;
+  top: 25%;
+  width: 250px;
+}
+.order-progress li:nth-last-of-type(2)::after {
+  background-color: #acb9cf;
+}
+.order-progress .i-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  line-height: 50px;
+  z-index: 2;
+}
+
+.payment label {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  cursor: pointer;
+}
+.payment label .type {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.payment label .type .radio-txt {
+  color: #fff;
+  transition: 0.3s;
+}
+.payment label .type .payment-logo {
+  width: 80px;
+  height: 40px;
+}
+
+label:hover {
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3333333333);
+  transform: scaleX(1.01);
+  transition: 0.3s;
+}
+
+.payment label:hover .radio-txt {
+  background-color: #fff;
+  color: #cda59d;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.function button {
+  width: 30%;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+
+.function button:hover {
+  background-color: #cda59d;
+  transition: 0.5s;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::-moz-placeholder {
+  color: #eee;
+  font-weight: 600;
+  padding: 8px;
+}
+
+input:-ms-input-placeholder {
+  color: #eee;
+  font-weight: 600;
+  padding: 8px;
+}
+
+input::placeholder {
+  color: #eee;
+  font-weight: 600;
+  padding: 8px;
+}
+
+input:focus::-moz-placeholder {
+  color: #fff;
+}
+
+input:focus:-ms-input-placeholder {
+  color: #fff;
+}
+
+input:focus::placeholder {
+  color: #fff;
+}
+
+.profile-info {
+  border-radius: 15px;
+}
+.profile-info p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+  .wrap {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .profile {
+    border-radius: 15px;
+  }
+  .profile p {
+    font-size: 1rem;
+  }
+  .profile .about {
+    flex-direction: column-reverse;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 16px;
+  }
+  .profile .about .about-pic {
+    display: flex;
+    margin-bottom: 16px;
+  }
+  .order-progress {
+    width: 500px;
+  }
+  .order-progress li:nth-last-of-type(1)::after,
+.order-progress li:nth-last-of-type(2)::after {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .order-progress {
+    width: 360px;
+  }
+  .order-progress li:nth-last-of-type(1)::after,
+.order-progress li:nth-last-of-type(2)::after {
+    width: 100px;
+  }
+}/*# sourceMappingURL=CheckOut.css.map */

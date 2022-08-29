@@ -1,0 +1,36 @@
+.btn-grown{
+    background-color: #e36a6a;
+    color: #eee;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(45deg, #8500ff, #5acaff);
+    height: 100vh;
+}
+.container{
+    position: absolute;
+    width: 75%;
+    height: 85%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,.5);
+    color: #fff;
+    text-align: center;
+    background: url(../img/404-bg.jpg);
+}
+
+.container h1{
+    font-size: 18vw;
+    font-weight: 900;
+}

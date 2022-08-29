@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- google-font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS Reset-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- Font Icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Bootstrap5-->
+    <!-- 放在head-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- 放在body結尾-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="./Cart.css">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/e95c98306e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">約會邀請確認</h1>
+        <div class="order-track">
+            <ol class=" col-12 text-center order-progress ">
+                <li>
+                    <div class="i-box bg-A">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <span>訂單確認中</span>
+                </li>
+                <li>
+                    <div class="i-box bg-C">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                    </div>
+                    <span>付款中</span>
+                </li>
+                <li>
+                    <div class="i-box bg-C">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span>付款完成</span>
+                </li>
+            </ol>
+        </div>
+        <div class="row">
+            
+            <form class="form cart-form">
+                <div class="row select-type-group">
+                    <h2 class="sub-title">選擇陪伴類型</h2>
+                    <div class="col-4 col-md-2 select-type-button">
+                        <input name="select-type" id="business" type="radio" value="business" checked>
+                        <label for="business">
+                            <div class="business-icon">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <span>商業陪同</span>
+                        </label>
+                    </div>
+                    <div class="col-4 col-md-2 select-type-button">
+                        <input name="select-type" id="travel" type="radio" value="travel">
+                        <label for="travel">
+                            <div class="travel-icon">
+                                <i class="fa-solid fa-suitcase-rolling"></i>
+                            </div>
+                            <span>旅遊陪同</span>
+                        </label>
+                    </div>
+                    <div class="col-4 col-md-2 select-type-button">
+                        <input name="select-type" id="party" type="radio" value="party">
+                        <label for="party">
+                            <div class="party-icon">
+                                <i class="fa-solid fa-people-line"></i>
+                            </div>
+                            <span>朋友聚會</span>
+                        </label>
+                    </div>
+                    <div class="col-4 col-md-2 select-type-button">
+                        <input name="select-type" id="dating" type="radio" value="dating">
+                        <label for="dating">
+                            <div class="dating-icon">
+                                <i class="fa-solid fa-champagne-glasses"></i>
+                            </div>
+                            <span>鐘點約會</span>
+                        </label>
+                    </div>
+                    <div class="col-4 col-md-2 select-type-button">
+                        <input name="select-type" id="professor" type="radio" value="professor">
+                        <label for="professor">
+                            <div class="professor-icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <span>專業職人</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row question-group">
+                    <h2 class="sub-title">備註</h2>
+                    <div class="text-start question">
+                        <div class="label-wrapper">
+                            <label for="qusetion-label business-dress">
+                                <span>衣著要求:</span>
+                            </label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="business-dress" id="business-dress" placeholder="希望著正式服裝">
+                            <span>30</span>
+                        </div>
+                    </div>
+                    <div class="text-start question">
+                        <div class="label-wrapper">
+                            <label for="qusetion-label business-contact">
+                                <span>會接觸到的人:</span>
+                            </label>
+                        </div>
+                        <div class="textarea-wrapper">
+                            <textarea name="business-contact" id="business-contact" rows="3" maxlength="150"></textarea>
+                            <span>150</span>
+                        </div>
+                    </div>
+                    <div class="text-start question">
+                        <div class="label-wrapper">
+                            <label for="qusetion-label business-info">
+                                <span>有什麼想對她說:</span>
+                            </label>
+                        </div>
+                        <div class="textarea-wrapper">
+                            <textarea name="business-info" id="business-info" rows="3" maxlength="180" placeholder="Hi, 你好!!"></textarea>
+                            <span>180</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cart-buttons">
+                    <a href="../Profile/Profile.html" class="col-5 col-md-4 col-lg-3 button bg-C goBack" >
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <span>&ensp;再多看幾眼</span>
+                    </a>
+                    <a href="../Payment/code/CheckOut.html" class="col-5 col-md-4 col-lg-3 button goPay" >
+                        <span>付款去&ensp;</span>
+                        <i class="fa-solid fa-comment-dollar"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

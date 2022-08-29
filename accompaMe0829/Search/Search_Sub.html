@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>搜尋結果</title>
+  <!-- google-font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Reset-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+  <!-- Font Icon-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- Bootstrap5-->
+  <!-- 放在head-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="../_common/common_style.css">
+  <link rel="stylesheet" href="./Search.css">
+  <style>
+    html {
+      overflow-y: overlay;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header -->
+  <header class=" navbar navbar-expand-md" aria-label="Fourth navbar example">
+    <div class="container-fluid d-flex gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+      <div class="logo">
+        <a href="../Index/Index.html">
+          <img src="https://fakeimg.pl/80x24/?text=Logo" alt="">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
+        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-1 " id="navbarsExample04">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0 justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="../Search/Search.html" data-bs-toggle="dropdown"
+              aria-expanded="false">商品主分類</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../Search/Search.html"><i
+                    class="fa-solid fa-brain me-2"></i>商品主分類</a></li>
+              <li><a class="dropdown-item" href="../Search/Search_Event.html"><i
+                    class="fa-solid fa-brain me-2"></i>商品活動頁</a></li>
+              <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+              <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+              <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+              <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+              <li><a class="dropdown-item" href="../Search/Search_Sub.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../LoginPage/LoginPage.html">成為租客</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="../BlogPage/BlogPage.html">部落格</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ContactUs/Contactus.html">聯絡我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link person-id" href="../LoginPage/LoginPage.html"><i class="fa-solid fa-user-large"></i></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img src="./img/tzuyu1.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu end-dropdown-menu">
+              <p class="">Hi，子瑜</p>
+              <li><a class="dropdown-item" href="../member-center/personalinfo/personalinfo.html">編輯個人資料</a></li>
+              <li><a class="dropdown-item" href="../member-center/favorite/favorite.html">我的收藏</a></li>
+              <li><a class="dropdown-item" href="../member-center/productinfo/productinfo.html">成為出租者</a></li>
+              <li><a class="dropdown-item" href="">登出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+<!--Header-->
+  <div class="container">
+    <!-- 麵包屑 -->
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="nav-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../Index/Index.html">Accompame</a></li>
+        <li class="breadcrumb-item active" aria-current="page">商業應酬</li>
+      </ol>
+    </nav>
+    <!-- Swiper -->
+    <div class="pb-2 container-swiper">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./img/event1.png" alt=""></div>
+          <div class="swiper-slide"><img src="./img/event2.png" alt=""></div>
+          <div class="swiper-slide"><img src="./img/event3.png" alt=""></div>
+        </div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- 分類區 -->
+    <section class="d-flex flex-wrap justify-content-between category-section">
+      <h1 class="category-title title">商務應酬</h1>
+    </section>
+    <!-- 搜尋結果 -->
+    <section class="search-section">
+      <div class="container">
+        <div class="group-search">
+          <div class="search">
+            <div class="icon"><i class="fa-solid fa-magnifying-glass" style="transform: rotate(100deg);"></i></div>
+            <form class="form-option-search">
+              <div class="group-option-search row">
+                <div class="option-search">
+                  <select class="select-option-search">
+                    <option value="">主分類</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                  </select>
+                </div>
+                <div class="option-search">
+                  <select class="select-option-search">
+                    <option value="">次分類</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                  </select>
+                </div>
+                <div class="option-search">
+                  <select class="select-option-search">
+                    <option value="">分類三</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                  </select>
+                </div>
+                <div class="option-search">
+                  <select class="select-option-search">
+                    <option value="">分類四</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <div class="btn-option-search">
+              <button class="button btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="d-flex justify-content-between container main-section">
+      <div class="side-group">
+        <!-- 側邊欄分類 -->
+        <div class="group-category">
+          <ul class="list-category">
+            <li class="list-main-category selected-cate">
+              <h2 class="sub-title main-category">商業應酬</h2>
+            </li>
+            <li class="list-main-category">
+              <h2 class="sub-title main-category">旅遊陪同</h2>
+            </li>
+            <li class="list-main-category">
+              <h2 class="sub-title main-category">朋友聚會</h2>
+            </li>
+            <li class="list-main-category">
+              <h2 class="sub-title main-category">鐘點約會</h2>
+            </li>
+            <li class="list-main-category">
+              <h2 class="sub-title main-category">專業職人</h2>
+            </li>
+          </ul>
+
+        </div>
+        <div class="blog-main blog-group">
+          <a href="../BlogPage/BlogPage.html">
+            <div class="blog">
+              <div class="blog-img"><img src="./img/blogA01.jpg" alt="">
+                <div class="blog-img-icon">
+                  <i class="fa-regular fa-heart"></i>
+                  <p>87</p>
+                </div>
+              </div>
+              <div class="blog-content-wrap">
+                <div class="blog-content">
+                  <h4 class="third-subtitle">愛情可以從一個吻開始嗎？</h4>
+                  <p><i class="fa-regular fa-clock"></i>20 July 2022</p>
+                  <p>我點木那汁耍兄雪目友冬眼，甲星身找母玩後免校泉裏，隻助記穴昔詞完能掃干吧，示婆意呀那土百耍，鳥包打告杯汁登旦喝。</p>
+                  <p>Read More</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="../BlogPage/BlogPage.html">
+            <div class="blog">
+              <div class="blog-img"><img src="./img/blogA03.jpg" alt="">
+                <div class="blog-img-icon">
+                  <i class="fa-regular fa-heart"></i>
+                  <p>87</p>
+                </div>
+              </div>
+              <div class="blog-content-wrap">
+                <div class="blog-content">
+                  <h4 class="third-subtitle">愛情可以從一個吻開始嗎？</h4>
+                  <p><i class="fa-regular fa-clock"></i>20 July 2022</p>
+                  <p>我點木那汁耍兄雪目友冬眼，甲星身找母玩後免校泉裏，隻助記穴昔詞完能掃干吧，示婆意呀那土百耍，鳥包打告杯汁登旦喝。</p>
+                  <p>Read More</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="../BlogPage/BlogPage.html">
+            <div class="blog">
+              <div class="blog-img"><img src="./img/blogA02.jpg" alt="">
+                <div class="blog-img-icon">
+                  <i class="fa-regular fa-heart"></i>
+                  <p>87</p>
+                </div>
+              </div>
+              <div class="blog-content-wrap">
+                <div class="blog-content">
+                  <h4 class="third-subtitle">愛情可以從一個吻開始嗎？</h4>
+                  <p><i class="fa-regular fa-clock"></i>20 July 2022</p>
+                  <p>我點木那汁耍兄雪目友冬眼，甲星身找母玩後免校泉裏，隻助記穴昔詞完能掃干吧，示婆意呀那土百耍，鳥包打告杯汁登旦喝。</p>
+                  <p>Read More</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row group-card">
+        <div class="col-12 col-lg-4 container-card">
+          <a href="" class="link-card">
+            <div class="card">
+              <div class="img-box-card">
+                <img src="https://i.imgur.com/U04oUab.jpg" class="img-card" alt="photo" />
+              </div>
+              <div class="content">
+                <div class="details-card">
+                  <div class="data-card">
+                    <h3 class="info info-card">
+                      <span class="name-info-card">子瑜</span>
+                      <span class="age-info-card">23</span>
+                    </h3>
+                    <p class="info loc-info-card">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>台北市</span><span>新北市</span>
+                    </p>
+                    <p class="info price-info-card">1000/hr</p>
+                    <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                  </div>
+                  <div class="action-btn">
+                    <button class="button like-btn-card">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="button cart-btn-card">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <a href="#" class="link-card">
+            <div class="card">
+              <div class="img-box-card">
+                <img src="https://i.imgur.com/6RJoTLh.jpg" class="img-card" alt="photo" />
+              </div>
+              <div class="content">
+                <div class="details-card">
+                  <div class="data-card">
+                    <h3 class="info info-card">
+                      <span class="name-info-card">Tzu Yu</span>
+                      <span class="age-info-card">23</span>
+                    </h3>
+                    <p class="info loc-info-card">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>台北市</span><span>新北市</span>
+                    </p>
+                    <p class="info price-info-card">1000/hr</p>
+                    <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                  </div>
+                  <div class="action-btn">
+                    <button class="button like-btn-card">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="button cart-btn-card">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <a href="" class="link-card">
+            <div class="card">
+              <div class="img-box-card">
+                <img src="./img/tzuyu3.jpg" class="img-card" alt="photo" />
+              </div>
+              <div class="content">
+                <div class="details-card">
+                  <div class="data-card">
+                    <h3 class="info info-card">
+                      <span class="name-info-card">주자유</span>
+                      <span class="age-info-card">23</span>
+                    </h3>
+                    <p class="info loc-info-card">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>台北市</span><span>新北市</span>
+                    </p>
+                    <p class="info price-info-card">1000/hr</p>
+                    <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                  </div>
+                  <div class="action-btn">
+                    <button class="button like-btn-card">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="button cart-btn-card">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <a href="" class="link-card">
+            <div class="card">
+              <div class="img-box-card">
+                <img src="https://i.imgur.com/U04oUab.jpg" class="img-card" alt="photo" />
+              </div>
+              <div class="content">
+                <div class="details-card">
+                  <div class="data-card">
+                    <h3 class="info info-card">
+                      <span class="name-info-card">子瑜</span>
+                      <span class="age-info-card">23</span>
+                    </h3>
+                    <p class="info loc-info-card">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>台北市</span><span>新北市</span>
+                    </p>
+                    <p class="info price-info-card">1000/hr</p>
+                    <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                  </div>
+                  <div class="action-btn">
+                    <button class="button like-btn-card">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="button cart-btn-card">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <div class="card">
+            <div class="img-box-card">
+              <img src="https://i.imgur.com/6RJoTLh.jpg" class="img-card" alt="photo" />
+            </div>
+            <div class="content">
+              <div class="details-card">
+                <div class="data-card">
+                  <h3 class="info info-card">
+                    <span class="name-info-card">Tzu Yu</span>
+                    <span class="age-info-card">23</span>
+                  </h3>
+                  <p class="info loc-info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>台北市</span><span>新北市</span>
+                  </p>
+                  <p class="info price-info-card">1000/hr</p>
+                  <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                </div>
+                <div class="action-btn">
+                  <button class="button like-btn-card">
+                    <i class="fa-solid fa-heart"></i>
+                  </button>
+                  <button class="button cart-btn-card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <a href="#" class="link-card">
+            <div class="card">
+              <div class="img-box-card">
+                <img src="https://i.imgur.com/6RJoTLh.jpg" class="img-card" alt="photo" />
+              </div>
+              <div class="content">
+                <div class="details-card">
+                  <div class="data-card">
+                    <h3 class="info info-card">
+                      <span class="name-info-card">Tzu Yu</span>
+                      <span class="age-info-card">23</span>
+                    </h3>
+                    <p class="info loc-info-card">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>台北市</span><span>新北市</span>
+                    </p>
+                    <p class="info price-info-card">1000/hr</p>
+                    <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                  </div>
+                  <div class="action-btn">
+                    <button class="button like-btn-card">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="button cart-btn-card">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <a href="" class="link-card">
+            <div class="card">
+              <div class="img-box-card">
+                <img src="./img/tzuyu3.jpg" class="img-card" alt="photo" />
+              </div>
+              <div class="content">
+                <div class="details-card">
+                  <div class="data-card">
+                    <h3 class="info info-card">
+                      <span class="name-info-card">주자유</span>
+                      <span class="age-info-card">23</span>
+                    </h3>
+                    <p class="info loc-info-card">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>台北市</span><span>新北市</span>
+                    </p>
+                    <p class="info price-info-card">1000/hr</p>
+                    <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                  </div>
+                  <div class="action-btn">
+                    <button class="button like-btn-card">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="button cart-btn-card">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <a href="" class="link-card">
+            <div class="card">
+              <div class="img-box-card">
+                <img src="https://i.imgur.com/U04oUab.jpg" class="img-card" alt="photo" />
+              </div>
+              <div class="content">
+                <div class="details-card">
+                  <div class="data-card">
+                    <h3 class="info info-card">
+                      <span class="name-info-card">子瑜</span>
+                      <span class="age-info-card">23</span>
+                    </h3>
+                    <p class="info loc-info-card">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>台北市</span><span>新北市</span>
+                    </p>
+                    <p class="info price-info-card">1000/hr</p>
+                    <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                  </div>
+                  <div class="action-btn">
+                    <button class="button like-btn-card">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="button cart-btn-card">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-4 container-card">
+          <div class="card">
+            <div class="img-box-card">
+              <img src="https://i.imgur.com/6RJoTLh.jpg" class="img-card" alt="photo" />
+            </div>
+            <div class="content">
+              <div class="details-card">
+                <div class="data-card">
+                  <h3 class="info info-card">
+                    <span class="name-info-card">Tzu Yu</span>
+                    <span class="age-info-card">23</span>
+                  </h3>
+                  <p class="info loc-info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>台北市</span><span>新北市</span>
+                  </p>
+                  <p class="info price-info-card">1000/hr</p>
+                  <p class="info service-info-card"><span>商業應酬</span><span>朋友聚會</span><span>鐘點約會</span></p>
+                </div>
+                <div class="action-btn">
+                  <button class="button like-btn-card">
+                    <i class="fa-solid fa-heart"></i>
+                  </button>
+                  <button class="button cart-btn-card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 分頁 -->
+        <nav aria-label="Page navigation" class="container-pagination-card">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </div>
+
+  <!-- JQuery -->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- 放在body結尾-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script>
+    let mainCategory = document.querySelectorAll('.list-main-category')
+    mainCategory.forEach(ul => {
+      ul.addEventListener('click', () => {
+        mainCategory.forEach(all => {
+          all.classList = 'list-main-category'
+        })
+        ul.classList.add('selected-cate')
+      })
+    })
+
+    $(function () {
+      let len = 50; // 超過50個字以"..."取代
+      $(".blog-content>p:nth-of-type(2)").each(function (i) {
+        if ($(this).text().length > len) {
+          $(this).attr("title", $(this).text());
+          var text = $(this).text().substring(0, len - 1) + "...";
+          $(this).text(text);
+        }
+      });
+    });
+    //swiper JS
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+  </script>
+
+</body>
+
+</html>

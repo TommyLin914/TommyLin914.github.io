@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- google-font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS Reset-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- Font Icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Bootstrap5-->
+    <!-- 放在head-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- 放在body結尾-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <style>
+                :root{
+                    /*文字色*/
+                    --primary:#6d8cbc;
+                    --secondary:#7d9ab8;
+                    --info:#89849a;
+
+                    --background:#eeedec;
+                    
+                    /* 底線，裝飾性顏色 */
+                    --grown:#c59b89;
+                    --gray:#c4c8d0;
+
+                    /* 版型 */
+                    --light-brown:#d7bdaf;
+                    --light-blue:#acb9cf;
+                    --light-pink:#cda59d;
+                    
+                }
+                body{
+                    background-color: var(--background);
+                }
+                
+                * {
+                    font-family: 'Noto Serif TC', serif;
+                    
+                }
+                .mb-16{
+                    margin-bottom: 16px;
+                }
+                
+                .button{
+                    font-size: 24px;
+                    padding: 10px 20px;
+                    border-radius: 16px;
+                    color: #fff;
+                    text-align: center;
+                    background-color: var(--primary);
+                    border: 1px solid var(--primary);
+                }
+                .title {
+                    font-family: 'Noto Serif TC', serif;
+                    font-weight: 900;
+                    line-height: 1.5em;
+                    font-size: 48px;
+                    letter-spacing: 1.8px;
+                    color:var(--primary);
+                }
+
+                .sub-title {
+                    font-family: 'Noto Serif TC', serif;
+                    line-height: 1.5em;
+                    font-size: 36px;
+                    font-weight: 700;
+                    letter-spacing: 1.5px;
+                    color:var(--secondary);
+                }
+
+                .third-subtitle {
+                    font-family: 'Noto Serif TC', serif;
+                    line-height: 1.5em;
+                    font-weight: 600;
+                    font-size: 24px;
+                    letter-spacing: 1.2px;
+                    color:var(--info);
+                }
+                p,
+h4,
+h5,
+h6,
+                span,
+                .text {
+                    font-family: 'Noto Serif TC', serif;
+                    line-height: 1.5em;
+                    font-size: 16px;
+                    letter-spacing: 1.2px;
+                    color:var(--info);
+                }
+                img {
+                    max-width: 100%;
+                    vertical-align: bottom;
+                }
+                .bg-A{
+                    background-color: var(--light-blue);
+                }
+                .bg-B{
+                    background-color: var(--light-brown);
+                }
+                .bg-C{
+                    background-color: var(--light-pink);
+                }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container-md">
+
+    <!-- 文字測試 -->
+    <h1 class="title">大標題</h1>
+    <h2 class="sub-title">中標題</h2>
+    <h3 class="card-subtitle">小標題</h3>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, voluptatum saepe dolores magni aliquid distinctio dignissimos hic minima. Voluptatum dolorem alias, cumque quisquam expedita quibusdam consequatur blanditiis distinctio necessitatibus, nihil dolores porro architecto molestiae earum non odio. Libero doloremque fugiat minus fugit, in provident tenetur nemo animi placeat quod explicabo.s</p>
+    <div class="row mb-16">
+        <div class="col-4 bg-A">1</div>
+        <div class="col-4 bg-B">2</div>
+        <div class="col-4 bg-C">3</div>
+    </div>
+    <button class="button">按我</button>
+
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+:root {
+    /*文字色*/
+    --primary: #6d8cbc;
+    --secondary: #7d9ab8;
+    --info: #89849a;
+
+    --background: #eeedec;
+
+    /* 底線，裝飾性顏色 */
+    --grown: #c59b89;
+    --gray: #c4c8d0;
+
+    /* 版型 */
+    --light-brown: #d7bdaf;
+    --light-blue: #acb9cf;
+    --light-pink: #cda59d;
+
+}
+
+
+body {
+    background-color: var(--background);
+    padding-left: 35rem;
+}
+
+* {
+    font-family: 'Noto Serif TC', serif;
+}
+html{
+    font-size: 62.5%;
+} 
+section{
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    background-color: var(--light-blue);
+}
+
+.nav .user img{
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border:.5rem solid #7d9ab8;
+}
+.nav .user .name{
+    font-size: 3.5rem;
+}
+.nav .user .post{
+    font-size: 2rem;
+}
+.nav .navbar{
+    width: 100%;
+}
+.nav .navbar ul{
+    list-style: none;
+    padding: 1rem 3rem;
+    margin: auto;
+    flex-grow: 1;
+}
+.nav .navbar ul li a{
+    display: block;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background: #7d9ab8;
+    font-size: 2rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+#menu{
+    position: fixed;
+    top: 2rem;right: 2rem;
+    color: #acb9cf;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+
+/* ------------------ nav end -------------- */
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0 1rem;
+    align-items: center;
+}
+.info h3{
+    font-size: 2.5rem;
+    padding: 2rem;
+}
+
+.info-group{
+    display: flex;
+    width: 80%;
+}
+.info-group .pic{
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+}
+.info-group .pic img{
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.info-group .pic p{
+    margin-top: 3rem;
+}
+.info-group .text{
+    padding: 2rem;
+    flex-grow: 1;
+}
+.info .box{
+    padding: 1rem;
+    margin: 1rem 0;
+    background: rgb(253,252,250);
+    font-size: 1.5rem;
+    width: 100%;
+    border: transparent;
+    border-radius: 8px;
+}
+.detail-group{
+    display: flex;
+    width: 80%;
+}
+.detail-group .detail-1{
+    padding: 2rem;
+    flex-grow: 1;
+}
+.detail-group .detail-2{
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+/* 變更密碼 */
+.pwchange{
+    padding: 2rem;
+    width: 80%;
+}
+.pwchange h3{
+    font-size: 2rem;
+}
+
+.button{
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 16px;
+    color: #fff;
+    text-align: center;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+    .nav{
+        left:-120%;
+    }
+    #menu{
+        display: block;
+    }
+
+    body{
+        padding: 0;
+    }
+
+    .info-group{
+        display: block;
+        width: 90%;
+    }
+    .detail-group{
+        display: block;
+        width: 90%;
+    }
+    .pwchange{
+        width: 90%;
+    }
+}

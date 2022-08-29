@@ -1,0 +1,173 @@
+body{
+  color: #fff;
+}
+section {
+position: relative;
+height: 100vh;
+width: 100%;
+background: url("../img/bgc.jpeg");
+background-size: cover;
+background-position: center center;
+}
+h2.title{
+opacity: 0.6;
+}
+.form-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+  width: 380px;
+  padding: 50px 30px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 60px #000;
+}
+h1{
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.5em;      
+}
+
+.control input[type="submit"]{
+  width: 100%;
+  color: #fff;
+  font-size: 1.2em;
+  transition: background-color .3s ease;          
+}
+.control input[type="submit"]:hover{            
+  background-color: #31507e;
+}
+.remark span,.remark a{
+font-size: 10px;
+}
+.link{
+  text-align: center;
+}
+.link :first-child{
+  border-right: 1px solid gainsboro;
+}
+.link a{
+  text-decoration: none;
+  padding: 0 25px;
+  /* border-right: 5px solid gainsboro; */
+}
+.link a:hover{
+  color: #eee;
+}
+.fb_bg{
+  background-color: #0066ff;
+  opacity: 0.7;
+}
+.line_bg{
+  background-color: #00b900;
+  opacity: 0.7;
+}
+.fb_bg:hover{
+  background-color: #0066ff;
+  opacity: 1;
+}
+.line_bg:hover{
+  background-color: #00b900;
+  opacity: 1;
+}
+.pw{
+  font-size: 14px;
+}
+
+body {
+  background-color: #eeedec;
+}
+
+*:not(i) {
+  font-family: "Noto Serif TC", serif !important;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.button {
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 16px;
+  color: #fff;
+  text-align: center;
+  background-color: #6d8cbc;
+  border: 1px solid #6d8cbc;
+}
+
+.title {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 900;
+  line-height: 1.5em;
+  font-size: 48px;
+  letter-spacing: 1.8px;
+  color: #6d8cbc;
+}
+
+.sub-title {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #7d9ab8;
+}
+
+.third-subtitle {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: #89849a;
+}
+
+p,
+h4,
+a,
+h5,
+h6,
+span,
+.text {
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.5em;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  color: #89849a;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.bg-A {
+  background-color: #acb9cf;
+}
+
+.bg-B {
+  background-color: #d7bdaf;
+}
+
+.bg-C {
+  background-color: #cda59d;
+}
+
+.btn-blue {
+  background-color: #6d8cbc;
+}
+
+.btn-grown {
+  background-color: #c59b89;
+}
+
+span, a{
+  color: #eee;
+}
+
+a:hover{
+  color: #6d8cbc
+}
+

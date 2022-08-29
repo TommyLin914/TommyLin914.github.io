@@ -1,0 +1,28 @@
+header{
+    background-color:$primary;
+}
+.dropdown-menu[data-bs-popper].end-dropdown-menu{
+    left: -100px;
+ }
+
+ .dropdown-item:hover{
+    color: saturate($light-pink, 50%);
+ }
+ .dropdown-item {
+    color: $primary;
+ }
+ .nav-link{
+    color: #fff;
+ }
+ .nav-link:focus, .nav-link:hover,
+ .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+    color: saturate($light-pink, 50%);
+ }
+ .person-id i{
+    font-size: 20px;
+ }
+ .end-dropdown-menu p{
+    text-align: center;
+    color: saturate($light-pink, 50%);
+    margin: 16px 0;
+ }
