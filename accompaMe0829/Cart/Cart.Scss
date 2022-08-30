@@ -1,4 +1,9 @@
-@import '../accompaMe/_commen/variable';
+@import '../_common/variable';
+@import '../_common/header';
+@import '../_common/footer';
+
+
+
 
 $cartPadding: 1rem;
 
@@ -54,6 +59,9 @@ $cartPadding: 1rem;
 }
 
 //form
+.cart-form{
+    flex-direction: column;
+}
 .select-type-button input{
     visibility: hidden;
 }
@@ -120,7 +128,7 @@ $cartPadding: 1rem;
 .textarea-wrapper{
     position: relative;
 }
-.input-wrapper input {
+.input-wrapper #business-dress {
     width: 100%;
     border: 2px solid #000;
     border-radius: .5rem;

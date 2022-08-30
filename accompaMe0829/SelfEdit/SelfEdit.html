@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- google-font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS Reset-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- Font Icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Bootstrap5-->
+    <!-- 放在head-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="./SelfEdit.css">
+
+</head>
+
+<body>
+    <!-- ------------ header start-------------------- -->
+    <header class=" navbar navbar-expand-md" aria-label="Fourth navbar example">
+        <div class="container-fluid d-flex gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="https://fakeimg.pl/80x24/?text=Logo" alt="">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
+                aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse flex-grow-1 " id="navbarsExample04">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../Search/Search.html" data-bs-toggle="dropdown"
+                            aria-expanded="false">商品主分類</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../Profile/Profile.html"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-brain me-2"></i>商品次分類</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../LoginPage/LoginPage.html">成為租客</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="../BlogPage/BlogPage.html">部落格</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../ContactUs/Contactus.html">聯絡我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link person-id" href="../LoginPage/LoginPage.html"><i class="fa-solid fa-user-large"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./img/tzuyu1.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+                          </a>
+                        <ul class="dropdown-menu end-dropdown-menu">
+                            <p class="">Hi，子瑜</p>
+                            <li><a class="dropdown-item" href="../member-center/personalinfo/personalinfo.html">編輯個人資料</a></li>
+                            <li><a class="dropdown-item" href="../member-center/favorite/favorite.html">我的收藏</a></li>
+                            <li><a class="dropdown-item" href="../member-center/productinfo/productinfo.html">成為出租者</a></li>
+                            <li><a class="dropdown-item" href="">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </header>
+
+
+    <!-- ------------  header end  -------------------- -->
+
+
+
+
+    <div class="container-md">
+
+        <!-- nav part -->
+
+        <section class="profile side-section">
+            <div class="group-user">
+              <div class="box-img-user"><img src="https://i.imgur.com/U04oUab.jpg" alt="profile-photo" class="img-user" />
+              </div>
+              <h1 class="title name-user">子瑜</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, explicabo.</p>
+            </div>
+            <nav class="nav-user">
+              <ul>
+                <li>
+                  <a href="../SelfEdit/SelfEdit.html" class="d-flex justify-content-center align-items-center button nav-button">
+                    <p class="hover">編輯個人資料</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="../Favorite/Favorite.html" class="d-flex justify-content-center align-items-center button nav-button">
+                    <p class="hover">我的收藏</p>
+                  </a>
+                </li>
+                <li>
+                    <a href="../ProductInfo/ProductInfo.html" class="d-flex justify-content-center align-items-center button nav-button">
+                      <p class="hover">刊登出租資訊</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex justify-content-center align-items-center button nav-button">
+                      <p class="hover">我的訂單</p>
+                    </a>
+                  </li>
+              </ul>
+            </nav>
+        </section>
+
+        <!-- nav part ends -->
+
+        <!-- main part -->
+
+        <div class="main-container">
+            <section class="info">
+            <h2>編輯個人資料</h2>
+            <div class="info-group">
+                <div class="pic col-md-6 col-12">
+                    <img src="https://picsum.photos/300/200/?random=10">
+                    <p>* 點擊照片可更換頭像，建議使用直式照片</p>
+                </div>
+                <div class="text col-md-6">
+                    <h4>真實姓名*</h4>
+                    <input type="text" class="box">
+                    <h4>暱稱*</h4>
+                    <input type="text" class="box">
+                    <h4>性別*</h4>
+                    <select name="sex" class="box">
+                        <option value="M">男性</option>
+                        <option value="F">女性</option>
+                    </select>
+                    <h4>生日*</h4>
+                    <input type="date" class="box">
+                </div>
+            </div>
+
+            <div class="detail-group">
+                <div class="detail-1 col-md-6 col-12">
+                    <h4>信箱</h4>
+                    <input type="email" class="box">
+                    <h4>居住城市*</h4>
+                    <select name="city" class="box">
+                        <option value="">基隆市</option>
+                        <option value="">臺北市</option>
+                        <option value="">新北市</option>
+                        <option value="">桃園市</option>
+                        <option value="">新竹市</option>
+                        <option value="">新竹縣</option>
+                        <option value="">宜蘭縣</option>
+                        <option value="">臺中市</option>
+                        <option value="">苗栗縣</option>
+                        <option value="">彰化縣</option>
+                        <option value="">南投縣</option>
+                        <option value="">雲林縣</option>
+                        <option value="">高雄市</option>
+                        <option value="">臺南市</option>
+                        <option value="">嘉義市</option>
+                        <option value="">嘉義縣</option>
+                        <option value="">屏東縣</option>
+                        <option value="">澎湖縣</option>
+                        <option value="">花蓮縣</option>
+                        <option value="">臺東縣</option>
+                        <option value="">金門縣</option>
+                        <option value="">連江縣</option>
+                    </select>
+                </div>
+                <div class="detail-2 col-md-6 col-12">
+                    <h4>手機</h4>
+                    <input type="tel" class="box">
+                    <h4>居住區域*</h4>
+                    <select name="district" class="box"></select>
+                </div>
+            </div>
+
+            <div class="pwchange">
+                <h3>修改密碼(如欲變更密碼請填寫以下資訊)</h3>
+                <h4>舊密碼</h4>
+                <input type="password" class="box">
+                <h4>新密碼</h4>
+                <input type="password" class="box">
+                <h4>確認新密碼</h4>
+                <input type="password" class="box">
+            </div>
+
+            <div class="confirm">
+                <button class="button">確認</button>
+            </div>
+            </section>
+        </div>
+        
+
+    </div>
+
+
+
+    <!-- -------------------footer start--------------------------- -->
+    
+    <footer>
+        <div class="main-footer">
+          <div>
+            <h4>CATEGORIES</h4>
+            <ul>
+              <li><a href="javascript:void(0)">Help & Contact Us</a></li>
+              <li><a href="javascript:void(0)">Returns & Refunds</a></li>
+              <li><a href="javascript:void(0)">Online Stores</a></li>
+              <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>OUR STORE</h4>
+            <ul>
+              <li><a href="javascript:void(0)">About</a></li>
+              <li><a href="javascript:void(0)">Blog</a></li>
+              <li><a href="javascript:void(0)">Shop</a></li>
+              <li><a href="javascript:void(0)">Contacts</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>PROTFILE</h4>
+            <ul>
+              <li><a href="javascript:void(0)">Checkout</a></li>
+              <li><a href="javascript:void(0)">My account</a></li>
+              <li><a href="javascript:void(0)">Order tracking</a></li>
+              <li><a href="javascript:void(0)">Help & support</a></li>
+            </ul>
+          </div>
+          <div class="ABOUT US">
+            <h4>Contact US</h4>
+            <form>
+            <input type="text" class="footer-text">
+            <input type="submit" class="footer-submit" value="訂閱">
+            </form>
+          </div>
+        </div>
+    </footer>
+
+    <!-- -------------------footer end--------------------------- -->
+
+
+
+
+
+    <!-- 放在body結尾-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,19 +1,42 @@
-@import '../accompaMe/_commen/variable';
+@import '../_common/variable';
+@import '../_common/header';
+@import '../_common/footer';
+
 $cartPadding: 1rem;
 
+body,html{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+
+}
+header,footer{
+    flex : 0 0 auto;
+}
+.container{
+    flex-grow: 1;
+}
+footer{
+    width: 100%;
+}
 h1{
     text-align: center;
     padding: $cartPadding 0 $cartPadding;
 }
+.changeList{
+    padding-top: $cartPadding;
+    padding-bottom: $cartPadding;
+}
 .td-group{
     display: flex;
     padding: $cartPadding 1rem $cartPadding;
-
+    justify-content: space-around;
 }
 .td-group span{
-    font-size: 1.3rem;
     display: inline-block;
-    
+    font-size: 1.5rem;
 }
 .accordion{
     padding-top: $cartPadding;
@@ -33,6 +56,11 @@ h1{
     color: $light-pink;
     
 }
+.accordion-button{
+    display: flex;
+    justify-content: space-around;
+    // text-align: ;
+}
 .accordion-button:focus {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(197, 155, 137,.25);
@@ -41,6 +69,7 @@ h1{
     background-color: $light-brown;
 }
 .accordion-body ol{
+    justify-content: space-around;
     padding-left: 0;
     li{
         display: flex;
@@ -67,6 +96,9 @@ h1{
         font-size: 1rem;
     }
     .accordion-body ol li span{
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    .td-group span{
+        font-size: 1rem;
     }
 }

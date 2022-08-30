@@ -112,36 +112,45 @@ header {
 }
 
 p, h4, a {
-  font-family: "Anek Latin", sans-serif;
+  font-family: 'Anek Latin', sans-serif;
   letter-spacing: 1.2px;
 }
 
 a {
   text-decoration: none;
-  color: #ecefd4;
+  color: #fff;
   font-size: 10px;
   line-height: 1.8em;
-}
-
-a:hover {
-  color: white;
 }
 
 footer {
   border-top: 1px solid #FFF;
   background-color: #3d5a86;
 }
+
 footer .main-footer {
   padding: 30px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 footer .main-footer div {
   width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 footer .main-footer div h4 {
   color: #fff;
   border-bottom: 2px solid #fff;
@@ -150,6 +159,7 @@ footer .main-footer div h4 {
   line-height: 1.8em;
   margin-bottom: 10px;
 }
+
 footer .main-footer div p {
   font-size: 10px;
   line-height: 1.5em;
@@ -157,15 +167,19 @@ footer .main-footer div p {
 }
 
 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: auto 0;
 }
-form input[type=submit],
-form input[type=text] {
+
+form input[type="submit"],
+form input[type="text"] {
   width: 50%;
   border: none;
 }
-form input[type=submit] {
+
+form input[type="submit"] {
   background-color: #ff846b;
   font-weight: 500;
   font-size: 10px;
@@ -176,112 +190,4 @@ form input[type=submit] {
     width: 45%;
   }
 }
-body, html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-header, footer {
-  flex: 0 0 auto;
-}
-
-.container {
-  flex-grow: 1;
-}
-
-footer {
-  width: 100%;
-}
-
-h1 {
-  text-align: center;
-  padding: 1rem 0 1rem;
-}
-
-.changeList {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.td-group {
-  display: flex;
-  padding: 1rem 1rem 1rem;
-  justify-content: space-around;
-}
-
-.td-group span {
-  display: inline-block;
-  font-size: 1.5rem;
-}
-
-.accordion {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.accordion-button span {
-  display: inline-block;
-  padding-left: 0.5rem;
-  font-size: 1.5rem;
-}
-
-.accordion-button:focus {
-  box-shadow: rgb(197, 155, 137);
-}
-
-.accordion-button::after {
-  position: absolute;
-  right: 1rem;
-  color: #cda59d;
-}
-
-.accordion-button {
-  display: flex;
-  justify-content: space-around;
-}
-
-.accordion-button:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(197, 155, 137, 0.25);
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #d7bdaf;
-}
-
-.accordion-body ol {
-  justify-content: space-around;
-  padding-left: 0;
-}
-.accordion-body ol li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.accordion-body ol li span {
-  font-size: 1.5rem;
-}
-.accordion-body ol .pay-type {
-  flex-direction: column;
-}
-
-.detail-img img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-@media screen and (max-width: 992px) {
-  .accordion-button span {
-    font-size: 1rem;
-  }
-  .accordion-body ol li span {
-    font-size: 1rem;
-  }
-  .td-group span {
-    font-size: 1rem;
-  }
-}/*# sourceMappingURL=OrderedList.css.map */
+/*# sourceMappingURL=header-footer.css.map */
