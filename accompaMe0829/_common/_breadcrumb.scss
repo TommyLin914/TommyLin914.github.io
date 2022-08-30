@@ -1,0 +1,12 @@
+.breadcrumb {
+  padding-top: 10px;
+  .breadcrumb-item,
+  a {
+    font-size: 16px;
+    // color: $text-color;
+    color: #888;
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+}

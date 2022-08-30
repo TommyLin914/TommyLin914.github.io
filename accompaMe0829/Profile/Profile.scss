@@ -1,6 +1,6 @@
 @import '../_common/variable';
 @import './_swipe_card.scss';
-@import '../_common/breadcrumb.scss';
+@import '../_common/_breadcrumb.scss';
 @import '../_common/_header.scss';
 @import '../_common/_footer.scss';
 
@@ -202,7 +202,7 @@ section.profile {
       color: red;
     }
     @include phone {
-      display: block;
+      // display: block;
     }
   }
   .opening-home {
