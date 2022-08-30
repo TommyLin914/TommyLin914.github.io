@@ -3,6 +3,7 @@
 @import '../_common/_header.scss';
 @import '../_common/breadcrumb.scss';
 @import 'blogCard';
+
 @mixin pad {
   @media (max-width: 768px) {
     @content;
@@ -453,6 +454,9 @@ $mobile-card-height: 466px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include phone{
+    width: 100%;
+  }
 }
 .group-card {
   display: flex;
