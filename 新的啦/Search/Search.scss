@@ -1,0 +1,30 @@
+@import '../_common/common';
+a{
+    text-decoration: none;
+}
+
+.item-section {
+    height: 380px;
+  .img-box {
+    position: relative;
+    width: 100%;
+    .like-btn {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: auto;
+      top: 0;
+      right: 0;
+    }
+  }
+  .info-group {
+    .info {
+      display: flex;
+      flex-direction: column;
+      & > span {
+        display: block;
+        line-height: 19px;
+      }
+    }
+  }
+}

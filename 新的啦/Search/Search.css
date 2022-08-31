@@ -1,0 +1,41 @@
+header {
+  margin-bottom: 40px;
+}
+
+h1, h2, h3, h4, h5, h6, p span,
+tt, td, a {
+  font-family: "Noto Serif TC", serif;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+.item-section {
+  height: 380px;
+}
+.item-section .img-box {
+  position: relative;
+  width: 100%;
+}
+.item-section .img-box .like-btn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: auto;
+  top: 0;
+  right: 0;
+}
+.item-section .info-group .info {
+  display: flex;
+  flex-direction: column;
+}
+.item-section .info-group .info > span {
+  display: block;
+  line-height: 19px;
+}/*# sourceMappingURL=Search.css.map */
