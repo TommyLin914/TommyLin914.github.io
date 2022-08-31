@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#555, #292929);
+}
+
+label {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  background-color: #3e3e3e;
+  box-shadow: 0 0 0 4px #303030;
+  border-radius: 75px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label span {
+  position: absolute;
+  left: 0;
+  width: 175px;
+  height: 150px;
+  background: url(./coffee-empty.png);
+  background-size: auto 150px;
+  background-repeat: no-repeat;
+  transition: 1.5s;
+  transform: rotate(-180deg);
+  transform-origin: 75px;
+}
+label input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+label input:checked ~ span {
+  left: 150px;
+  background: url(./coffee-fill.png);
+  background-size: auto 150px;
+  background-repeat: no-repeat;
+  transition: 1.5s;
+  transform: rotate(360deg);
+}
+label input:checked ~ text {
+  color: #8f8f8f;
+  filter: none;
+}
+label input:checked ~ text:last-child {
+  color: #fff;
+  filter: drop-shadow(0 0 15px #fff) drop-shadow(0 0 35px #fff);
+}
+label text {
+  font-family: consolas;
+  position: absolute;
+  left: -100px;
+  font-size: 3em;
+  color: #fff;
+  filter: drop-shadow(0 0 15px #fff) drop-shadow(0 0 35px #fff);
+  transition: 1.5s;
+}
+label text:last-child {
+  left: initial;
+  right: -100px;
+  color: #8f8f8f;
+  filter: none;
+}/*# sourceMappingURL=style.css.map */
