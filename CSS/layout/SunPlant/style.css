@@ -410,27 +410,22 @@ h1 {
   .control-box.login {
     display: block;
   }
-
   .close-btn {
     display: none;
   }
-
   .default-nav .function-container {
     color: #000;
   }
   .default-nav .function-container i:hover {
     color: #518432;
   }
-
   .sidebar-control:hover {
     cursor: pointer;
   }
-
   #sidebar-open:checked ~ .black-cover {
     display: block;
     opacity: 1;
   }
-
   #login-control:checked ~ .black-cover {
     display: block;
     opacity: 1;
@@ -451,7 +446,6 @@ h1 {
     position: absolute;
     left: 50%;
   }
-
   .nav.container {
     position: unset;
     left: 0;
@@ -486,11 +480,9 @@ h1 {
   .nav.container .menu-container li:hover i {
     color: #88c766;
   }
-
   .nav.list-topic {
     display: flex;
   }
-
   .login-container {
     position: fixed;
     width: 70%;
@@ -521,7 +513,6 @@ h1 {
   .login-container .link-btn {
     width: 70%;
   }
-
   #login-PC:checked ~ .nav.container .nav.panel .login-container {
     display: block;
     z-index: 20;
@@ -536,7 +527,6 @@ h1 {
   #login-PC:not(:checked) ~ .nav.container .nav.panel .login-container {
     left: 100%;
   }
-
   .nav.list-topic .topic {
     font-size: 16px;
     font-weight: 500;
@@ -642,7 +632,6 @@ h1 {
   .media-container .media-img img {
     aspect-ratio: 1/1;
   }
-
   .info-container {
     padding: 30px 30px;
   }
@@ -652,7 +641,6 @@ h1 {
     width: auto;
     height: 100%;
   }
-
   .info-container .text-container {
     flex-direction: row;
     align-items: center;
@@ -810,7 +798,6 @@ h1 {
   .row li > a:hover .hover-img, .row li > a:hover .image-cover {
     opacity: 1;
   }
-
   .staff-container .sold-out {
     width: 30%;
   }
@@ -953,7 +940,6 @@ h1 {
     width: 50%;
     padding: 25px;
   }
-
   .products-container .product-media span {
     font-size: 50px;
     color: #fff;
