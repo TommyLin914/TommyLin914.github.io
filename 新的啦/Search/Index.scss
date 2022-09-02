@@ -149,7 +149,19 @@ a {
     border-radius: 10px;
     aspect-ratio: 20/19;
     margin-bottom: 12px;
-
+    &.great-owner-marker::after {
+      content: '超讚房東';
+      padding: 3px 5px;
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      width: auto;
+      background-color: #fff;
+      z-index: 1;
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: 600;
+    }
     img {
       height: 100%;
       width: 100%;
@@ -212,7 +224,7 @@ a {
   left: 0;
   z-index: 20;
 }
-#map{
+#map {
   height: 100%;
   width: 100%;
 }
