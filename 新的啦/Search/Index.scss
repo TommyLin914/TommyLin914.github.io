@@ -1,4 +1,6 @@
 @import '../_common/commen';
+@import 'filter';
+@import 'light_box';
 a {
   text-decoration: none;
   color: #000;
@@ -7,15 +9,24 @@ a {
   }
 }
 
-@mixin pc {
-  @media (min-width: 1440px) {
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: 420px) {
     @content;
   }
 }
 .container-set {
+  position: relative;
   max-width: 1400px;
   margin: auto;
   padding: 0 60px;
+  @include pad {
+    padding: 20px;
+  }
   .category-btn {
     border: 0;
   }
@@ -26,6 +37,17 @@ a {
     &:hover {
       opacity: 1;
     }
+    .icon-container {
+      padding: 10px;
+      padding-bottom: 0;
+    }
+  }
+}
+.title-section {
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 200;
   }
 }
 // swiper
@@ -65,12 +87,21 @@ a {
 }
 .swiper-category {
   width: 90%;
+  @include pad {
+    width: 75%;
+  }
+  @include phone {
+    width: 100%;
+  }
 }
 .button-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: end;
+  @include phone {
+    display: none;
+  }
   .filter-button {
     background-color: transparent;
     cursor: pointer;
@@ -89,34 +120,11 @@ a {
     align-items: center;
   }
 }
-//篩選條件
-.lightbox {
-  display: block;
-  background-color: rgba(0, 0, 0, 0.3);
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.filter-container {
-  width: 80vw;
-  background-color: #fff;
-  .filter-section {
-    width: 90%;
-  }
-  .price-filter {
-    .price-slider {
-      position: relative;
-      width: 95vmin;
-    }
-  }
-}
-
 
 //商品區
 .item-section {
   .card-container {
+    position: relative;
     &:hover {
       .swiper-button-prev:after,
       .swiper-button-next:after {
@@ -124,22 +132,24 @@ a {
       }
     }
   }
+  .like-btn {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: auto;
+    right: 20px;
+    z-index: 2;
+    color: #ff385c;
+    font-size: 24px;
+    cursor: pointer;
+  }
   .img-box {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     aspect-ratio: 20/19;
     margin-bottom: 12px;
-    .like-btn {
-      width: 24px;
-      height: 24px;
-      position: absolute;
-      left: auto;
-      top: 0;
-      right: 0;
-      z-index: 2;
-      color: #ff385c;
-    }
+
     img {
       height: 100%;
       width: 100%;
@@ -162,6 +172,47 @@ a {
           right: 0;
         }
       }
+      .info-sub {
+        color: #333;
+        font-weight: 200;
+      }
+      .item-price {
+        margin-top: 5px;
+      }
     }
   }
+}
+
+.map-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  border-radius: 30px;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  background-color: #000;
+  color: #e8e8e8;
+  & > * {
+    font-weight: 600;
+    display: block;
+    margin: 0;
+  }
+}
+
+.map-section {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+#map{
+  height: 100%;
+  width: 100%;
 }

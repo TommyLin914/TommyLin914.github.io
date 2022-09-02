@@ -1,15 +1,25 @@
 let btnLike = document.querySelectorAll('.like-btn')
-let lightboxWish = document.querySelector('.wishlist')
+let overlayWish = document.querySelector('.wishlist')
 let lightboxAdd = document.querySelector('.new-wishlist')
 let btnClose = document.querySelectorAll('.btn-close')
 let clickAdd = document.querySelector('.add-new-list')
 let listAll = document.querySelectorAll('.per-wishlist')
-
+const aaa = document.querySelector('.card-container')
 btnLike.forEach(btn => {
-  btn.addEventListener('click',function(){
-    $('.wishlist').show()
-  }) 
+  btn.addEventListener('click',showWishlist.bind(event))
+  // btn.onclick = event => {
+  //   $('.wishlist').show()
+  //   event.stopPropagation()
+  // }
 })
+function showWishlist(e){
+  $('.wishlist').show()
+    e.stopPropagation()
+    console.log('btn');
+}
+aaa.onclick = (e)=>{
+  console.log('aaa');
+}
 
 listAll.forEach(list => {
   list.addEventListener('click', () => {
@@ -18,7 +28,7 @@ listAll.forEach(list => {
   })
 })
 
-lightboxWish.onclick = event => {
+overlayWish.onclick = event => {
   if ($(event.target).has('.lightbox-container').length) {
     $('.lightbox').hide()
   }

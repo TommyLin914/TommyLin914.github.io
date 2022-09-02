@@ -4,22 +4,25 @@
   height: 100vh;
   width: 100vw;
   position: absolute;
+  z-index: 10;
   left: 0;
   top: 0;
   .lightbox-container {
-    position: absolute;
-    width: 100%;
-    max-width: 600px;
+    width: 80%;
+    max-width: 800px;
     max-height: 85vh;
     background-color: #fff;
     border-radius: 10px;
+    position: absolute;
     left: 50%;
     top: 50%;
+    overflow-y: overlay;
     transform: translate(-50%, -50%);
     .title-section {
       border-bottom: 1px solid rgb(184, 184, 184);
       height: 64px;
       position: relative;
+      display: flex;
       justify-content: center;
       align-items: center;
       .btn-close {
@@ -71,7 +74,7 @@
         padding: 10px;
         margin-top: 15px;
         border-radius: 10px;
-        border: 1px solid rgba(141, 141, 141, 0.726);
+        border: 1px solid rgba(141, 141, 141, 0.7);
         position: relative;
       }
       &::after {
@@ -86,7 +89,7 @@
         padding: 10px;
         cursor: pointer;
       }
-      .disabled{
+      .disabled {
         cursor: not-allowed;
       }
     }

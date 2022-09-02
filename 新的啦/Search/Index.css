@@ -1,0 +1,589 @@
+@charset "UTF-8";
+header {
+  margin-bottom: 40px;
+}
+
+h1, h2, h3, h4, h5, h6, p span,
+tt, td, a {
+  font-family: "Noto Serif TC", serif;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.detail-filter {
+  padding: 15px;
+}
+.detail-filter .filter-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+.detail-filter p {
+  color: #717171;
+}
+
+.detail-group > section.group-section:last-child {
+  border-bottom: 0;
+}
+
+.lightbox.filter .lightbox-container {
+  overflow: hidden;
+}
+
+.body-section {
+  overflow-y: auto;
+  height: 535px;
+  padding: 20px;
+}
+
+.group-section {
+  padding: 0;
+}
+
+.price-slider {
+  height: 100px;
+}
+.price-slider input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  pointer-events: none;
+}
+.price-slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(119, 119, 119);
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+.price-slider .slider-track {
+  width: 100%;
+  height: 5px;
+  background-color: #d5d5d5;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+.price-input-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.price-input-group input {
+  width: 40%;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(141, 141, 141, 0.726);
+  position: relative;
+}
+
+.price-slider {
+  position: relative;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.checkbox-group .checkbox-item {
+  width: 48%;
+  height: 45px;
+  font-size: 18px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+.checkbox-group .checkbox-item input[type=checkbox] {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.checkbox-group .checkbox-item label {
+  position: relative;
+}
+.checkbox-group .checkbox-item label::after {
+  content: "";
+  position: absolute;
+  top: auto;
+  bottom: -18px;
+  left: 0;
+  font-size: 15px;
+  color: #888;
+  width: 300px;
+}
+.checkbox-group .checkbox-item label.whole::after {
+  content: "獨享整間房源";
+}
+.checkbox-group .checkbox-item label.shared::after {
+  content: "房源或飯店內的獨立客房，以及部分共用空間";
+}
+.checkbox-group .checkbox-item label.independent::after {
+  content: "可能要和他人共用的就寢空間和公共區域";
+}
+
+.quantity-filter {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.quantity-filter h4 {
+  font-weight: 600;
+  font-size: 18px;
+}
+.quantity-filter .button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  overflow-x: scroll;
+}
+.quantity-filter .button-group::-webkit-scrollbar {
+  display: none;
+}
+.quantity-filter .button-group .btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+.room-type-group {
+  display: flex;
+  justify-content: space-between;
+}
+.room-type-group .room-type {
+  width: 22%;
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.room-type-group .room-type:hover {
+  border: 1px solid #000;
+}
+.room-type-group .room-type .img-box {
+  height: 32px;
+  width: 32px;
+  margin: 10px;
+}
+.room-type-group .room-type span {
+  font-weight: 600;
+}
+
+.supply-service,
+.accessibility-service {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+.supply-service h4,
+.accessibility-service h4 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.switch-group.room-type {
+  font-size: 18px;
+}
+.switch-group.room-type label {
+  position: relative;
+}
+.switch-group.room-type label::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-size: 15px;
+  color: #888;
+  width: 300px;
+}
+.switch-group.room-type label.order-now::after {
+  content: "無需等待房東批准即可預訂的房源";
+}
+.switch-group.room-type label.help-self::after {
+  content: "抵達後可輕鬆進入房源";
+}
+
+.btn-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000;
+  font-weight: 600;
+}
+
+.btn:focus {
+  color: #000;
+  box-shadow: unset;
+}
+.btn:active:focus {
+  box-shadow: unset;
+}
+
+.owner {
+  font-size: 18px;
+}
+.owner label {
+  position: relative;
+}
+.owner label::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-size: 15px;
+  color: #888;
+  width: 300px;
+}
+.owner label.great-owner::after {
+  content: "向獲得認可的房東租住房源";
+}
+.owner label.plus::after {
+  content: "品質卓越、風格獨具的嚴選房源系列";
+}
+
+.switch-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  height: 46px;
+  margin: 16px 0;
+}
+
+.footer-section {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  border-top: 1px solid rgb(184, 184, 184);
+}
+
+.lightbox {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}
+.lightbox .lightbox-container {
+  width: 80%;
+  max-width: 800px;
+  max-height: 85vh;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow-y: overlay;
+  transform: translate(-50%, -50%);
+}
+.lightbox .lightbox-container .title-section {
+  border-bottom: 1px solid rgb(184, 184, 184);
+  height: 64px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox .lightbox-container .title-section .btn-close {
+  position: absolute;
+  left: 24px;
+  top: 12px;
+  height: 24px;
+}
+.lightbox .lightbox-container .title-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.lightbox .lightbox-container .group-section {
+  padding: 10px;
+  min-height: 160px;
+  border-bottom: 1px solid rgb(184, 184, 184);
+}
+.lightbox .lightbox-container .per-wishlist {
+  height: 84px;
+  width: 100%;
+  display: flex;
+  margin: 10px;
+  cursor: pointer;
+  align-items: center;
+}
+.lightbox .lightbox-container .per-wishlist > p {
+  display: block;
+  font-weight: 600;
+  margin: auto;
+  margin-left: 0;
+}
+.lightbox .lightbox-container .per-wishlist .img-box {
+  height: 64px;
+  width: 64px;
+  margin-right: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.lightbox .lightbox-container .per-wishlist .img-box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: bottom;
+}
+.lightbox .lightbox-container .input-container .new-wishlist-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(141, 141, 141, 0.7);
+  position: relative;
+}
+.lightbox .lightbox-container .input-container::after {
+  content: "最多50字元";
+  font-size: 12px;
+  color: #777;
+}
+.lightbox .lightbox-container .button-section {
+  padding: 20px;
+}
+.lightbox .lightbox-container .button-section .btn-create {
+  padding: 10px;
+  cursor: pointer;
+}
+.lightbox .lightbox-container .button-section .disabled {
+  cursor: not-allowed;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: #000;
+}
+
+.container-set {
+  position: relative;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 60px;
+}
+@media (max-width: 768px) {
+  .container-set {
+    padding: 20px;
+  }
+}
+.container-set .category-btn {
+  border: 0;
+}
+.container-set .category-content {
+  font-size: 12px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.container-set .category-content:hover {
+  opacity: 1;
+}
+.container-set .category-content .icon-container {
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.title-section h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 18px;
+}
+
+.swiper.img-swiper {
+  height: 100%;
+}
+
+.swiper-button-next:after {
+  content: "";
+  left: 42%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  clear: both;
+  opacity: 0;
+  transition: 0.3s;
+  border-left: 16px solid #e8e8e8;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+}
+
+.swiper-button-prev:after {
+  content: "";
+  left: 42%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  clear: both;
+  opacity: 0;
+  transition: 0.3s;
+  border-right: 16px solid #e8e8e8;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgb(230, 230, 230);
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: rgb(245, 245, 245);
+}
+
+.swiper-category {
+  width: 90%;
+}
+@media (max-width: 768px) {
+  .swiper-category {
+    width: 75%;
+  }
+}
+@media (max-width: 420px) {
+  .swiper-category {
+    width: 100%;
+  }
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+@media (max-width: 420px) {
+  .button-container {
+    display: none;
+  }
+}
+.button-container .filter-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.329);
+  transition: 0.3s;
+  border-radius: 12px;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  min-width: 92px;
+  height: 48px;
+  color: #222;
+  display: flex;
+  align-items: center;
+}
+.button-container .filter-button:hover {
+  border: 1px solid #222;
+}
+
+.item-section .card-container {
+  position: relative;
+}
+.item-section .card-container:hover .swiper-button-prev:after,
+.item-section .card-container:hover .swiper-button-next:after {
+  opacity: 1;
+}
+.item-section .like-btn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: auto;
+  right: 20px;
+  z-index: 2;
+  color: #ff385c;
+  font-size: 24px;
+  cursor: pointer;
+}
+.item-section .img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 20/19;
+  margin-bottom: 12px;
+}
+.item-section .img-box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: bottom;
+}
+.item-section .info-group .info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+}
+.item-section .info-group .info span {
+  display: block;
+  line-height: 19px;
+}
+.item-section .info-group .info span:last-child {
+  position: absolute;
+  left: auto;
+  right: 0;
+}
+.item-section .info-group .info .info-sub {
+  color: #333;
+  font-weight: 200;
+}
+.item-section .info-group .info .item-price {
+  margin-top: 5px;
+}
+
+.map-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  border-radius: 30px;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  background-color: #000;
+  color: #e8e8e8;
+}
+.map-btn > * {
+  font-weight: 600;
+  display: block;
+  margin: 0;
+}
+
+.map-section {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}/*# sourceMappingURL=Index.css.map */
