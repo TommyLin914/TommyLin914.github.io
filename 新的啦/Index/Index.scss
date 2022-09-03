@@ -19,6 +19,9 @@ a {
     @content;
   }
 }
+.full-container{
+  position: relative;
+}
 .container-set {
   position: relative;
   max-width: 1400px;
@@ -139,9 +142,16 @@ a {
     left: auto;
     right: 20px;
     z-index: 2;
-    color: #ff385c;
     font-size: 24px;
     cursor: pointer;
+    color: #fff;
+    transition:color .5s;
+    &:hover{
+      color: #ff708a;
+    }
+    &.like-check{
+      color: #ff385c;
+    }
   }
   .img-box {
     position: relative;
@@ -199,16 +209,24 @@ a {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  position: absolute;
-  width: 150px;
-  height: 60px;
+  position: fixed;
+  width: 125px;
+  height: 45px;
   border-radius: 30px;
   top: auto;
   left: 50%;
   transform: translateX(-50%);
   bottom: 30px;
-  background-color: #000;
+  background-color: #222;
   color: #e8e8e8;
+  z-index: 10;
+  &:hover,&:active{
+    background-color: #e8e8e8;
+  }
+  &:focus{
+    background-color: #222;
+    color: #fff;
+  }
   & > * {
     font-weight: 600;
     display: block;
@@ -221,8 +239,12 @@ a {
   height: 100%;
   width: 100%;
   top: 0;
-  left: 0;
-  z-index: 20;
+  left: -100vw;
+  z-index: 9;
+  transition: .5s ease-in-out;
+  &.show{
+    left: 0;
+  }
 }
 #map {
   height: 100%;

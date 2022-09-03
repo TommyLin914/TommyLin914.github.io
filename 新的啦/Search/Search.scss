@@ -1,0 +1,222 @@
+@import '../_common/commen';
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+a {
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    color: #000;
+  }
+}
+$init-width: 40%;
+
+.container-set {
+  position: relative;
+  padding: 0 20px;
+  width: 50%;
+  @include pad {
+    padding: 20px;
+  }
+  .btn-toggle-area{
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    right: -66px;
+    z-index: 10;
+    background-color: #fff;
+    &.open{
+        transform: rotateZ(180deg);
+    }
+    &.close{
+        transform: rotateZ(0deg);
+    }
+    &:hover{
+        background-color: #e8e8e8;
+        border: 0;
+    }
+    &:active,&:focus{
+        border: 0;
+    }
+  }
+}
+.head-section {
+  display: flex;
+  width: 100%;
+  padding-bottom: 10px;
+  align-items: center;
+  // 篩選按鈕
+  h2 {
+    display: flex;
+    width: auto;
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .result-display {
+    width: 100%;
+  }
+  .button-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    @include phone {
+      display: none;
+    }
+    .filter-button {
+      background-color: transparent;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.329);
+      transition: 0.3s;
+      &:hover {
+        border: 1px solid #222;
+      }
+      border-radius: 12px;
+      margin: 0;
+      appearance: none;
+      min-width: 92px;
+      height: 48px;
+      color: #222;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+//swiper
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 18px;
+}
+.swiper.img-swiper {
+  height: 100%;
+}
+@mixin swiper-button {
+  content: '';
+  left: 42%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  clear: both;
+  opacity: 0;
+  transition: 0.3s;
+}
+.swiper-button-next:after {
+  @include swiper-button;
+  border-left: 16px solid #e8e8e8;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+}
+.swiper-button-prev:after {
+  @include swiper-button;
+  border-right: 16px solid #e8e8e8;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+}
+.swiper-pagination-bullet {
+  background-color: rgb(230, 230, 230);
+  &.swiper-pagination-bullet-active {
+    background-color: rgb(245, 245, 245);
+  }
+}
+
+.item-section {
+  .card-container {
+    position: relative;
+    &:hover {
+      .swiper-button-prev:after,
+      .swiper-button-next:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+.like-btn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: auto;
+  right: 20px;
+  z-index: 2;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  transition:color .5s;
+  &:hover{
+    color: #ff708a;
+  }
+  &.like-check {
+    color: #ff385c;
+  }
+}
+.img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 20/19;
+  margin-bottom: 12px;
+  &.great-owner-marker::after {
+    content: '超讚房東';
+    padding: 3px 5px;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: auto;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+}
+.info-group {
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    span {
+      display: block;
+      line-height: 19px;
+      &:last-child {
+        position: absolute;
+        left: auto;
+        right: 0;
+      }
+    }
+    .info-sub {
+      color: #333;
+      font-weight: 200;
+    }
+    .item-price {
+      margin-top: 5px;
+    }
+  }
+}
+.map-section {
+  position: absolute;
+  height: 100vh;
+  width: 50%;
+  top: 0;
+  right: 0%;
+  z-index: 9;
+  transition: 0.5s ease-in-out;
+  background-color: #888;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}

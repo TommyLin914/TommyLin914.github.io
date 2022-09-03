@@ -277,7 +277,7 @@ img {
   background-color: rgba(0, 0, 0, 0.3);
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: 0;
   top: 0;
@@ -375,6 +375,10 @@ a {
 }
 a:hover {
   color: #000;
+}
+
+.full-container {
+  position: relative;
 }
 
 .container-set {
@@ -512,9 +516,16 @@ a:hover {
   left: auto;
   right: 20px;
   z-index: 2;
-  color: #ff385c;
   font-size: 24px;
   cursor: pointer;
+  color: #fff;
+  transition: color 0.5s;
+}
+.item-section .like-btn:hover {
+  color: #ff708a;
+}
+.item-section .like-btn.like-check {
+  color: #ff385c;
 }
 .item-section .img-box {
   position: relative;
@@ -570,16 +581,24 @@ a:hover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  position: absolute;
-  width: 150px;
-  height: 60px;
+  position: fixed;
+  width: 125px;
+  height: 45px;
   border-radius: 30px;
   top: auto;
   left: 50%;
   transform: translateX(-50%);
   bottom: 30px;
-  background-color: #000;
+  background-color: #222;
   color: #e8e8e8;
+  z-index: 10;
+}
+.map-btn:hover, .map-btn:active {
+  background-color: #e8e8e8;
+}
+.map-btn:focus {
+  background-color: #222;
+  color: #fff;
 }
 .map-btn > * {
   font-weight: 600;
@@ -592,8 +611,12 @@ a:hover {
   height: 100%;
   width: 100%;
   top: 0;
+  left: -100vw;
+  z-index: 9;
+  transition: 0.5s ease-in-out;
+}
+.map-section.show {
   left: 0;
-  z-index: 20;
 }
 
 #map {
