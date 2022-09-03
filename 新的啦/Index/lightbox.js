@@ -1,5 +1,7 @@
 let btnLike = document.querySelectorAll('.like-btn')
-let overlayWish = document.querySelector('.wishlist')
+let overlayGroup = document.querySelectorAll('.lightbox')
+
+
 let lightboxAdd = document.querySelector('.new-wishlist')
 let btnClose = document.querySelectorAll('.btn-close')
 let clickAdd = document.querySelector('.add-new-list')
@@ -12,7 +14,11 @@ function showWishlist(e){
   $('.wishlist').show()
     e.stopPropagation()
 }
-
+overlayGroup.forEach(overlay=>{
+  overlay.onclick = (e)=>{
+      e.target.style.display = 'none'
+  }
+})
 listAll.forEach(list => {
   list.addEventListener('click', () => {
     // AddToWishlist()
@@ -20,11 +26,7 @@ listAll.forEach(list => {
   })
 })
 
-overlayWish.onclick = event => {
-  if ($(event.target).has('.lightbox-container').length) {
-    $('.lightbox').hide()
-  }
-}
+
 btnClose.forEach(item => {
   item.onclick = event => {
     $('.lightbox').hide()

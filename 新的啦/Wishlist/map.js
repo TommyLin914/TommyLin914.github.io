@@ -1,20 +1,30 @@
-let lat = 25
-let lng = 121.5
+let lat = 25.0415942
+let lng = 121.5340941
 let zoom = 8
-var map = L.map('map').setView([lat, lng], zoom)
 let markers = L.markerClusterGroup()
-// set icon
+let map;
+function setMap() {
+  if (map != undefined) {
+    map.remove()
+  }
+  map = L.map('map', {
+    center: [lat, lng],
+    zoom: zoom,
+    zoomControl: false,
+    closePopupOnClick: false
+  })
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '© OpenStreetMap'
+  }).addTo(map)
 
+  L.control
+    .zoom({
+      position: 'topright'
+    })
+    .addTo(map)
 
-const secMap = document.querySelector('.map-section')
-$('.map-btn').click(function () {
-  secMap.classList.toggle('show')
-})
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '© OpenStreetMap'
-}).addTo(map)
+}
 
 //初始化marker
 
@@ -32,6 +42,8 @@ function setMarker() {
   })
   map.addLayer(markers)
 }
-setMarker()
 
-
+window.onload = () => {
+  setMap()
+  setMarker()
+}

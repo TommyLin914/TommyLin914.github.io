@@ -95,3 +95,13 @@
     }
   }
 }
+.lightbox {
+  .lightbox-container {
+    max-width: 600px;
+  }
+  &.filter {
+    .lightbox-container {
+      max-width: 800px;
+    }
+  }
+}

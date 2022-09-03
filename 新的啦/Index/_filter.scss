@@ -70,7 +70,7 @@
     padding: 10px;
     margin-top: 15px;
     border-radius: 10px;
-    border: 1px solid rgba(141, 141, 141, 0.726);
+    border: 1px solid rgba(150, 150, 150, 0.5);
     position: relative;
   }
 }
@@ -147,7 +147,7 @@
   justify-content: space-between;
   .room-type {
     width: 22%;
-    border: 1px solid rgba(153, 153, 153, 0.5);
+    border: 1px solid rgba(150, 150, 150, 0.5);
     border-radius: 10px;
     padding: 10px;
     transition: 0.3s;
@@ -248,5 +248,5 @@
   display: flex;
   padding: 15px;
   justify-content: space-between;
-  border-top: 1px solid rgb(184, 184, 184);
+  border-top: 1px solid rgb(150, 150, 150,.5);
 }

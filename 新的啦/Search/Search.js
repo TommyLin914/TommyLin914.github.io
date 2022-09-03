@@ -6,5 +6,6 @@ btnHide.onclick = () => {
   btnHide.classList.toggle('close')
   containerProducts.classList.toggle('close')
   secMap.classList.toggle('full-width')
-  setMap()
+
+  setTimeout(function(){map.invalidateSize()},500)
 }
