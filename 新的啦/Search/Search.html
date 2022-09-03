@@ -36,7 +36,7 @@
     </header>
     <div class="full-container">
         <div class="container-set">
-            <button class="btn open btn-toggle-area">
+            <button class="btn btn-hide-products">
                 <i class="fa-solid fa-arrow-right-to-bracket"></i>
             </button>
             <section class="head-section">
@@ -63,7 +63,7 @@
                             <i class="fa-solid fa-heart"></i>
                         </div>
                         <a href="">
-                            <div class="great-owner-marker img-box">
+                            <div class="hot-product-marker img-box">
                                 <div class="btn-box">
                                 </div>
                                 <div class="swiper img-swiper">
@@ -83,8 +83,8 @@
                             <div class="info-group">
                                 <p class="info">
                                     <span class="item-loc">Abiansemal、印尼</span>
-                                    <span class="info-sub item-distence">3796公里</span>
-                                    <span class="info-sub item-recent-date">10月21日至26日</span>
+                                    <span class="info-sub item-name">Aura House 2居室生態竹屋、泳池、河景</span>
+                                    <span class="info-sub item-beds">2張床</span>
                                     <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
                                     <span class="item-rate">&#9733;&nbsp;4.87</span>
                                 </p>
@@ -116,8 +116,8 @@
                             <div class="info-group">
                                 <p class="info">
                                     <span class="item-loc">Abiansemal、印尼</span>
-                                    <span class="info-sub item-distence">3796公里</span>
-                                    <span class="info-sub item-recent-date">10月21日至26日</span>
+                                    <span class="info-sub item-name">Aura House 2居室生態竹屋、泳池、河景</span>
+                                    <span class="info-sub item-beds">2張床</span>
                                     <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
                                     <span class="item-rate">&#9733;&nbsp;4.87</span>
                                 </p>
@@ -149,8 +149,8 @@
                             <div class="info-group">
                                 <p class="info">
                                     <span class="item-loc">Abiansemal、印尼</span>
-                                    <span class="info-sub item-distence">3796公里</span>
-                                    <span class="info-sub item-recent-date">10月21日至26日</span>
+                                    <span class="info-sub item-name">Aura House 2居室生態竹屋、泳池、河景</span>
+                                    <span class="info-sub item-beds">2張床</span>
                                     <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
                                     <span class="item-rate">&#9733;&nbsp;4.87</span>
                                 </p>
@@ -182,8 +182,8 @@
                             <div class="info-group">
                                 <p class="info">
                                     <span class="item-loc">Abiansemal、印尼</span>
-                                    <span class="info-sub item-distence">3796公里</span>
-                                    <span class="info-sub item-recent-date">10月21日至26日</span>
+                                    <span class="info-sub item-name">Aura House 2居室生態竹屋、泳池、河景</span>
+                                    <span class="info-sub item-beds">2張床</span>
                                     <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
                                     <span class="item-rate">&#9733;&nbsp;4.87</span>
                                 </p>
@@ -197,6 +197,457 @@
             <div class="map-container" id="map"></div>
         </section>
     </div>
+
+     <!-- lightbox -->
+    <!-- wish list -->
+    <div class="lightbox wishlist" style="display: none;">
+        <div class="lightbox-container">
+            <section class="d-flex title-section">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h2 class="lightbox-title">你的心願單</h2>
+            </section>
+            <section class="wishlist group-section">
+                <div class="per-wishlist add-new-list">
+                    <div class="img-box"><img src="./img/add-icon.webp" alt="add icon"></div>
+                    <p>建立新的心願單</p>
+                </div>
+                <div class="per-wishlist">
+                    <div class="img-box"><img src="./img/wishlist-1.webp" alt="wishlist img"></div>
+                    <p class="wishlist-name">去不起的地方</p>
+                </div>
+                <div class="per-wishlist">
+                    <div class="img-box"><img src="./img/wishlist-2.jpeg" alt="wishlist img"></div>
+                    <p class="wishlist-name">想去的地方</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="lightbox new-wishlist" style="display: none;">
+        <div class="lightbox-container">
+            <section class="d-flex title-section">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h2 class="lightbox-title">為心願單取名</h2>
+            </section>
+            <section class="group-section">
+                <div class="input-container">
+                    <input type="text" placeholder="心願單名稱" class="new-wishlist-input">
+                </div>
+            </section>
+            <section class="button-section">
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-dark btn-create disabled">建立</button>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <!-- filter -->
+    <div class="lightbox filter" style="display: none;">
+        <div class="lightbox-container">
+            <section class="title-section">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h2 class="lightbox-title">篩選條件</h2>
+            </section>
+
+            <section class="body-section">
+                <div class="detail-group">
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">價格範圍</h3>
+                            <p>平均每晚價格為$<span>6,504</span>&nbsp;TWD</p>
+                            <div class="price-slider wrapper">
+                                <div class="slider-track"></div>
+                                <input type="range" min="0" max="100" value="30" id="slider-1">
+                                <input type="range" min="0" max="100" value="70" id="slider-2">
+                            </div>
+                            <div class="price-input-group">
+                                <input type="text" class="min-price" placeholder="最低價格">
+                                <span>-</span>
+                                <input type="text" class="max-price" placeholder="最高價格">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">房源類型</h3>
+                            <div class="checkbox-group room-type">
+                                <div class="checkbox-item">
+                                    <input type="checkbox">
+                                    <label for="whole" class="whole">整個房源</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox">
+                                    <label for="whole" class="shared">合住房間</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox">
+                                    <label for="whole" class="independent">獨立房間</label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">臥室和床舖</h3>
+                            <div class="room-info-group">
+                                <div class="quantity-filter">
+                                    <h4>臥室</h4>
+                                    <div class="button-group room-quantity">
+                                        <button class="btn btn-dark" data-num="any">任何</button>
+                                        <button class="btn btn-outline-secondary" data-num="1">1</button>
+                                        <button class="btn btn-outline-secondary" data-num="2">2</button>
+                                        <button class="btn btn-outline-secondary" data-num="3">3</button>
+                                        <button class="btn btn-outline-secondary" data-num="4">4</button>
+                                        <button class="btn btn-outline-secondary" data-num="5">5</button>
+                                        <button class="btn btn-outline-secondary" data-num="6">6</button>
+                                        <button class="btn btn-outline-secondary" data-num="7">7</button>
+                                        <button class="btn btn-outline-secondary" data-num="8">8+</button>
+                                    </div>
+                                </div>
+                                <div class="quantity-filter">
+                                    <h4>床位</h4>
+                                    <div class="button-group room-quantity">
+                                        <button class="btn btn-dark" data-num="any">任何</button>
+                                        <button class="btn btn-outline-secondary" data-num="1">1</button>
+                                        <button class="btn btn-outline-secondary" data-num="2">2</button>
+                                        <button class="btn btn-outline-secondary" data-num="3">3</button>
+                                        <button class="btn btn-outline-secondary" data-num="4">4</button>
+                                        <button class="btn btn-outline-secondary" data-num="5">5</button>
+                                        <button class="btn btn-outline-secondary" data-num="6">6</button>
+                                        <button class="btn btn-outline-secondary" data-num="7">7</button>
+                                        <button class="btn btn-outline-secondary" data-num="8">8+</button>
+                                    </div>
+                                </div>
+                                <div class="quantity-filter">
+                                    <h4>衛浴</h4>
+                                    <div class="button-group room-quantity">
+                                        <button class="btn btn-dark" data-num="any">任何</button>
+                                        <button class="btn btn-outline-secondary" data-num="1">1</button>
+                                        <button class="btn btn-outline-secondary" data-num="2">2</button>
+                                        <button class="btn btn-outline-secondary" data-num="3">3</button>
+                                        <button class="btn btn-outline-secondary" data-num="4">4</button>
+                                        <button class="btn btn-outline-secondary" data-num="5">5</button>
+                                        <button class="btn btn-outline-secondary" data-num="6">6</button>
+                                        <button class="btn btn-outline-secondary" data-num="7">7</button>
+                                        <button class="btn btn-outline-secondary" data-num="8">8+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">住宿類型</h3>
+                            <div class="room-type-group">
+                                <div class="room-type">
+                                    <div class="img-box">
+                                        <img src="./img/filter-icon/house.jpg" alt="icon">
+                                    </div>
+                                    <span>獨棟房屋</span>
+                                </div>
+                                <div class="room-type">
+                                    <div class="img-box">
+                                        <img src="./img/filter-icon/apartment.jpg" alt="icon">
+                                    </div>
+                                    <span>公寓</span>
+                                </div>
+                                <div class="room-type">
+                                    <div class="img-box">
+                                        <img src="./img/filter-icon/normal.jpg" alt="icon">
+                                    </div>
+                                    <span>客用住房</span>
+                                </div>
+                                <div class="room-type">
+                                    <div class="img-box">
+                                        <img src="./img/filter-icon/hotel.jpg" alt="icon">
+                                    </div>
+                                    <span>飯店</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">設備與服務</h3>
+                            <div class="supply-service">
+                                <div class="service-group">
+                                    <h4>基本設施</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>WiFi</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>廚房</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>洗衣機</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>乾衣機</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>空調設備</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>暖氣</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>專門工作空間</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>電視機</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>吹風機</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>熨斗</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="service-group">
+                                    <h4>設施</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>游泳池</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>按摩浴池</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>建築物內免費停車</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>電動車充電器</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>嬰兒床</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>健身房</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>烤肉區</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>早餐</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>室內壁爐</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>可吸煙</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-group">
+                                    <h4>地點</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>濱海</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>濱水</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-group">
+                                    <h4>安全</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>煙霧警報器</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>一氧化碳警報器</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-link less-info">顯示較少內容</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">預訂選項</h3>
+                            <div class="switch-group room-type">
+                                <div class="form-check form-switch switch-item">
+                                    <label class="order-now">即時預訂</label>
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                                <div class="form-check form-switch switch-item">
+                                    <label class="help-self">自助入住</label>
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">無障礙設施與服務</h3>
+                            <p>此資訊由房東提供，並經過 Airbnb 審查。</p>
+                            <div class="accessibility-service">
+                                <div class="service-group">
+                                    <h4>房客入口和停車位</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>房客入口無台階</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>房客入口寬度超過 81 公分</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>無障礙停車位</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>房客入口通道無台階</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="service-group">
+                                    <h4>臥室</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>臥室通道無台階</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>臥室入口寬度超過 81 公分</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-group">
+                                    <h4>浴室</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>衛浴通道無台階</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>衛浴入口寬度超過 81 公分</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>淋浴間安全扶手</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>馬桶旁安全扶手</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>無台階淋浴間</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>洗澡椅或沐浴椅</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-group">
+                                    <h4>輔具</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>固定式或活動式升降機</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-link less-info">顯示較少內容</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">高級住宿</h3>
+                            <div class="switch-group owner">
+                                <div class="form-check form-switch switch-item">
+                                    <label class="great-owner">超讚房東</label>
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                                <div class="form-check form-switch switch-item">
+                                    <label class="plus">Airbnb Plus</label>
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="filter group-section">
+                        <div class="detail-filter">
+                            <h3 class="filter-title">房東語言</h3>
+                            <div class="language-service">
+                                <div class="service-group">
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>英語</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>日語</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>中文</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox">
+                                            <label>韓語</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-link less-info">顯示較少內容</button>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </section>
+
+            <section class="footer-section">
+                <button class="btn btn-link clear-info">清除全部</button>
+                <button class="btn btn-dark">顯示超過&nbsp;<span>1000</span>&nbsp;間房源</button>
+            </section>
+        </div>
+    </div>
+    <!-- lightbox end -->
 
     <footer>
         <!-- 待生成 -->
@@ -216,6 +667,9 @@
         crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="./map.js"></script>
+    <script src="../Index/wish_list.js"></script>
+    <script src="../Index/filter.js"></script>
+    <script src="./Search.js"></script>
     <script>
         var swiper = new Swiper(".img-swiper", {
             loop: true,

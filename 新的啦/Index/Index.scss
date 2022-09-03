@@ -1,4 +1,4 @@
-@import '../_common/commen';
+@import '../_common/common';
 @import 'filter';
 @import 'light_box';
 a {
@@ -188,6 +188,7 @@ a {
       span {
         display: block;
         line-height: 19px;
+        font-weight: 600;
         &:last-child {
           position: absolute;
           left: auto;

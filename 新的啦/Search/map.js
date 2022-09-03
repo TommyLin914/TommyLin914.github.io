@@ -2,23 +2,30 @@ let lat = 25.0415942
 let lng = 121.5340941
 let zoom = 9
 let markers = L.markerClusterGroup()
-
-var map = L.map('map', {
-  center: [lat, lng],
-  zoom: 10,
-  zoomControl: false
-});
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 13,
-  attribution: '© OpenStreetMap'
-}).addTo(map)
-
-L.control
-  .zoom({
-    position: 'topright'
+let map;
+function setMap() {
+  console.log('initial once');
+  if (map != undefined) {
+    map.remove()
+  }
+  map = L.map('map', {
+    center: [lat, lng],
+    zoom: 10,
+    zoomControl: false,
+    closePopupOnClick: false
   })
-  .addTo(map)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 13,
+    attribution: '© OpenStreetMap'
+  }).addTo(map)
+
+  L.control
+    .zoom({
+      position: 'topright'
+    })
+    .addTo(map)
+
+}
 
 //初始化marker
 
@@ -30,12 +37,14 @@ let locGroup = [
 
 function setMarker() {
   // 建立marker
-  locGroup.forEach(item => { 
-    let popup = L.popup().setLatLng([item.lat, item.lng]).setContent(`\$${item.price}&nbsp;TWD`).openOn(map)
+  locGroup.forEach(item => {
+    let popup = L.popup().setLatLng([item.lat, item.lng]).setContent(`<a href="profile.html" class="product-link">\$${item.price}&nbsp;TWD</a>`).openOn(map)
     markers.addLayer(popup)
   })
   map.addLayer(markers)
 }
+
 window.onload = () => {
+  setMap()
   setMarker()
 }

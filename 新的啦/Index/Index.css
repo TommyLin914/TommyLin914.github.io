@@ -563,6 +563,7 @@ a:hover {
 .item-section .info-group .info span {
   display: block;
   line-height: 19px;
+  font-weight: 600;
 }
 .item-section .info-group .info span:last-child {
   position: absolute;

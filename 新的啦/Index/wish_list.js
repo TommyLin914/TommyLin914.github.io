@@ -7,18 +7,10 @@ let listAll = document.querySelectorAll('.per-wishlist')
 const aaa = document.querySelector('.card-container')
 btnLike.forEach(btn => {
   btn.addEventListener('click',showWishlist.bind(event))
-  // btn.onclick = event => {
-  //   $('.wishlist').show()
-  //   event.stopPropagation()
-  // }
 })
 function showWishlist(e){
   $('.wishlist').show()
     e.stopPropagation()
-    console.log('btn');
-}
-aaa.onclick = (e)=>{
-  console.log('aaa');
 }
 
 listAll.forEach(list => {
