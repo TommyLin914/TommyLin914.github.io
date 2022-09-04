@@ -3,13 +3,19 @@ let lng = 121.5
 let zoom = 8
 var map = L.map('map').setView([lat, lng], zoom)
 let markers = L.markerClusterGroup()
-// set icon
-
 
 const secMap = document.querySelector('.map-section')
-$('.map-btn').click(function () {
+$('.btn-map').click(function () {
   secMap.classList.toggle('show')
+  if (secMap.classList.contains('show')) {
+    $('.btn-map').html(`<p>顯示列表</p>
+                        <i class="fa-regular fa-map"></i>`)
+  } else {
+    $('.btn-map').html(`<p>顯示地圖</p>
+                        <i class="fa-solid fa-list-ul"></i>`)
+  }
 })
+window.onresize = () => map.invalidateSize
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
@@ -33,5 +39,3 @@ function setMarker() {
   map.addLayer(markers)
 }
 setMarker()
-
-

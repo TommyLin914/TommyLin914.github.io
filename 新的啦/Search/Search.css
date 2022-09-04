@@ -24,6 +24,14 @@ img {
   color: #717171;
 }
 
+@media (max-width: 500px) {
+  .detail-group .group-section {
+    padding: 10px 0;
+  }
+  .detail-group .group-section .detail-filter {
+    padding: 0;
+  }
+}
 .detail-group > section.group-section:last-child {
   border-bottom: 0;
 }
@@ -31,11 +39,26 @@ img {
 .lightbox.filter .lightbox-container {
   overflow: hidden;
 }
+@media (max-width: 500px) {
+  .lightbox.filter .lightbox-container {
+    width: 100%;
+    bottom: 0;
+    transform: unset;
+    left: 0;
+    top: auto;
+  }
+}
 
 .body-section {
   overflow-y: auto;
   height: 535px;
   padding: 20px;
+}
+@media (max-width: 768px) {
+  .body-section {
+    height: 80%;
+    max-height: 650px;
+  }
 }
 
 .group-section {
@@ -101,6 +124,11 @@ img {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 768px) {
+  .checkbox-group {
+    display: block;
+  }
+}
 .checkbox-group .checkbox-item {
   width: 48%;
   height: 45px;
@@ -108,6 +136,11 @@ img {
   margin: 5px;
   display: flex;
   align-items: center;
+}
+@media (max-width: 768px) {
+  .checkbox-group .checkbox-item {
+    width: 100%;
+  }
 }
 .checkbox-group .checkbox-item input[type=checkbox] {
   height: 20px;
@@ -159,6 +192,11 @@ img {
 .quantity-filter .button-group .btn {
   padding: 10px 20px;
   border-radius: 25px;
+}
+@media (max-width: 768px) {
+  .quantity-filter .button-group .btn {
+    padding: 6px 12px;
+  }
 }
 
 .room-type-group {
@@ -400,39 +438,54 @@ a:hover {
   color: #000;
 }
 
+.full-container {
+  position: relative;
+}
+
 .container-set {
   position: relative;
   padding: 0 20px;
   width: 50%;
   left: 0;
   transition: 0.5s;
+  height: 100vh;
+  overflow-y: scroll;
+}
+@media (max-width: 768px) {
+  .container-set {
+    width: 100%;
+    padding: unset;
+  }
 }
 .container-set.close {
   left: -50%;
 }
-@media (max-width: 768px) {
-  .container-set {
-    padding: 20px;
-  }
-}
-.container-set .btn-hide-products {
+
+.btn-hide-products {
   width: 48px;
   height: 48px;
   position: absolute;
-  top: 0;
-  right: -66px;
+  top: 15px;
+  left: 15px;
   z-index: 10;
   background-color: #fff;
   transform: rotateZ(180deg);
+  display: block;
 }
-.container-set .btn-hide-products.close {
+@media (max-width: 768px) {
+  .btn-hide-products {
+    display: none;
+  }
+}
+.btn-hide-products.close {
   transform: rotateZ(0deg);
 }
-.container-set .btn-hide-products:hover {
+.btn-hide-products:hover {
   background-color: #e8e8e8;
   border: 0;
 }
-.container-set .btn-hide-products:active, .container-set .btn-hide-products:focus {
+.btn-hide-products:active, .btn-hide-products:focus {
+  background-color: #fff;
   border: 0;
 }
 
@@ -503,6 +556,11 @@ a:hover {
   border-top: 16px solid transparent;
   border-bottom: 16px solid transparent;
 }
+@media (max-width: 768px) {
+  .swiper-button-next:after {
+    opacity: 1;
+  }
+}
 
 .swiper-button-prev:after {
   content: "";
@@ -517,6 +575,11 @@ a:hover {
   border-top: 16px solid transparent;
   border-bottom: 16px solid transparent;
 }
+@media (max-width: 768px) {
+  .swiper-button-prev:after {
+    opacity: 1;
+  }
+}
 
 .swiper-pagination-bullet {
   background-color: rgb(230, 230, 230);
@@ -525,6 +588,36 @@ a:hover {
   background-color: rgb(245, 245, 245);
 }
 
+.item-section {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+}
+.item-section .pull-icon {
+  width: 50px;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 4px solid #777;
+  display: none;
+}
+@media (max-width: 768px) {
+  .item-section .pull-icon {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .item-section {
+    top: 80%;
+    width: 100%;
+    z-index: 10;
+    padding: 0 20px;
+    padding-top: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+}
 .item-section .card-container {
   position: relative;
 }
@@ -622,14 +715,20 @@ a:hover {
 }
 
 .map-section {
-  position: fixed;
-  height: 100vh;
+  position: absolute;
+  height: 100%;
   width: 50%;
   top: 0;
   right: 0%;
   z-index: 9;
   transition: 0.5s ease-in-out;
   background-color: #888;
+}
+@media (max-width: 768px) {
+  .map-section {
+    width: 100%;
+    z-index: 2;
+  }
 }
 .map-section.full-width {
   width: 100%;
@@ -638,4 +737,5 @@ a:hover {
 #map {
   width: 100%;
   height: 100%;
+  z-index: -1;
 }/*# sourceMappingURL=Search.css.map */

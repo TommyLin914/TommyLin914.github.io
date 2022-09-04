@@ -1,3 +1,13 @@
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
 .detail-filter {
   padding: 15px;
   .filter-title {
@@ -9,6 +19,14 @@
   }
 }
 .detail-group {
+  @include phone(){
+    .group-section{
+      padding: 10px 0;
+      .detail-filter{
+        padding: 0;
+      }
+    }
+  }
   & > section.group-section:last-child {
     border-bottom: 0;
   }
@@ -16,6 +34,13 @@
 .lightbox.filter {
   .lightbox-container {
     overflow: hidden;
+    @include phone(){
+      width: 100%;
+      bottom: 0;
+      transform: unset;
+      left: 0;
+      top: auto;
+    }
   }
 }
 
@@ -23,6 +48,10 @@
   overflow-y: auto;
   height: 535px;
   padding: 20px;
+  @include pad(){
+    height: 80%;
+    max-height: 650px;
+  }
 }
 .group-section {
   padding: 0;
@@ -81,6 +110,9 @@
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;
+  @include pad{
+    display: block;
+  }
 
   .checkbox-item {
     width: 48%;
@@ -89,6 +121,9 @@
     margin: 5px;
     display: flex;
     align-items: center;
+    @include pad{
+      width: 100%;
+    }
     input[type='checkbox'] {
       height: 20px;
       width: 20px;
@@ -139,6 +174,9 @@
     .btn {
       padding: 10px 20px;
       border-radius: 25px;
+      @include pad{
+       padding: 6px 12px;
+      }
     }
   }
 }

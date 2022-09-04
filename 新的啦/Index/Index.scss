@@ -1,6 +1,7 @@
 @import '../_common/common';
 @import 'filter';
 @import 'light_box';
+@import '../_common/map_custom';
 a {
   text-decoration: none;
   color: #000;
@@ -206,7 +207,7 @@ a {
   }
 }
 
-.map-btn {
+.btn-map {
   display: flex;
   justify-content: space-evenly;
   align-items: center;

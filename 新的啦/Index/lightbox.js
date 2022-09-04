@@ -16,7 +16,9 @@ function showWishlist(e){
 }
 overlayGroup.forEach(overlay=>{
   overlay.onclick = (e)=>{
-      e.target.style.display = 'none'
+    if ($(e.target).has('.lightbox-container').length) {
+      $('.lightbox').hide()
+    }
   }
 })
 listAll.forEach(list => {
@@ -56,5 +58,6 @@ lightboxAdd.onclick = event => {
 }
 btnCreate.addEventListener('click', function () {
   // CreateNewWishlist()
+  input.value = ''
   $('.lightbox').hide()
 })

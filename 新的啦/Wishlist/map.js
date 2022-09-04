@@ -28,7 +28,7 @@ function setMap() {
 
 //初始化marker
 
-let locGroup = [
+let testLoc = [
   { lat: 25.0367219, lng: 121.5600938, price: 5000, url: '../Profile/Profile.html' },
   { lat: 24.0367219, lng: 120.5600938, price: 4000, url: '../Profile/Profile.html' },
   { lat: 23.0367219, lng: 121, price: 3000, url: '../Profile/Profile.html' }
@@ -36,7 +36,7 @@ let locGroup = [
 
 function setMarker() {
   // 建立marker
-  locGroup.forEach(item => {
+  testLoc.forEach(item => {
     let popup = L.popup().setLatLng([item.lat, item.lng]).setContent(`<a href="${item.url}" class="product-link">\$${item.price}&nbsp;TWD</a>`).openOn(map)
     markers.addLayer(popup)
   })

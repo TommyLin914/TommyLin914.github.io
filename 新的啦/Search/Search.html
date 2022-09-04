@@ -36,9 +36,7 @@
     </header>
     <div class="full-container">
         <div class="container-set">
-            <button class="btn btn-hide-products">
-                <i class="fa-solid fa-arrow-right-to-bracket"></i>
-            </button>
+         
             <section class="head-section">
                 <div class="result-display">
                     <h2><span class="result">{941}</span>間住宿</h2>
@@ -57,8 +55,9 @@
                 </div>
             </section>
             <section class="item-section">
+                <div class="pull-icon" ></div>
                 <div class="card-group row">
-                    <div class="col-md-6 col-sm-12 card-container">
+                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 card-container">
                         <div class="like-btn like-check">
                             <i class="fa-solid fa-heart"></i>
                         </div>
@@ -91,7 +90,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-sm-12 card-container">
+                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 card-container">
                         <div class="like-btn">
                             <i class="fa-solid fa-heart"></i>
                         </div>
@@ -124,7 +123,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-sm-12 card-container">
+                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 card-container">
                         <div class="like-btn like-check">
                             <i class="fa-solid fa-heart"></i>
                         </div>
@@ -157,7 +156,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-sm-12 card-container">
+                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 card-container">
                         <div class="like-btn like-check">
                             <i class="fa-solid fa-heart"></i>
                         </div>
@@ -194,11 +193,14 @@
             </section>
         </div>
         <section class="map-section">
+            <button class="btn btn-hide-products">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </button>
             <div class="map-container" id="map"></div>
         </section>
     </div>
 
-     <!-- lightbox -->
+    <!-- lightbox -->
     <!-- wish list -->
     <div class="lightbox wishlist" style="display: none;">
         <div class="lightbox-container">
@@ -257,7 +259,7 @@
                             <h3 class="filter-title">價格範圍</h3>
                             <p>平均每晚價格為$<span>6,504</span>&nbsp;TWD</p>
                             <div class="price-slider wrapper">
-                                <div class="slider-track"></div>
+                                <div class="slider-track" style="background:unset"></div>
                                 <input type="range" min="0" max="100" value="30" id="slider-1">
                                 <input type="range" min="0" max="100" value="70" id="slider-2">
                             </div>
