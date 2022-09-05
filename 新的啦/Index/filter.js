@@ -5,7 +5,7 @@ overlayFilter.onclick = event => {
   if ($(event.target).has('.lightbox-container').length) {
     $('.lightbox').hide()
   }
-  document.body.style.overflow = 'auto'
+  document.body.style.overflow = 'overlay'
 }
 btnFilter.onclick = () => {
   $('.filter').show()

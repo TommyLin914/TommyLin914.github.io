@@ -10,22 +10,18 @@
     <!-- google-font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <!-- CSS Reset-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <!-- Font Icon-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <!-- Bootstrap5-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <!-- leaflet map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="Index.css">
@@ -33,7 +29,64 @@
 
 <body>
     <header>
-        <!-- 待生成 -->
+        <div class="container header-wrap">
+            <div class="logo">LOGO</div>
+            <i onclick="toggleMenu()" class=" toggle-bar fa-solid fa-bars"></i>
+            <!-- search bar -->
+            <div class="main">
+                <div class="btn-group">
+                    <button class="btn location-btn"><span class="r-line">任何地方</span></button>
+                    <button class="btn date-btn"><span class="r-line">任1週</span></button>
+                    <button class="btn traveler-btn"><span class="info-sub">新增人數</span>
+                    </button>
+                    <button class=" btn search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </div>
+            </div>
+            <div class="toggle-menu d-md-flex align-items-md-center justify-content-md-between">
+
+
+                <ul class="aside d-md-flex menu">
+                    <li><a href="javascript:;">切換至出租模式</a></li>
+                    <li><i class="fa-solid fa-earth-asia"></i></li>
+                    <li class="dropdownbox"><i class="fa-solid fa-chevron-down"></i>User
+                        <ul>
+                            <li><a href="javascript:;">訊息</a></li>
+                            <li><a href="javascript:;">通知</a></li>
+                            <li><a href="javascript:;">旅程</a></li>
+                            <li><a href="javascript:;">心願單</a></li>
+                            <li><a href="javascript:;">管理房源</a></li>
+                            <li><a href="javascript:;">舉辦體驗</a></li>
+                            <li><a href="javascript:;">推薦新房東</a></li>
+                            <li><a href="javascript:;">帳號</a></li>
+                            <li><a href="javascript:;">協助</a></li>
+                            <li><a href="javascript:;">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- large search bar -->
+        <div class="d-flex px-5 searchbar-container">
+            <div class="r-line search-box loc-box">
+                <h2 class="location">地點</h2>
+                <input type="search" placeholder="搜尋目的地">
+            </div>
+            <div class="r-line search-box date-box searchbar-checkin">
+                <h2 class="checkin">入住</h2>
+                <p class="info-sub checkin-date">新增日期</p>
+            </div>
+            <div class="r-line search-box date-box searchbar-checkout">
+                <h2 class="checkout">退房</h2>
+                <p class="info-sub checkout-date">新增日期</p>
+            </div>
+            <div class="search-box traveler-box searchbar-checkout">
+                <h2 class="checkout">退房</h2>
+                <p class="info-sub checkout-date">新增日期</p>
+            </div>
+        </div>
     </header>
 
     <div class="container-set">
@@ -45,8 +98,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -55,8 +107,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -64,8 +115,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -73,8 +123,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -82,8 +131,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -91,8 +139,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -100,8 +147,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -109,8 +155,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -118,8 +163,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -127,8 +171,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -136,8 +179,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -145,8 +187,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -154,8 +195,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -163,8 +203,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -172,8 +211,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -181,8 +219,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -190,8 +227,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -199,8 +235,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -208,8 +243,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -217,8 +251,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -226,8 +259,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -235,8 +267,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -244,8 +275,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -253,8 +283,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -262,8 +291,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -271,8 +299,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -280,8 +307,7 @@
                         <div class="swiper-slide">
                             <button class="btn category-btn">
                                 <div class="category-content">
-                                    <div class="icon-container"><img src="./img/house.png" alt="category icon"
-                                            class="category-icon"></div>
+                                    <div class="icon-container"><img src="./img/house.png" alt="category icon" class="category-icon"></div>
                                     <p>台灣民宿</p>
                                 </div>
                             </button>
@@ -293,11 +319,8 @@
             </div>
             <div class="button-container">
                 <button type="button" class="filter-button">
-                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
-                        style="display:block;height:14px;width:14px;fill:currentColor" aria-hidden="true"
-                        role="presentation" focusable="false">
-                        <path
-                            d="M5 8c1.306 0 2.418.835 2.83 2H14v2H7.829A3.001 3.001 0 1 1 5 8zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6-8a3 3 0 1 1-2.829 4H2V4h6.17A3.001 3.001 0 0 1 11 2zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="display:block;height:14px;width:14px;fill:currentColor" aria-hidden="true" role="presentation" focusable="false">
+                        <path d="M5 8c1.306 0 2.418.835 2.83 2H14v2H7.829A3.001 3.001 0 1 1 5 8zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6-8a3 3 0 1 1-2.829 4H2V4h6.17A3.001 3.001 0 0 1 11 2zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z">
                         </path>
                     </svg>
                     <span class="filter-span">篩選條件</span>
@@ -498,20 +521,44 @@
                     </div>
                 </div>
             </section>
-           
+
         </div>
-         <section class="map-section">
-                <div class="map-container" id="map"></div>
-            </section>
+        <button class="btn btn-map">
+            <p>顯示地圖</p>
+            <i class="fa-regular fa-map"></i>
+        </button>
+        <section class="map-section">
+            <div class="map-container" id="map"></div>
+        </section>
     </div>
-    
-    
-    <button class="btn btn-map">
-        <p>顯示地圖</p>
-        <i class="fa-regular fa-map"></i>
-    </button>
 
 
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom d-md-flex justify-content-md-between align-items-center">
+                <div class="d-flex align-items-center bfa">
+                    <p class="m-0"><i class="fa-regular fa-copyright"></i>2022 Airbnb, Inc</p>
+                    <a href="javascript:;">隱私</a>
+                    <a href="javascript:;">相關條款</a>
+                    <a href="javascript:;">網站地圖</a>
+                </div>
+                <div class="d-flex">
+                    <div class="d-flex">
+                        <p class="m-0"><i class="fa-solid fa-earth-asia"></i>繁體中文 (TW)</p>
+                        <p class="m-0"><i class="fa-solid fa-dollar-sign"></i>TWD</p>
+                    </div>
+                    <div class="social d-flex">
+                        <i class="fa-brands fa-square-twitter"></i>
+                        <i class="fa-brands fa-line"></i>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i class="fa-brands fa-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- lightbox -->
     <!-- wish list -->
     <div class="lightbox wishlist" style="display: none;">
@@ -964,27 +1011,19 @@
     <!-- lightbox end -->
 
 
-    <footer>
-        <!-- 待生成 -->
-    </footer>
+
 
     <!-- 放在body結尾 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- leaflet -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="./lightbox.js"></script>
     <script src="./filter.js"></script>
-<script src="./map.js"></script>
+    <script src="./map.js"></script>
     <script>
         //swiper JS
         var swiper1 = new Swiper(".cate-swiper", {
@@ -1026,7 +1065,13 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-
+        // header
+        function toggleMenu() {
+            console.log(111);
+            document.querySelectorAll(".toggle-menu").forEach((e) => {
+                e.classList.toggle("toggle-menu-active");
+            });
+        }
     </script>
 </body>
 

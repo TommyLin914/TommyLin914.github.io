@@ -9,10 +9,10 @@ $('.btn-map').click(function () {
   secMap.classList.toggle('show')
   if (secMap.classList.contains('show')) {
     $('.btn-map').html(`<p>顯示列表</p>
-                        <i class="fa-regular fa-map"></i>`)
+                        <i class="fa-regular fa-list-ul"></i>`)
   } else {
     $('.btn-map').html(`<p>顯示地圖</p>
-                        <i class="fa-solid fa-list-ul"></i>`)
+                        <i class="fa-solid fa-map"></i>`)
   }
 })
 window.onresize = () => map.invalidateSize
