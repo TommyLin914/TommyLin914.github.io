@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 負責頁面-->
+    <title>Document</title>
+    <!-- google-font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- CSS Reset-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- Font Icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Bootstrap5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Index/Index.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header-wrap">
+            <div class="logo-wrap"><a class="logo" src="../Index/Index.html"><img src="../_common/airdnd_logo.png" alt=""></a></div>
+
+            <!-- search bar -->
+            <div class="main search-bar" onclick="openSearchBar()">
+                <div class="btn-group">
+                    <button class="btn location-btn" onclick="searchLoc()"><span class="r-line">任何地方</span></button>
+                    <button class="btn date-btn" onclick="searchDate()"><span class="r-line">任1週</span></button>
+                    <button class="btn traveler-btn" onclick="searchTraveler()"><span class="info-sub">新增人數</span>
+                    </button>
+                    <button class=" btn search-btn" onclick="searchLoc()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md-btn-container">
+                <button class=" btn search-btn">
+                    <i class="fa-solid fa-magnifying-glass" onclick="openSearchBar()">搜尋</i>
+                </button>
+            </div>
+            <i onclick="toggleMenu()" class=" toggle-bar fa-solid fa-bars"></i>
+            <div class="toggle-menu d-md-flex align-items-md-center justify-content-md-between">
+
+
+                <ul class="aside d-md-flex menu">
+                    <li><a href="javascript:;">切換至出租模式</a></li>
+                    <li><i class="fa-solid fa-earth-asia"></i></li>
+                    <li class="dropdownbox"><i class="fa-solid fa-chevron-down"></i>User
+                        <ul>
+                            <li><a href="javascript:;">訊息</a></li>
+                            <li><a href="javascript:;">通知</a></li>
+                            <li><a href="javascript:;">旅程</a></li>
+                            <li><a href="javascript:;">心願單</a></li>
+                            <li><a href="javascript:;">管理房源</a></li>
+                            <li><a href="javascript:;">舉辦體驗</a></li>
+                            <li><a href="javascript:;">推薦新房東</a></li>
+                            <li><a href="javascript:;">帳號</a></li>
+                            <li><a href="javascript:;">協助</a></li>
+                            <li><a href="javascript:;">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- large search bar -->
+        <div class="d-flex before search-bar-container">
+            <div class="r-line search-box loc-box" onclick="searchLoc()">
+                <h2 class="location">想去哪</h2>
+                <input type="search" placeholder="搜尋目的地">
+            </div>
+            <div class="r-line search-box date-box searchbar-checkin" onclick="searchDate()">
+                <h2 class="checkin">入住</h2>
+                <p class="info-sub checkin-date">新增日期</p>
+            </div>
+            <div class="r-line search-box date-box searchbar-checkout" onclick="searchDate()">
+                <h2 class="checkout">退房</h2>
+                <p class="info-sub checkout-date">新增日期</p>
+            </div>
+            <div class="search-box traveler-box searchbar-traveler" onclick="searchTraveler()">
+                <h2 class="checkout">旅客</h2>
+                <p class="info-sub checkout-date">新增人數</p>
+            </div>
+            <button class=" btn search-btn">
+                <a href="../Search/Search.html"><i class="fa-solid fa-magnifying-glass">搜尋</i></a>
+            </button>
+        </div>
+    </header>
+      <!-- search - loc -->
+      <div class="lightbox search-bar-floatbox loc" style="display: none;">
+        <div class=" area d-flex location-area">
+            <div class="recent-container">
+                <div class="title-box">
+                    <h3>近期搜尋紀錄</h3>
+                </div>
+                <div class="search-record-box">
+                    <div class="per-record-box">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <div class="info-box">
+                            <h4 class="loc-info">
+                                <span class="loc">台北</span>。住宿
+                            </h4>
+                            <p class="date-info">
+                                <span class="date-start">9月31日</span>
+                                <span class="date-end">10月2日</span>。
+                                <span class="guest">2位</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="per-record-box">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <div class="info-box">
+                            <h4 class="loc-info">
+                                <span class="loc">台北</span>。住宿
+                            </h4>
+                            <p class="date-info">
+                                <span class="date-start">9月31日</span>
+                                <span class="date-end">10月2日</span>。
+                                <span class="guest">2位</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="region-container">
+                <div class="title-box">
+                    <h3>按地區搜尋</h3>
+                </div>
+                <div class="d-flex row region-box-group">
+                    <div class="col-md-4 region-box">
+                        <div class="img-box">
+                            <img src="./img/world.jpg" alt="隨心所欲">
+                        </div>
+                        <div class="title-box">
+                            <h3 class="region-title">隨心所欲</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 region-box">
+                        <div class="img-box">
+                            <img src="./img/EU.webp" alt="歐洲">
+                        </div>
+                        <div class="title-box">
+                            <h3 class="region-title">歐洲</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 region-box">
+                        <div class="img-box">
+                            <img src="./img/Fr.webp" alt="法國">
+                        </div>
+                        <div class="title-box">
+                            <h3 class="region-title">法國</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 region-box">
+                        <div class="img-box">
+                            <img src="./img/US.webp" alt="美國">
+                        </div>
+                        <div class="title-box">
+                            <h3 class="region-title">美國</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 region-box">
+                        <div class="img-box">
+                            <img src="./img/UK.webp" alt="英國">
+                        </div>
+                        <div class="title-box">
+                            <h3 class="region-title">英國</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 region-box">
+                        <div class="img-box">
+                            <img src="./img/SEA.webp" alt="東南亞">
+                        </div>
+                        <div class="title-box">
+                            <h3 class="region-title">東南亞</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- search date -->
+    <div class="lightbox search-bar-floatbox calendar" style="display: none;">
+        <div class="area calendar-area" id="calendar">
+            <div class="d-flex body-container">
+                <section class="left-month">
+                    <div class="calendar-container">
+                        <div class="header">
+                            <i class="fa-solid fa-chevron-left last-month-btn"></i>
+                            <h3 class="left-month-display">{2022}年{9}月</h3>
+                            <i class="fa-solid fa-chevron-right md-next next-month-btn"></i>
+                        </div>
+                        <div class="wrapper">
+                            <!---->
+                            <table class="table-date">
+                                <thead>
+                                    <tr class="row-day">
+                                        <th class="day">日</th>
+                                        <th class="day">一</th>
+                                        <th class="day">二</th>
+                                        <th class="day">三</th>
+                                        <th class="day">四</th>
+                                        <th class="day">五</th>
+                                        <th class="day">六</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="row row-date">
+                                        <!---->
+                                        <td> </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">1</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">2</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">3</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">4</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">5</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">6</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date unselectable">
+                                            <div class="date-num">7</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">8</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">9</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">10</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">11</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">12</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">13</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date unselectable">
+                                            <div class="date-num">14</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">15</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">16</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">17</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">18</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">19</div>
+                                        </td>
+                                        <td class="date selectable today">
+                                            <div class="date-num">20</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date selectable">
+                                            <div class="date-num">21</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">22</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">23</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">24</div>
+                                        </td>
+                                        <td class="date selectable selected">
+                                            <div class="date-num">25</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">26</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">27</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date selectable">
+                                            <div class="date-num">28</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">29</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">30</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">30</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+                <section class="right-month">
+                    <div class="calendar-container">
+                        <div class="header">
+                            <i class="fa-solid fa-chevron-right next-month-btn"></i>
+                            <h3 class="right-month-display">{2022}年{10}月</h3>
+                        </div>
+                        <div class="wrapper">
+                            <!---->
+                            <table class="table-date">
+                                <thead>
+                                    <tr class="row-day">
+                                        <th class="day">日</th>
+                                        <th class="day">一</th>
+                                        <th class="day">二</th>
+                                        <th class="day">三</th>
+                                        <th class="day">四</th>
+                                        <th class="day">五</th>
+                                        <th class="day">六</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="row row-date">
+                                        <!---->
+                                        <td> </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">1</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">2</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">3</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">4</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">5</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">6</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date unselectable">
+                                            <div class="date-num">7</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">8</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">9</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">10</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">11</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">12</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">13</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date unselectable">
+                                            <div class="date-num">14</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">15</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">16</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">17</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">18</div>
+                                        </td>
+                                        <td class="date unselectable">
+                                            <div class="date-num">19</div>
+                                        </td>
+                                        <td class="date selectable today">
+                                            <div class="date-num">20</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date selectable">
+                                            <div class="date-num">21</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">22</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">23</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">24</div>
+                                        </td>
+                                        <td class="date selectable selected">
+                                            <div class="date-num">25</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">26</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">27</div>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                    <tr class="row row-date">
+                                        <td class="date selectable">
+                                            <div class="date-num">28</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">29</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">30</div>
+                                        </td>
+                                        <td class="date selectable">
+                                            <div class="date-num">30</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- search traveler -->
+    <div class="lightbox search-bar-floatbox traveler" style="display:none;" ">
+        <div class=" area traveler-area">
+        <section class="counting-section adult-group">
+            <div class="info-box">
+                <h3 class="name">成人</h3>
+                <p class="info-sub">滿13歲</p>
+            </div>
+            <div class="function-box">
+                <button class="btn disabled minus">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <div class="display-counter">0</div>
+                <button class="btn minus">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+        </section>
+        <section class="counting-section child-group">
+            <div class="info-box">
+                <h3 class="name">兒童</h3>
+                <p class="info-sub">2-12歲</p>
+            </div>
+            <div class="function-box">
+                <button class="btn disabled minus">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <div class="display-counter">0</div>
+                <button class="btn minus">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+        </section>
+        <section class="counting-section adult-group">
+            <div class="info-box">
+                <h3 class="name">嬰幼兒</h3>
+                <p class="info-sub">2歲以下</p>
+            </div>
+            <div class="function-box">
+                <button class="btn disabled minus">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <div class="display-counter">0</div>
+                <button class="btn minus">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+        </section>
+        <section class="counting-section adult-group">
+            <div class="info-box">
+                <h3 class="name">寵物</h3>
+                <p class="info-sub">不含服務性動物</p>
+            </div>
+            <div class="function-box">
+                <button class="btn disabled minus">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <div class="display-counter">0</div>
+                <button class="btn minus">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+        </section>
+
+
+    </div>
+    </div>
+    <!-- 放在body結尾 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+     <!-- jquery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./_SearchBar.js"></script>
+    
+</body>
+
+</html>

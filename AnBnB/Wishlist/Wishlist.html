@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 負責頁面-->
+    <title>心願單</title>
+    <!-- google-font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS Reset-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- Font Icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Bootstrap5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- leaflet map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="../_common/layout.css">
+    <link rel="stylesheet" href="./Wishlist.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container header-wrap">
+            <div class="logo-wrap"><a class="logo" src="../Index/Index.html"><img src="../_common/airdnd_logo.png" alt=""></a></div>
+            <i onclick="toggleMenu()" class=" toggle-bar fa-solid fa-bars"></i>
+            <div class="toggle-menu d-md-flex align-items-md-center justify-content-md-between">
+                <div class="main"></div>
+                <ul class="aside d-md-flex menu">
+                    <li><a href="javascript:;">切換至出租模式</a></li>
+                    <li><i class="fa-solid fa-earth-asia"></i></li>
+                    <li class="dropdownbox"><i class="fa-solid fa-chevron-down"></i>User
+                        <ul>
+                            <li><a href="javascript:;">訊息</a></li>
+                            <li><a href="javascript:;">通知</a></li>
+                            <li><a href="javascript:;">旅程</a></li>
+                            <li><a href="javascript:;">心願單</a></li>
+                            <li><a href="javascript:;">管理房源</a></li>
+                            <li><a href="javascript:;">舉辦體驗</a></li>
+                            <li><a href="javascript:;">推薦新房東</a></li>
+                            <li><a href="javascript:;">帳號</a></li>
+                            <li><a href="javascript:;">協助</a></li>
+                            <li><a href="javascript:;">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="full-container">
+        <div class="container-set">
+            <section class="head-section">
+                <h1 class="wishlist-name">去不起的地方</h1>
+                <div class="btn-container btn-set-wishlist">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+            </section>
+            <section class="item-section">
+                <div class="card-group row">
+                    <div class="col-12 card-container">
+                        <div class="like-btn like-check">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <a href="" class="card-contain">
+                            <div class="hot-product-marker img-box">
+                                <div class="btn-box">
+                                </div>
+                                <div class="swiper img-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./img/item1.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item2.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item3.webp" class="swiper item-img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info">
+                                    <span class="info-sub item-loc">位於{Tambon Chang Phueak}的{生態屋}</span>
+                                    <h2 class="item-name">Aura House 2居室生態竹屋、泳池、河景</h2>
+                                    <!-- border bottom -->
+                                    <div class="more-info">
+                                        <span class="info-sub item-allow">{4}位</span>
+                                        <span class="info-sub item-rooms">{3}間臥室</span>
+                                        <span class="info-sub item-beds">{3}張床</span>
+                                        <span class="info-sub item-bath">{2}間衛浴</span>
+                                    </div>
+                                    <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
+                                    <span class="item-rate">&#9733;&nbsp;4.87</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 card-container">
+                        <div class="like-btn like-check">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <a href="" class="card-contain">
+                            <div class="hot-product-marker img-box">
+                                <div class="btn-box">
+                                </div>
+                                <div class="swiper img-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./img/item1.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item2.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item3.webp" class="swiper item-img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info">
+                                    <span class="info-sub item-loc">位於{Tambon Chang Phueak}的{生態屋}</span>
+                                    <h2 class="item-name">Aura House 2居室生態竹屋、泳池、河景</h2>
+                                    <!-- border bottom -->
+                                    <div class="more-info">
+                                        <span class="info-sub item-allow">{4}位</span>
+                                        <span class="info-sub item-rooms">{3}間臥室</span>
+                                        <span class="info-sub item-beds">{3}張床</span>
+                                        <span class="info-sub item-bath">{2}間衛浴</span>
+                                    </div>
+                                    <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
+                                    <span class="item-rate">&#9733;&nbsp;4.87</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 card-container">
+                        <div class="like-btn like-check">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <a href="" class="card-contain">
+                            <div class="hot-product-marker img-box">
+                                <div class="btn-box">
+                                </div>
+                                <div class="swiper img-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./img/item1.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item2.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item3.webp" class="swiper item-img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info">
+                                    <span class="info-sub item-loc">位於{Tambon Chang Phueak}的{生態屋}</span>
+                                    <h2 class="item-name">Aura House 2居室生態竹屋、泳池、河景</h2>
+                                    <!-- border bottom -->
+                                    <div class="more-info">
+                                        <span class="info-sub item-allow">{4}位</span>
+                                        <span class="info-sub item-rooms">{3}間臥室</span>
+                                        <span class="info-sub item-beds">{3}張床</span>
+                                        <span class="info-sub item-bath">{2}間衛浴</span>
+                                    </div>
+                                    <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
+                                    <span class="item-rate">&#9733;&nbsp;4.87</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 card-container">
+                        <div class="like-btn like-check">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <a href="" class="card-contain">
+                            <div class="hot-product-marker img-box">
+                                <div class="btn-box">
+                                </div>
+                                <div class="swiper img-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./img/item1.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item2.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item3.webp" class="swiper item-img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info">
+                                    <span class="info-sub item-loc">位於{Tambon Chang Phueak}的{生態屋}</span>
+                                    <h2 class="item-name">Aura House 2居室生態竹屋、泳池、河景</h2>
+                                    <!-- border bottom -->
+                                    <div class="more-info">
+                                        <span class="info-sub item-allow">{4}位</span>
+                                        <span class="info-sub item-rooms">{3}間臥室</span>
+                                        <span class="info-sub item-beds">{3}張床</span>
+                                        <span class="info-sub item-bath">{2}間衛浴</span>
+                                    </div>
+                                    <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
+                                    <span class="item-rate">&#9733;&nbsp;4.87</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 card-container">
+                        <div class="like-btn like-check">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <a href="" class="card-contain">
+                            <div class="hot-product-marker img-box">
+                                <div class="btn-box">
+                                </div>
+                                <div class="swiper img-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./img/item1.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item2.webp" class="swiper item-img">
+                                        </div>
+                                        <div class="swiper-slide"><img src="./img/item3.webp" class="swiper item-img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="info-group">
+                                <div class="info">
+                                    <span class="info-sub item-loc">位於{Tambon Chang Phueak}的{生態屋}</span>
+                                    <h2 class="item-name">Aura House 2居室生態竹屋、泳池、河景</h2>
+                                    <!-- border bottom -->
+                                    <div class="more-info">
+                                        <span class="info-sub item-allow">{4}位</span>
+                                        <span class="info-sub item-rooms">{3}間臥室</span>
+                                        <span class="info-sub item-beds">{3}張床</span>
+                                        <span class="info-sub item-bath">{2}間衛浴</span>
+                                    </div>
+                                    <span class="item-price">$99,990&nbsp;TWD&nbsp;晚</span>
+                                    <span class="item-rate">&#9733;&nbsp;4.87</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <section class="map-section">
+            <div class="map-container" id="map"></div>
+        </section>
+    </div>
+
+    <!-- lightbox -->
+    <!-- wish list -->
+    <div class="lightbox wishlist" style="display: none;">
+        <div class="lightbox-container">
+            <section class="d-flex title-section">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h2 class="lightbox-title">你的心願單</h2>
+            </section>
+            <section class="wishlist group-section">
+                <div class="per-wishlist add-new-list">
+                    <div class="img-box"><img src="./img/add-icon.webp" alt="add icon"></div>
+                    <p>建立新的心願單</p>
+                </div>
+                <div class="per-wishlist">
+                    <div class="img-box"><img src="./img/wishlist-1.webp" alt="wishlist img"></div>
+                    <p class="wishlist-name">去不起的地方</p>
+                </div>
+                <div class="per-wishlist">
+                    <div class="img-box"><img src="./img/wishlist-2.jpeg" alt="wishlist img"></div>
+                    <p class="wishlist-name">想去的地方</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="lightbox new-wishlist" style="display: none;">
+        <div class="lightbox-container">
+            <section class="d-flex title-section">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h2 class="lightbox-title">為心願單取名</h2>
+            </section>
+            <section class="group-section">
+                <div class="input-container">
+                    <input type="text" placeholder="心願單名稱" class="new-wishlist-input">
+                </div>
+            </section>
+            <section class="button-section">
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-dark btn-create disabled">建立</button>
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <div class="lightbox set-wishlist" style="display: none;">
+        <div class="lightbox-container">
+            <section class="d-flex title-section">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h2 class="lightbox-title">設定</h2>
+            </section>
+            <section class="group-section">
+                <div class="input-container">
+                    <input type="text" placeholder="重設心願單名稱" class="new-wishlist-input">
+                </div>
+            </section>
+            <section class="button-section change-name">
+
+                <button class="btn btn-link cancel-change">取消</button>
+                <button type="button" class="btn btn-dark btn-save">儲存</button>
+
+
+            </section>
+        </div>
+    </div>
+
+
+    <!-- lightbox end -->
+
+  
+    <!-- 放在body結尾 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- leaflet -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="./map.js"></script>
+    <script src="../Index/lightbox.js"></script>
+    <script src="../Wishlist/Wishlist.js"></script>
+    <script>
+        var swiper = new Swiper(".img-swiper", {
+            loop: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+       
+    </script>
+</body>
+
+</html>
