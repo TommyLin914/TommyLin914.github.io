@@ -178,7 +178,6 @@ window.onload = function () {
 //func
 //設定總額
 function setCurrentPrice() {
-
     let sumPrice = currentPrice + getBonusPriceSum()
     priceTop.innerText = toCurrency(sumPrice)
 }
@@ -361,9 +360,6 @@ const divBtn = document.createElement('div')
             btn.classList.add(`spec-${item.nameSpec}`, 'btn', 'option-btn','mx-auto')
             btn.setAttribute('add', detail.add)
 
-            // btn.addEventListener('click', function () {
-
-            // })
             btn.onclick = function () {
                 btn.setAttribute('selected', 'false')
                 divAccorBody.querySelectorAll('.btn').forEach(b => b.setAttribute('selected', 'false'))

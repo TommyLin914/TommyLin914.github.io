@@ -82,11 +82,6 @@ function createCalendar() {
         if (i == currentDate && currentMonth == today.getMonth() && currentYear == today.getFullYear()) {
             li.classList.add('today')
         }
-        if (i < currentDate) {
-            li.classList.add('pass-date')
-        } else {
-            li.classList.add('allow-date')
-        }
         li.setAttribute('data-id', `${currentYear}-${currentMonth + 1}-${i}`)
         div.innerText = i
         li.append(div)
@@ -189,8 +184,8 @@ btnGoBack.onclick = function () {
 let dataId
 const allowDate = document.querySelectorAll('.allow-date')
 btnThisMonth.addEventListener('click', function (event) {
-    // dataId = event.target.dataset.id
-    // clickCheck()
+    dataId = event.target.dataset.id
+    clickCheck()
 })
 allowDate.forEach(date => {
     date.onclick = event => {
