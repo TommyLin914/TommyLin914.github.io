@@ -97,7 +97,7 @@ function createCalendar() {
 
                 let divTodo = document.createElement('div')
                 divTodo.classList.add('divColor')
-                divTodo.style.backgroundColor = item.color
+                divTodo.style.border = `2px solid ${item.color}`
                 let pTodo = document.createElement('p')
                 pTodo.classList.add('p-todo')
                 pTodo.setAttribute('data-id', `${currentYear}-${currentMonth + 1}-${i}`)
@@ -250,7 +250,7 @@ function setScheduleValues() {
     inputTitle.value = ''
     inputDetail.value = ''
     inputLoc.value = ''
-    inputColor.value = '#000'
+    inputColor.value = '#000000'
 }
 function setScheduleInDate() {
     let li = document.createElement('li')
