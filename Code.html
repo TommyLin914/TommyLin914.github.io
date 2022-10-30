@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <style>
+        .btn:focus {
+            color: unset;
+            background-color: unset;
+            border-color: unset;
+        }
+
+        .main {
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            min-width: 768px;
+            max-width: 1200px;
+        }
+
+        .answer-group {
+            display: flex;
+            justify-content: center;
+        }
+
+        .display {
+            width: 30%;
+            margin-right: 0;
+        }
+
+        .container.input {
+            max-width: 350px;
+            margin-left: 0;
+        }
+
+        .range {
+            max-width: 350px;
+            background-color: rgb(54, 54, 54);
+            border-radius: 15px;
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.45);
+        }
+
+        .form-floating {
+            max-width: 350px;
+            padding-top: 15px;
+        }
+
+        .answer-num {
+            display: block;
+            width: 30%;
+            height: 50px;
+            margin: 0 auto;
+            line-height: 50px;
+            border-radius: 10px;
+        }
+
+        span.answer-num {
+            color: white;
+            height: 25px;
+            width: 10%;
+            line-height: 25px;
+            align-self: center;
+            margin: 0;
+        }
+
+        #last-input {
+            width: 85%;
+            font-size: 1.3em;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        .num-btns>.btn {
+            width: 27%;
+        }
+
+        #btn-start,
+        #btn-reset {
+            width: 48%;
+        }
+
+        .form-floating>.form-control:not(:placeholder-shown)~label {
+            transform: scale(.85) translateY(.5rem) translateX(.15rem);
+        }
+
+        .info {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 25px;
+            border-radius: 10px;
+            border:1px solid rgba(0, 0, 0, 0.45);
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.45);
+            margin-bottom: 10px;
+            
+        }
+
+        .answer-p {
+            color: #fff;
+        }
+
+        .shake {
+            animation: shake 800ms ease-in-out;
+        }
+
+        @keyframes shake {
+
+            10%,90% {transform: translateX(-2px);}
+            20%,80% {transform: translateX(+4px);}
+            30%,70% {transform: translateX(-6px);}
+            40%,60% {transform: translateX(+8px);}
+            50% {transform: translateX(-10px);}
+        }
+    </style>
+    <title>終極密碼</title>
+</head>
+
+<body>
+
+    <div class="main mt-5 d-flex">
+
+        <div class="container display">
+            <button type=" button" class="btn btn-primary mb-2" id="btn-start">開始遊戲</button>
+            <button type=" button" class="btn btn-danger mb-2" id="btn-reset" disabled="true">重置</button>
+            <div class="range py-2 mt-2" style="text-align: center;">
+                <div class="d-flex answer-group"> 
+                    <p class="bg-warning answer-num s-num">1</p>
+                    <span class="bg-secondary answer-num ">-</span>
+                    <p class=" bg-warning answer-num l-num">100</p>
+                </div>
+                <div class=" answer-group">
+                    <p class="bg-warning answer-num" id="last-input"> </p>
+                </div>
+            </div>
+            <div class=" form-floating">
+                <input type="text" class="form-control answer-box" id="floatingInput" placeholder="name@example.com"
+                    disabled="true">
+                <label for="floatingInput">輸入答案</label>
+            </div>
+        </div>
+
+
+        <div class=" container input ">
+
+            <div class="info">
+                <p></p>
+            </div>
+
+            <div class="mx-auto d-flex flex-wrap justify-content-between num-btns">
+                <button type="button" class="btn btn-outline-dark m-1" style="order: 11;"></button>
+                <button type="button" class="btn btn-outline-dark m-1" id="btn1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-dark m-1"></button>
+                <button type="button" class="btn btn-outline-danger m-1 func-btn cancel-btn"
+                    style="order: 10;"></button>
+                <button type="button" class="btn btn-outline-success m-1 func-btn check-btn"
+                    style="order: 12;"></button>
+            </div>
+        </div>
+
+    </div>
+    <p>答案: <span class="answer-p"></span></p>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script>
+
+        window.onload = function () {
+            infoGameStop()
+            disableBtn()
+        }
+
+        //#region 宣告
+        let btns = document.querySelector('.num-btns')
+        let output = 0
+        let answerBox = document.querySelector('.answer-box')
+        let btnAll = document.querySelectorAll('.num-btns>.btn')
+        let ans = document.querySelector('.answer')
+        let startBtn = document.querySelector('#btn-start')
+        let resetBtn = document.querySelector('#btn-reset')
+        let lastInput = document.querySelector('#last-input')
+        let b1 = document.querySelector('#btn1')
+        let ansP = document.querySelector('.answer-p')
+        let info = document.querySelector('.info')
+        //#endregion
+
+        //#region answer
+        function disableBtn() {
+            btnAll.forEach((btn) => {
+                btn.disabled = true
+                btn.innerText = 'x'
+            })
+        }
+        function enableBtn() {
+            let i =0
+            btnAll.forEach((btn) => {
+                btn.innerText = `${i}`
+                i++
+                if(i==11){btn.innerText = '←'}
+                if(i==12){btn.innerText = '√'}
+                btn.disabled = false
+            })
+        }
+
+        let answer
+        startBtn.addEventListener('click', () => {
+            infoDefault()
+            answer = Math.floor(Math.random() * 98) + 2
+            enableBtn()
+            ansP.innerText = answer
+            startBtn.disabled = true
+            resetBtn.disabled = false
+        })
+        function resetGame() {
+            startBtn.disabled = false
+            resetBtn.disabled = true
+            answer = ''
+            answerBox.value = ''
+            lastInput.innerText = ''
+            sNum.innerText = '1'
+            lNum.innerText = '100'
+            disableBtn()
+            ansP.innerText = answer
+            infoGameStop()
+        }
+        resetBtn.addEventListener('click', () => {
+            resetGame()
+        })
+
+
+        //#endregion
+
+        //#region input
+        //info
+        let infoStart = '請按下開始遊戲'
+        let infoTypeTooMuch = '最多輸入二位數'
+        let infoHit = '猜對了！！'
+
+        function infoGameStop() {
+            info.innerText = infoStart
+            info.style.backgroundColor = '#fff'
+            info.style.color = 'rgba(0, 0, 0, 0.5)'
+        }
+        function infoDefault() {
+            info.innerText = '終極密碼'
+            info.style.backgroundColor = '#fa0'
+            info.style.color = '#000'
+                                info.classList = "info"
+        }
+
+        //btns
+        btns.addEventListener('click', function (event) {
+            let inputParse = Number(answerBox.value)
+            if (!isNaN(event.target.innerText)) {
+                output = event.target.innerText
+                if (answerBox.value.length < 2 || inputParse < 10) {
+                    answerBox.value += output
+                } else {
+                    info.setAttribute('Class', 'info shake')
+                    info.innerText = infoTypeTooMuch
+                    info.style.backgroundColor = '#f00'
+                    info.style.color = '#fff'
+
+                    setTimeout(() => {
+                        infoDefault()
+                        info.setAttribute('Class', 'info')
+                    } , 2000)
+                }
+            }
+        })
+
+        let cancel = document.querySelector('.cancel-btn')
+        cancel.addEventListener('click', () => {
+            let getAns = answerBox.value
+            answerBox.value = getAns.slice(0, -1)
+        })
+
+        //檢查答案
+
+        let sNum = document.querySelector('.s-num')
+        let lNum = document.querySelector('.l-num')
+
+        function replaceAns() {
+            let inputParse = Number(answerBox.value)
+            let sNumParse = Number(sNum.innerText)
+            let lNumParse = Number(lNum.innerText)
+
+            if (inputParse > sNumParse && inputParse < lNumParse) {
+                if (inputParse < answer) {
+                    sNum.innerText = inputParse
+                }
+                else { lNum.innerText = inputParse }
+                lastInput.innerText = inputParse
+            }
+            else {
+                info.setAttribute('Class', 'info shake')
+                info.innerText = `請輸入介於${sNum.innerText}-${lNum.innerText} 間的數字`
+                info.style.backgroundColor = '#f00'
+                info.style.color = '#fff'
+
+                setTimeout(() => {
+                    infoDefault()
+                }, 3000)                  
+            }
+        }
+
+        let checkBtn = document.querySelector('.check-btn')
+        checkBtn.addEventListener('click', () => {
+            if (answerBox.value != answer) {
+                replaceAns()
+            } else {
+                info.setAttribute('Class', 'info shake')
+                info.innerText = infoHit
+                info.style.backgroundColor = '#f00'
+                info.style.color = '#fff'
+                
+                setTimeout(() => {
+                    resetGame()}, 2000)                     
+            }
+            answerBox.value = ''
+        })
+        //#endregion
+
+
+    </script>
+
+</body>
+
+</html>

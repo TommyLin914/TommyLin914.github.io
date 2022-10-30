@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Open+Sans:ital,wght@0,400;0,500;1,600&display=swap');
+
+        .shake {
+            animation: shake 800ms ease-in-out;
+        }
+
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translateX(-2px);
+            }
+
+            20%,
+            80% {
+                transform: translateX(+4px);
+            }
+
+            30%,
+            70% {
+                transform: translateX(-6px);
+            }
+
+            40%,
+            60% {
+                transform: translateX(+8px);
+            }
+
+            50% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .title-container {
+            width: 100%;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .title {
+            font-weight: 700;
+            letter-spacing: 10px;
+            font-style: italic;
+            font-size: 50px;
+        }
+
+        .game-container {
+            width: 70%;
+            max-width: 900px;
+            justify-content: space-evenly;
+            position: relative;
+            margin: 10px auto;
+            padding: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .game-container::before,
+        .game-container::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 2px;
+        }
+
+        .game-container::before {
+            top: 0;
+            background-image: linear-gradient(to right, #0000 0%, #5ee7df 20%, #b490ca 80%, #0000 100%);
+        }
+
+        .game-container::after {
+            bottom: 0;
+            background-image: linear-gradient(to left, #0000 0%, #5ee7df 20%, #b490ca 80%, #0000 100%);
+        }
+
+
+        .btn-container {
+            width: 25%;
+            background-color: #3E6B7E;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            border-radius: 15px;
+        }
+
+        .check-answer {
+            position: relative;
+            width: 80%;
+        }
+
+        .check-answer .btn {
+            display: block;
+            margin: auto;
+            width: 100%;
+            cursor: help;
+        }
+
+        .check-answer .btn:hover~.answer {
+            opacity: 1;
+            animation-name: float;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .answer {
+            opacity: 0;
+            width: 100px;
+            height: 43px;
+            text-align: center;
+            line-height: 43px;
+            font-size: 20px;
+            letter-spacing: 3px;
+            position: absolute;
+            left: -88px;
+            top: 50%;
+            clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0 51%, 0% 0%);
+            background-color: rgb(83, 83, 83);
+            color: #fff;
+            transform: translatey(-50%);
+            transition: opacity .5s;
+        }
+
+        @keyframes float {
+
+            25%,
+            75% {
+                transform: translate(-8px, -50%)
+            }
+
+            50% {
+                transform: translate(-12px, -50%)
+            }
+        }
+
+        .btn-container>.btn {
+            width: 80%;
+        }
+
+        .btn-container .btn {
+            color: #fce4a8de;
+            border-radius: unset;
+            font-weight: 500;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 24px;
+            border-bottom: 3px solid #0000;
+            transition: all .5s;
+        }
+
+        .btn.disabled,
+        .btn:disabled {
+            border-color: #0000;
+        }
+
+        .btn-container .btn:focus {
+            border-color: #0000;
+        }
+
+        .btn-container .btn:hover {
+            border-color: #0000;
+            border-bottom: 3px solid #fce4a8de;
+        }
+
+        .display-container {
+            width: 50%;
+
+            max-width: 500px;
+        }
+
+        .guess-input::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .list-area {
+            height: 220px;
+            overflow: auto;
+            border-radius: 10px;
+            background-color: #d2bfa6;
+            padding: 5px;
+        }
+
+        .list-group .list-group-item {
+            border-radius: 15px;
+            margin: 2px 0;
+        }
+
+        .badge {
+            line-height: 2;
+            width: 54px;
+            margin-right: 10px;
+        }
+
+        .modal-title {
+            font-weight: 600;
+        }
+    </style>
+    <title>猜啦</title>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade hit-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">標題放這</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    文字放這
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal結束 -->
+
+    <div class="title-container container">
+        <h1 class="title">猜數字</h1>
+    </div>
+    <div class="game-container d-flex container">
+
+        <div class="btn-container d-flex flex-column">
+            <button type="button" class="btn start">開始遊戲</button>
+            <button type="button" class="btn reset">放棄重來</button>
+            <div class="check-answer">
+                <button type="button" class="btn">偷看答案</button>
+                <div class="answer">還沒產生</div>
+            </div>
+        </div>
+        <div class="display-container">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">猜答案</span>
+                <input type="text" pattern="\d*" maxlength="4" class="form-control guess-input"
+                    aria-label="Sizing example input" placeholder="請輸入4位數字"
+                    aria-describedby="inputGroup-sizing-default">
+                <button class="btn btn-warning btn-guess" type="button" id="button-addon2">Enter</button>
+            </div>
+            <div class="list-area">
+                <ul class="list-group d-flex flex-column-reverse">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+        window.onload = function () {
+            gameUnset()
+        }
+        //#region 關閉遊戲
+        function gameUnset() {
+            inputBox.disabled = true
+            inputBox.placeholder = '請先按開始遊戲'
+            inputBox.style.fontStyle = 'italic'
+            inputBox.style.fontWeight = '600'
+            inputBox.value = ''
+            guessBtn.disabled = true
+            answer = ''
+            answerArr.splice(0, answerArr.length)
+            startBtn.disabled = false
+            zeroToNine.splice(0, zeroToNine.length)
+            resetBtn.disabled = true
+        }
+        //#endregion
+
+        //#region 遊戲初始化
+        let displayBox = document.querySelector('.display-container')
+        function gameDefaultUI() {
+            startBtn.disabled = true
+            inputBox.disabled = false
+            inputBox.placeholder = '請輸入4位不同的數字'
+            inputBox.style.fontStyle = 'unset'
+            inputBox.style.fontWeight = 'unset'
+            guessBtn.disabled = false
+            displayBox.classList.add('shake')
+            resetBtn.disabled = false
+        }
+        //#endregion
+
+        //#region 產生謎底
+        let zeroToNine = []
+        let answer
+        let answerArr = []
+        let answerDisplay = document.querySelector('.answer')
+        function gameStart() {
+            for (let i = 0; i <= 9; i++) {
+                zeroToNine.push(i)
+            }
+            for (let i = 10; i >= 7; i--) {
+                let random = Math.floor(Math.random() * i)
+                answerArr.push(zeroToNine[random])
+                zeroToNine.splice(random, 1)
+            }
+            answer = answerArr.join('')
+            answerDisplay.innerText = answer
+            logReset()
+        }
+
+        let startBtn = document.querySelector('.btn.start')
+        startBtn.addEventListener('click', () => {
+            gameDefaultUI()
+            gameStart()
+        })
+        //#endregion
+
+        //#region 產生Log
+        let addLi, addSpanAB, addSpanAns
+        let ul = document.querySelector('.list-group')
+        let counter = 1
+
+        function addLog(a, b) {
+            let input
+            addLi = document.createElement('li')
+            addSpanAB = document.createElement('span')
+            addSpanAns = document.createElement('span')
+
+            addSpanAB.innerText = `${a}A${b}B`
+            let spanAB = addLi.appendChild(addSpanAB)
+
+            if (a == 4) { spanAB.classList.add('badge', 'text-bg-success') }
+            else if (a != 0 && b != 0) { spanAB.classList.add('badge', 'text-bg-warning') }
+            else { spanAB.classList.add('badge', 'text-bg-danger') }
+
+            input = inputBox.value
+            addSpanAns.innerText = input
+            let span = addLi.append(addSpanAB, addSpanAns)
+            let li = ul.appendChild(addLi)
+            if (counter % 2 == 1) {
+                li.className = 'list-group-item list-group-item-info'
+            }
+            if (counter % 2 == 0) {
+                li.className = 'list-group-item list-group-item-secondary'
+            }
+            counter++
+        }
+
+        //#endregion
+
+        //#region input對答案
+        let inputBox = document.querySelector('.guess-input')
+        let guessBtn = document.querySelector('.btn-guess')
+        let guess
+        let guessArr
+        function getInput() {
+            guess = inputBox.value
+            guessArr = Array.from(guess)
+        }
+        let aCount, bCount
+        let filterArr
+        let answerNum = Number(answer)
+        function checkAnswer() {
+            if (checkNumber(guess)) {
+                filterArr = answerArr.filter((num) => {
+                    return guess.includes(num)
+                })
+                aCount = answerArr.filter((num) => {
+                    return guess.indexOf(num) == answerArr.indexOf(num)
+                }).length
+                bCount = filterArr.length - aCount
+                addLog(aCount, bCount)
+                if (aCount == 4) { hit() }
+            }
+            else {
+                modalTitle.innerText = '搞事啊'
+                modalBody.innerText = '請輸入4個不重複的數字'
+                hitModal.show()
+            }
+        }
+
+        inputBox.addEventListener('keyup', (key) => {
+            if (key.keyCode == 13) {
+                getInput()
+                checkAnswer()
+                inputBox.value = ''
+            }
+        })
+
+        guessBtn.addEventListener('click', () => {
+            getInput()
+            checkAnswer()
+            inputBox.value = ''
+        })
+        //#region 檢查數字
+        function distinct(arr) {
+            return Array.from(new Set([...arr]))
+        }
+        let numberRegExp = /^(?:([0-9])(?!.*?\1))+$/
+        
+        function checkNumber(num) {
+
+            return numberRegExp.test(num)
+        }
+        //#endregion
+
+        //#region 猜對了
+        var hitModal = new bootstrap.Modal(document.querySelector('.hit-modal'), {
+            keyboard: false
+        })
+        let modalBody = document.querySelector('.modal-body')
+        let modalTitle = document.querySelector('.modal-title')
+        function hit() {
+            modalTitle.innerText = '猜對啦！！'
+            modalBody.innerText = `答案是: ${answer}`
+            hitModal.show()
+            gameUnset()
+            reset()
+        }
+        //#endregion
+        let resetBtn = document.querySelector('.reset')
+        let li
+        resetBtn.addEventListener('click', () => {
+            reset()
+        })
+        function logReset() {
+            let liAll = document.querySelectorAll('li')
+            for (let i = 0; i < liAll.length; i++) {
+                ul.removeChild(document.querySelector('li'))
+            }
+        }
+        function reset() {
+            gameUnset()
+        }
+
+    </script>
+
+</body>
+
+</html>
