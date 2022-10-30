@@ -174,6 +174,17 @@ h1 {
   right: 7px;
 }
 
+.nav .topic {
+  position: relative;
+}
+.nav .topic::after {
+  content: "";
+  border-bottom: 1px solid #518432;
+}
+.nav .list-box {
+  position: absolute;
+}
+
 #menu-control:checked ~ .switch-btn .menu .hb span::after {
   background-color: #fff;
 }

@@ -114,7 +114,18 @@ $hb-width: 40px;
     }
   }
 }
-
+.nav{
+  .topic{
+    position: relative;
+    &::after{
+      content: '';
+      border-bottom: 1px solid #518432;
+    }
+  }
+  .list-box{
+    position: absolute;
+  }
+}
 #menu-control:checked {
   & ~ .switch-btn .menu {
     @extend %panel-checked;
