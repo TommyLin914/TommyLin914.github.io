@@ -1,0 +1,123 @@
+.shake {
+    animation: shake 600ms ease-in-out;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate(-2px, 6px);
+    }
+
+    20%,
+    80% {
+        transform: translate(+4px, -7px);
+    }
+
+    30%,
+    70% {
+        transform: translate(-6px, 3px);
+    }
+
+    40%,
+    60% {
+        transform: translate(+8px, -5px);
+    }
+
+    50% {
+        transform: translate(-10px, 9px);
+    }
+}
+body {
+    background: url(./set_bgimg.png) no-repeat center center fixed;
+    background-size: cover;
+}
+.main-area {
+    position: relative;
+    padding-top: 50px;
+    z-index: 5;
+    /* background-color: #fff; */
+}
+.active-area {
+    position: relative;
+    height: 768px;
+    margin: auto;
+    overflow: hidden;
+}
+.border-img {
+    position: absolute;
+    height: 768px;
+    width: 1539px;
+    left: 0;
+    top: 0px;
+}
+canvas {
+    outline: 1px double #fa0;
+}
+
+.drawCircle {
+    position: relative;
+    z-index: 10;
+}
+
+#target {
+    position: absolute;
+    width: 80px;
+    z-index: -1;
+}
+.target-start {
+    transform: scale(3);
+    transition: transform 0.3s ease-in;
+}
+.target-start .target-normal {
+    transform: scale(1);
+    transition: transform 0.5s ease-in;
+}
+.btn-start {
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    transition: 0.5s ease-in-out;
+}
+.countdown-display {
+    position: absolute;
+    font-size: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dancing Script', cursive;
+    transition: 0.5s ease;
+}
+.score-area {
+    position: absolute;
+    top: 0;
+    width: 265px;
+    left: 100px;
+}
+.score-display {
+    font-family: 'Permanent Marker', cursive;
+    color: #fff;
+    position: absolute;
+    top: -12px;
+    font-size: 100px;
+    left: 199px;
+    transition: 0.3s ease;
+}
+.score-change {
+    transform: scale(1.5);
+}
+.gun-fire {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+}
+.wood-stand {
+    position: absolute;
+    z-index: 5;
+    top: 436px;
+    left: 1553px;
+    height: 486px;
+}
